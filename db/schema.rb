@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170814121001) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "tipos_transacciones", force: :cascade do |t|
     t.string   "descripcion"
     t.boolean  "habilitado"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["descripcion"], name: "index_tipos_transacciones_on_descripcion", unique: true
+    t.index ["descripcion"], name: "index_tipos_transacciones_on_descripcion", unique: true, using: :btree
   end
 
 end
