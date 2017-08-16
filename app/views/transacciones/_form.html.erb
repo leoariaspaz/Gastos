@@ -22,7 +22,7 @@
 
   <div class="form-group">
     <%= f.label :tipo_transaccion_id %>
-    <%= f.text_field :tipo_transaccion_id, class: "form-control" %>
+    <%= f.select :tipo_transaccion_id, @tipos_transacciones, {prompt: true}, {class: "form-control"} %>
   </div>
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: transacciones_path} %>
