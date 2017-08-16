@@ -1,0 +1,29 @@
+<%= form_for(transaccion) do |f| %>
+  <%= render 'errores', partial: true, model: transaccion, model_name: 'La transacción' %>
+
+  <div class="form-group">
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion, class: "form-control" %>
+  </div>
+
+  <div class="checkbox">
+    <%= f.label :habilitado do %>
+      <%= f.check_box :habilitado %> 
+      Habilitada
+    <% end %>
+  </div>
+
+  <div class="checkbox">
+    <%= f.label :es_ingreso do %>
+      <%= f.check_box :es_ingreso %>
+      Es una transacción de ingreso
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :tipo_transaccion_id %>
+    <%= f.text_field :tipo_transaccion_id, class: "form-control" %>
+  </div>
+
+  <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: transacciones_path} %>
+<% end %>

@@ -1,0 +1,54 @@
+<h1>Transacciones</h1>
+
+<%= render 'notice' %>
+
+<div class="row">
+  <div class="col-sm-offset-9 col-sm-3">
+    <%= link_to 'Nuevo Tipo', new_transaccion_path, class: 'btn btn-default', role: 'button' %>
+  </div>  
+</div>
+
+<% if @transacciones.any? %>
+
+  <table class="table table-striped table-responsive">
+    <thead>
+      <tr>
+        <th>Descripción</th>
+        <th>Habilitado</th>
+        <th>De ingreso</th>
+        <th>Tipo de transacción</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @transacciones.each do |transaccion| %>
+        <tr>
+          <td><%= transaccion.descripcion %></td>
+          <td class="col-sm-2">
+            <%= render partial: "controls/checkbox", object: transaccion.habilitado %>
+          </td>
+          <td class="col-sm-2">
+            <%= render partial: "controls/checkbox", object: transaccion.es_ingreso %>
+          </td>
+          <td><%= transaccion.tipo_transaccion.descripcion %></td>
+          <td>
+            <%= link_to edit_transaccion_path(transaccion) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+            <% end %>
+            <%= link_to transaccion, method: :delete, data: { confirm: '¿Está seguro?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+  <div id="notas-empty" class="row">
+    <div class="alert alert-success text-center col-sm-4 col-sm-offset-4">
+      Todavía no hay transacciones cargadas.
+    </div>
+  </div>
+<% end %>

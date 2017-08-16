@@ -5,7 +5,6 @@
 <div class="row">
   <div class="col-sm-offset-9 col-sm-3">
     <%= link_to 'Nuevo Tipo', new_tipo_transaccion_path, class: 'btn btn-default', role: 'button' %>
-    <%# = link_to 'Ver notas', notas_path, class: 'btn btn-default', role: 'button' #%>
   </div>  
 </div>
 
@@ -25,11 +24,7 @@
         <tr>
           <td><%= tipo_transaccion.descripcion %></td>
           <td class="col-sm-5">
-            <% if tipo_transaccion.habilitado %>
-              <span class="glyphicon glyphicon-check"></span>          
-            <% else %>
-              <span class="glyphicon glyphicon-unchecked"></span>
-            <% end %>           
+            <%= render partial: "controls/checkbox", object: tipo_transaccion.habilitado %>
           </td>          
           <td class="col-sm-1">
             <%= link_to edit_tipo_transaccion_path(tipo_transaccion) do %>

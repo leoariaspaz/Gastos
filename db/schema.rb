@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814121001) do
+ActiveRecord::Schema.define(version: 20170815235453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,4 +23,16 @@ ActiveRecord::Schema.define(version: 20170814121001) do
     t.index ["descripcion"], name: "index_tipos_transacciones_on_descripcion", unique: true, using: :btree
   end
 
+  create_table "transacciones", force: :cascade do |t|
+    t.string   "descripcion"
+    t.boolean  "habilitado"
+    t.boolean  "es_ingreso"
+    t.integer  "tipo_transaccion_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["descripcion", "tipo_transaccion_id"], name: "index_transacciones_on_descripcion_and_tipo_transaccion_id", unique: true, using: :btree
+    t.index ["tipo_transaccion_id"], name: "index_transacciones_on_tipo_transaccion_id", using: :btree
+  end
+
+  add_foreign_key "transacciones", "tipos_transacciones"
 end

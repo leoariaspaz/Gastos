@@ -1,3 +1,3 @@
 class TipoTransaccion < ApplicationRecord
-	validates :descripcion, uniqueness: true
+	validates_uniqueness_of :descripcion, :message => "ya existe"
 end

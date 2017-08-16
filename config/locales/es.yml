@@ -1,10 +1,13 @@
 es:
   activerecord:
     models:
-      categoria: categoría
+      tipo_transaccion: tipo de transacción
     attributes:
-      categoria:
+      tipo_transaccion:
         descripcion: Descripción
+      transaccion:
+        descripcion: Descripción
+        tipo_transaccion_id: Tipo de transacción
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
