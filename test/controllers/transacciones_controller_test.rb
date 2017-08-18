@@ -17,7 +17,7 @@ class TransaccionesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create transaccion" do
     assert_difference('Transaccion.count') do
-      post transacciones_url, params: { transaccion: { descripcion: @transaccion.descripcion, es_ingreso: @transaccion.es_ingreso, habilitado: @transaccion.habilitado, tipo_transaccion_id: @transaccion.tipo_transaccion_id } }
+      post transacciones_url, params: { transaccion: { descripcion: @transaccion.descripcion, es_debito: @transaccion.es_debito, habilitado: @transaccion.habilitado, tipo_transaccion_id: @transaccion.tipo_transaccion_id } }
     end
 
     assert_redirected_to transaccion_url(Transaccion.last)
@@ -34,7 +34,7 @@ class TransaccionesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update transaccion" do
-    patch transaccion_url(@transaccion), params: { transaccion: { descripcion: @transaccion.descripcion, es_ingreso: @transaccion.es_ingreso, habilitado: @transaccion.habilitado, tipo_transaccion_id: @transaccion.tipo_transaccion_id } }
+    patch transaccion_url(@transaccion), params: { transaccion: { descripcion: @transaccion.descripcion, es_debito: @transaccion.es_debito, habilitado: @transaccion.habilitado, tipo_transaccion_id: @transaccion.tipo_transaccion_id } }
     assert_redirected_to transaccion_url(@transaccion)
   end
 

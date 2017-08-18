@@ -74,6 +74,6 @@ class TransaccionesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaccion_params
-      params.require(:transaccion).permit(:descripcion, :habilitado, :es_ingreso, :tipo_transaccion_id)
+      params.require(:transaccion).permit(:descripcion, :habilitado, :es_debito, :tipo_transaccion_id)
     end
 end

@@ -3,11 +3,11 @@
 one:
   descripcion: MyString
   habilitado: false
-  es_ingreso: false
+  es_debito: false
   tipo_transaccion: one
 
 two:
   descripcion: MyString
   habilitado: false
-  es_ingreso: false
+  es_debito: false
   tipo_transaccion: two

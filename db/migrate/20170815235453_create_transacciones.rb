@@ -3,7 +3,7 @@ class CreateTransacciones < ActiveRecord::Migration[5.0]
     create_table :transacciones do |t|
       t.string :descripcion
       t.boolean :habilitado
-      t.boolean :es_ingreso
+      t.boolean :es_debito
       t.references :tipo_transaccion, foreign_key: true
 
       t.timestamps
