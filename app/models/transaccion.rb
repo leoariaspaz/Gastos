@@ -6,8 +6,8 @@ class Transaccion < ApplicationRecord
 
 private
 	def tipo_transaccion_válido
-		if (not :tipo_transaccion_id.nil?) and TipoTransaccion.where(habilitado: true, id: :tipo_transaccion_id).empty?
-	 		errors.add(:tipo_transaccion_id, "es incorrecto")
+		if (not tipo_transaccion_id.nil?) and TipoTransaccion.where(habilitado: true, id: tipo_transaccion_id).empty?
+ 			errors.add(:tipo_transaccion_id, "es incorrecto")
 		end
 	end 
 end

@@ -26,10 +26,9 @@ class TransaccionesController < ApplicationController
   # POST /transacciones.json
   def create
     @transaccion = Transaccion.new(transaccion_params)
-
     respond_to do |format|
       if @transaccion.save
-        format.html { redirect_to @transaccion, notice: 'Transaccion was successfully created.' }
+        format.html { redirect_to transacciones_url, notice: 'La transacción se grabó correctamente.' }
         format.json { render :show, status: :created, location: @transaccion }
       else
         format.html { render :new }
@@ -43,7 +42,7 @@ class TransaccionesController < ApplicationController
   def update
     respond_to do |format|
       if @transaccion.update(transaccion_params)
-        format.html { redirect_to @transaccion, notice: 'Transaccion was successfully updated.' }
+        format.html { redirect_to transacciones_url, notice: 'La transacción se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @transaccion }
       else
         format.html { render :edit }
@@ -57,7 +56,7 @@ class TransaccionesController < ApplicationController
   def destroy
     @transaccion.destroy
     respond_to do |format|
-      format.html { redirect_to transacciones_url, notice: 'Transaccion was successfully destroyed.' }
+      format.html { redirect_to transacciones_url, notice: 'La transacción se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end
