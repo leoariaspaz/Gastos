@@ -8,6 +8,9 @@ es:
       transaccion:
         descripcion: Descripción
         tipo_transaccion_id: Tipo de transacción
+      movimiento:
+        transaccion: Transacción
+        fecha_mov: Fecha de movimiento
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

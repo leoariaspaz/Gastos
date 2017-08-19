@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha mov:</strong>
+  <%= @movimiento.fecha_mov %>
+</p>
+
+<p>
+  <strong>Transaccion:</strong>
+  <%= @movimiento.transaccion %>
+</p>
+
+<p>
+  <strong>Importe:</strong>
+  <%= @movimiento.importe %>
+</p>
+
+<%= link_to 'Edit', edit_movimiento_path(@movimiento) %> |
+<%= link_to 'Back', movimientos_path %>

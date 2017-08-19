@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815235453) do
+ActiveRecord::Schema.define(version: 20170819144149) do
+
+  create_table "movimientos", force: :cascade do |t|
+    t.date     "fecha_mov",                               default: '2017-08-19'
+    t.integer  "transaccion_id"
+    t.decimal  "importe",        precision: 2, scale: 18, default: "0.0"
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+    t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id"
+  end
 
   create_table "tipos_transacciones", force: :cascade do |t|
     t.string   "descripcion"

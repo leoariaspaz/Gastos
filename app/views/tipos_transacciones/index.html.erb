@@ -1,11 +1,9 @@
-<h1>Tipos de Transacciones</h1>
-
-<%= render 'notice' %>
-
 <div class="row">
-  <div class="col-sm-offset-9 col-sm-3">
+  <h1 class="col-sm-4">Tipos de Transacciones</h1>
+  <div class="col-sm-5"><%= render 'notice' %></div>  
+  <div id="menu-abm" class="col-sm-3 text-right">
     <%= link_to 'Nuevo Tipo', new_tipo_transaccion_path, class: 'btn btn-default', role: 'button' %>
-  </div>  
+  </div>
 </div>
 
 <% if @tipos_transacciones.any? %>
