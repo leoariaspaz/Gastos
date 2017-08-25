@@ -6,47 +6,12 @@
   </div>
 </div>
 
-<% if @transacciones.any? %>
+<div class="form-group">
+  <%= label_tag :tipo_transaccion_id, "Tipo de transacción:", { style: "display: inline;" } %>
+  <%= select_tag "tipo_transaccion_id", options_for_select(@tipos_transacciones),
+        {prompt: '(Todas)', class: "form-control", style: "display: inline; max-width: 40%;"} %>
+</div>
 
-  <table class="table table-striped table-responsive table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center">Descripción</th>
-        <th class="text-center">Habilitado</th>
-        <th class="text-center">De ingreso</th>
-        <th class="text-center">Tipo de transacción</th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @transacciones.each do |transaccion| %>
-        <tr>
-          <td><%= transaccion.descripcion %></td>
-          <td class="col-sm-2 text-center">
-            <%= render partial: "controls/checkbox", object: transaccion.habilitado %>
-          </td>
-          <td class="col-sm-2 text-center">
-            <%= render partial: "controls/checkbox", object: transaccion.es_debito %>
-          </td>
-          <td><%= transaccion.tipo_transaccion.descripcion %></td>
-          <td class="text-center">
-            <%= link_to edit_transaccion_path(transaccion) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-            <% end %>
-            <%= link_to transaccion, method: :delete, data: { confirm: '¿Está seguro?' } do %>
-              <span class="glyphicon glyphicon-trash"></span>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-<% else %>
-  <div id="notas-empty" class="row">
-    <div class="alert alert-success text-center col-sm-4 col-sm-offset-4">
-      Todavía no hay transacciones cargadas.
-    </div>
-  </div>
-<% end %>
+<div id="transacciones">
+  <%= render partial: 'list' %>  
+</div>

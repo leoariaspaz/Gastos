@@ -5,7 +5,7 @@ class MovimientosController < ApplicationController
   # GET /movimientos
   # GET /movimientos.json
   def index
-    @movimientos = Movimiento.all
+    @movimientos = Movimiento.all    
   end
 
   # GET /movimientos/1

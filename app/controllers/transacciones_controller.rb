@@ -1,11 +1,21 @@
 class TransaccionesController < ApplicationController
   before_action :set_transaccion, only: [:show, :edit, :update, :destroy]
-  before_action :set_tipos_transacciones, only: [:new, :create, :edit, :update]
+  before_action :set_tipos_transacciones, only: [:new, :create, :edit, :update, :index]
 
   # GET /transacciones
   # GET /transacciones.json
   def index
     @transacciones = Transaccion.all
+  end
+
+  def list
+    id = params[:id]
+    if id.nil?
+      @transacciones = Transaccion.all
+    else
+      @transacciones = Transaccion.where(tipo_transaccion_id: id.to_i)
+    end
+    render partial: true
   end
 
   # GET /transacciones/1
@@ -59,6 +69,12 @@ class TransaccionesController < ApplicationController
       format.html { redirect_to transacciones_url, notice: 'La transacción se eliminó correctamente.' }
       format.json { head :no_content }
     end
+  end
+
+  def select_by_tipoid
+    id = params[:id].to_i
+    @transacciones = Transaccion.where(tipo_transaccion_id: id).map { |t| [t.descripcion, t.id] }
+    render partial: true
   end
 
   private
