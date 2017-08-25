@@ -9,9 +9,8 @@
 <div class="form-group">
   <%= label_tag :tipo_transaccion_id, "Tipo de transacción:", { style: "display: inline;" } %>
   <%= select_tag "tipo_transaccion_id", options_for_select(@tipos_transacciones),
-        {prompt: '(Todas)', class: "form-control", style: "display: inline; max-width: 40%;"} %>
+        {prompt: '(Todos los tipos de transacciones)', class: "form-control", 
+          style: "display: inline; max-width: 40%;"} %>
 </div>
 
-<div id="transacciones">
-  <%= render partial: 'list' %>  
-</div>
+<div id="transacciones"></div>

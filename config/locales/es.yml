@@ -9,7 +9,7 @@ es:
         descripcion: Descripción
         tipo_transaccion_id: Tipo de transacción
       movimiento:
-        transaccion: Transacción
+        transaccion_id: Transacción
         fecha_mov: Fecha de movimiento
     errors:
       messages:

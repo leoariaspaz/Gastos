@@ -10,7 +10,9 @@ tipo_transaccion_id_change = ->
 
 ready = ->
 	tipo_transaccion_id_change()
-	lnk = '/transacciones/' + $("#tipo_transaccion_id").val() + '/list'
+	id = $("#tipo_transaccion_id").val()
+	if id == "" then id = 0	
+	lnk = '/transacciones/' + id + '/list'
 	$.get lnk, (data) ->
 		$("#transacciones").html data
 

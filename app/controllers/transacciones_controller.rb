@@ -5,15 +5,15 @@ class TransaccionesController < ApplicationController
   # GET /transacciones
   # GET /transacciones.json
   def index
-    @transacciones = Transaccion.all
+    # @transacciones = Transaccion.all
   end
 
   def list
-    id = params[:id]
-    if id.nil?
+    id = params[:id].to_i
+    if id == 0
       @transacciones = Transaccion.all
     else
-      @transacciones = Transaccion.where(tipo_transaccion_id: id.to_i)
+      @transacciones = Transaccion.where(tipo_transaccion_id: id)
     end
     render partial: true
   end
