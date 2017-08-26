@@ -6,10 +6,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 tipo_transaccion_id_change = ->
-	$("#tipo_transaccion_id").change (e) ->
+	$("#new_movimiento #tipo_transaccion_id").change (e) ->
 		lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
 		$.get lnk, (data) ->
-			$("#transacciones").html data
+			$("#new_movimiento #transacciones").html data
 		return false
 
 ready = ->

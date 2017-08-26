@@ -1,20 +1,22 @@
 <% content_for :title do %>
-  Gastos - Transacciones
+  Transacciones
 <% end %>
 
-<div class="row">
-  <h1 class="col-sm-3">Transacciones</h1>
-  <div class="col-sm-6"><%= render 'notice' %></div>  
-  <div id="menu-abm" class="col-sm-3 text-right">
-    <%= link_to 'Nueva transacción', new_transaccion_path, class: 'btn btn-default', role: 'button' %>
+<div id="index">
+  <div class="row">
+    <h1 class="col-sm-3">Transacciones</h1>
+    <div class="col-sm-6"><%= render 'notice' %></div>  
+    <div id="menu-abm" class="col-sm-3 text-right">
+      <%= link_to 'Nueva transacción', new_transaccion_path, class: 'btn btn-default', role: 'button' %>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <%= label_tag :tipo_transaccion_id, "Tipo de transacción:", { style: "display: inline;" } %>
-  <%= select_tag "tipo_transaccion_id", options_for_select(@tipos_transacciones),
-        {prompt: '(Todos los tipos de transacciones)', class: "form-control", 
-          style: "display: inline; max-width: 40%;"} %>
-</div>
+  <div class="form-group">
+    <%= label_tag :tipo_transaccion_id, "Tipo de transacción:", { style: "display: inline;" } %>
+    <%= select_tag "tipo_transaccion_id", options_for_select(@tipos_transacciones),
+          {prompt: '(Todos los tipos de transacciones)', class: "form-control", 
+            style: "display: inline; max-width: 40%;"} %>
+  </div>
 
-<div id="transacciones"></div>
+  <div id="list"></div>  
+</div>
