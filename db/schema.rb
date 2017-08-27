@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819144149) do
+ActiveRecord::Schema.define(version: 20170827012034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cuentas", force: :cascade do |t|
+    t.string   "descripcion",   limit: 50
+    t.decimal  "saldo_inicial",            precision: 18, scale: 2, default: "0.0"
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
+  end
 
   create_table "movimientos", force: :cascade do |t|
     t.date     "fecha_mov",                               default: '2017-08-24'

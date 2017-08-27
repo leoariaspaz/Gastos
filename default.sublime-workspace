@@ -151,12 +151,12 @@
 	],
 	"file_history":
 	[
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/Gemfile",
 		"/media/leonardo/Programación/Ruby/Programas/depot/app/views/sessions/create.html.erb",
 		"/media/leonardo/Programación/Ruby/Programas/depot/app/views/sessions/destroy.html.erb",
 		"/media/leonardo/Programación/Ruby/Programas/depot/app/views/sessions/new.html.erb",
 		"/media/leonardo/Programación/Ruby/Programas/depot/app/views/carts/index.html.erb",
 		"/media/leonardo/Programación/Ruby/Programas/depot/app/views/layouts/application.html.erb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/Gemfile",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/tipos_transacciones/index.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/models/transaccion.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/_form.html.erb",
@@ -499,6 +499,10 @@
 		"selected_items":
 		[
 			[
+				"gemfi",
+				"Gemfile"
+			],
+			[
 				"gem",
 				"Gemfile"
 			],
@@ -656,10 +660,6 @@
 			],
 			[
 				"ge",
-				"Gemfile"
-			],
-			[
-				"gemfi",
 				"Gemfile"
 			],
 			[

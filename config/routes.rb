@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cuentas
   resources :movimientos
   resources :transacciones do
   	member do

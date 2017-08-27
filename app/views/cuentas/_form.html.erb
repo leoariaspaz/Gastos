@@ -1,0 +1,15 @@
+<%= form_for(cuenta) do |f| %>
+  <%= render 'errores', partial: true, model: cuenta, model_name: 'La cuenta' %>
+
+  <div class="form-group">
+    <%= f.label :descripcion %>
+    <%= f.text_field :descripcion, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :saldo_inicial %>
+    <%= f.text_field :saldo_inicial, class: "form-control", type: "number" %>
+  </div>
+
+  <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: cuentas_path} %>
+<% end %>
