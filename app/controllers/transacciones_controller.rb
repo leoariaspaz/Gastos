@@ -1,6 +1,5 @@
 class TransaccionesController < ApplicationController
   before_action :set_transaccion, only: [:show, :edit, :update, :destroy]
-  before_action :set_tipos_transacciones, only: [:new, :create, :edit, :update, :index]
 
   # GET /transacciones
   # GET /transacciones.json
@@ -81,10 +80,6 @@ class TransaccionesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_transaccion
       @transaccion = Transaccion.find(params[:id])
-    end
-
-    def set_tipos_transacciones
-      @tipos_transacciones = TipoTransaccion.where(habilitado: true).map { |t| [t.descripcion, t.id] }
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

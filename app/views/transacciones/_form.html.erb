@@ -3,7 +3,7 @@
 
   <div class="form-group">
     <%= f.label :tipo_transaccion_id %>
-    <%= f.select :tipo_transaccion_id, @tipos_transacciones, {prompt: true}, {class: "form-control"} %>
+    <%= f.select :tipo_transaccion_id, TipoTransaccion.all_for_select, {prompt: true}, {class: "form-control"} %>
   </div>
 
   <div class="form-group">

@@ -2,13 +2,19 @@
   <%= render 'errores', partial: true, model: movimiento, model_name: 'El movimiento' %>
 
   <div class="form-group">
+    <%= f.label :cuenta_id %>
+    <%= select_tag :cuenta_id, options_for_select(Cuenta.all_for_select),
+          {prompt: t('helpers.select.prompt'), class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :fecha_mov %>
     <%= f.date_select :fecha_mov, {class: 'form-control'} %>
   </div>
 
   <div class="form-group">
     <%= label_tag "tipo_transaccion_id", 'Tipo de transacción' %>
-    <%= select_tag "tipo_transaccion_id", options_for_select(@tipos_transacciones),  
+    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select), 
           {prompt: t('helpers.select.prompt'), class: "form-control"} %>
   </div>
 

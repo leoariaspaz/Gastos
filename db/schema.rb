@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827012034) do
+ActiveRecord::Schema.define(version: 20170828114437) do
 
   create_table "cuentas", force: :cascade do |t|
     t.string   "descripcion",   limit: 50
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170827012034) do
     t.decimal  "importe",        precision: 18, scale: 2, default: "0.0"
     t.datetime "created_at",                                                     null: false
     t.datetime "updated_at",                                                     null: false
+    t.integer  "cuenta_id"
+    t.index ["cuenta_id"], name: "index_movimientos_on_cuenta_id"
     t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id"
   end
 
