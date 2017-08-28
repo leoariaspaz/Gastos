@@ -12,23 +12,21 @@
 
 ActiveRecord::Schema.define(version: 20170827012034) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "cuentas", force: :cascade do |t|
     t.string   "descripcion",   limit: 50
     t.decimal  "saldo_inicial",            precision: 18, scale: 2, default: "0.0"
+    t.boolean  "habilitado",                                        default: true
     t.datetime "created_at",                                                        null: false
     t.datetime "updated_at",                                                        null: false
   end
 
   create_table "movimientos", force: :cascade do |t|
-    t.date     "fecha_mov",                               default: '2017-08-24'
+    t.date     "fecha_mov",                               default: '2017-08-25'
     t.integer  "transaccion_id"
     t.decimal  "importe",        precision: 18, scale: 2, default: "0.0"
     t.datetime "created_at",                                                     null: false
     t.datetime "updated_at",                                                     null: false
-    t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id", using: :btree
+    t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id"
   end
 
   create_table "tipos_transacciones", force: :cascade do |t|
@@ -36,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170827012034) do
     t.boolean  "habilitado"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["descripcion"], name: "index_tipos_transacciones_on_descripcion", unique: true, using: :btree
+    t.index ["descripcion"], name: "index_tipos_transacciones_on_descripcion", unique: true
   end
 
   create_table "transacciones", force: :cascade do |t|
@@ -46,10 +44,8 @@ ActiveRecord::Schema.define(version: 20170827012034) do
     t.integer  "tipo_transaccion_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["descripcion", "tipo_transaccion_id"], name: "index_transacciones_on_descripcion_and_tipo_transaccion_id", unique: true, using: :btree
-    t.index ["tipo_transaccion_id"], name: "index_transacciones_on_tipo_transaccion_id", using: :btree
+    t.index ["descripcion", "tipo_transaccion_id"], name: "index_transacciones_on_descripcion_and_tipo_transaccion_id", unique: true
+    t.index ["tipo_transaccion_id"], name: "index_transacciones_on_tipo_transaccion_id"
   end
 
-  add_foreign_key "movimientos", "transacciones"
-  add_foreign_key "transacciones", "tipos_transacciones"
 end

@@ -12,8 +12,9 @@
 <table class="table table-striped table-responsive table-bordered">
   <thead>
     <tr>
-      <th>Descripción</th>
-      <th>Saldo inicial</th>
+      <th class="text-center">Descripción</th>
+      <th class="text-center">Saldo inicial</th>
+      <th class="text-center">Habilitado</th>
       <th></th>
     </tr>
   </thead>
@@ -22,7 +23,10 @@
     <% @cuentas.each do |cuenta| %>
       <tr>
         <td><%= cuenta.descripcion %></td>
-        <td><%= cuenta.saldo_inicial %></td>
+        <td class="text-right"><%= number_to_currency(cuenta.saldo_inicial) %></td>
+        <td class="col-sm-2 text-center">
+          <%= render partial: "controls/checkbox", object: cuenta.habilitado %>
+        </td>        
         <td class="text-center">
           <%= link_to edit_cuenta_path(cuenta) do %>
             <span class="glyphicon glyphicon-edit"></span>

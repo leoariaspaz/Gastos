@@ -8,8 +8,16 @@
 
   <div class="form-group">
     <%= f.label :saldo_inicial %>
-    <%= f.text_field :saldo_inicial, class: "form-control", type: "number" %>
+    <%= f.text_field :saldo_inicial, value: number_to_currency(cuenta.saldo_inicial), 
+      class: 'form-control text-right'%>
   </div>
+
+  <div class="checkbox">
+    <%= f.label :habilitado do %>
+      <%= f.check_box :habilitado %> 
+      Habilitada
+    <% end %>
+  </div>  
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: cuentas_path} %>
 <% end %>

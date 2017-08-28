@@ -15,6 +15,7 @@ class CuentasController < ApplicationController
   # GET /cuentas/new
   def new
     @cuenta = Cuenta.new
+    logger.debug "cuenta.saldo_inicial = #{@cuenta.saldo_inicial}"
   end
 
   # GET /cuentas/1/edit
@@ -69,6 +70,6 @@ class CuentasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cuenta_params
-      params.require(:cuenta).permit(:descripcion, :saldo_inicial)
+      params.require(:cuenta).permit(:descripcion, :saldo_inicial, :habilitado)
     end
 end
