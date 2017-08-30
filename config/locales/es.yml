@@ -1,7 +1,15 @@
 es:
   activerecord:
     models:
-      tipo_transaccion: tipo de transacción
+      tipo_transaccion: 
+        one: tipo de transacción
+        other: tipos de transacciones
+      transaccion: 
+        one: transacción
+        other: transacciones
+      cuenta:
+        one: cuenta
+        other: Cuentas      
     attributes:
       tipo_transaccion:
         descripcion: Descripción

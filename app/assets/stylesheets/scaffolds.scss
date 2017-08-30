@@ -105,3 +105,10 @@ label {
   color: #337ab7;
   text-decoration: none;
 }
+
+.nav-tabs.nav-justified a, 
+.nav-tabs.nav-justified a:focus, 
+.nav-tabs.nav-justified a:hover {
+  font-size: 1.25em;
+  font-weight: bold;
+}

@@ -9,7 +9,24 @@ module ApplicationHelper
 
 	def li(options)
 			model_name   = options[:model_name]	|| ""
-			title        = options[:title] || model_name.titleize.pluralize
+
+			# title puede ser una clave de options, una traducción en es.yml o se deduce del nombre de la clase
+			title = options[:title]
+			if title.nil?
+				if I18n.exists?("activerecord.models." + model_name + ".other")
+					title = I18n.t("activerecord.models." + model_name + ".other").capitalize
+				else
+					modelos = {"cuenta": "Cuenta"}
+					class_name = nil
+					if modelos[model_name.to_sym].nil?
+						class_name = model_name.classify
+					else
+						class_name = modelos[model_name.to_sym]
+					end
+					title = class_name.constantize.model_name.human.pluralize.capitalize
+				end
+			end
+
 			controller   = options[:controller] || model_name.pluralize
 			url          = options[:url] || url_for(controller: controller, action: "index")
 			html_options = options[:html_options] || {}
@@ -35,11 +52,11 @@ module ApplicationHelper
 	end
 
 private
-	def add_content(model)
-		if params[:controller] == model.model_name.name + "Controller"
-			content += content_tag(:li, link_to(model.model_name.human, path), class: "active")
+	def add_content(amodel)
+		if params[:controller] == amodel.model_name.name + "Controller"
+			content += content_tag(:li, link_to(amodel.model_name.human(count: 2), path), class: "active")
 		else
-			content += content_tag(:li, link_to("Cuentas", cuentas_path))
+			content += content_tag(:li, link_to(amodel.model_name.human(count: 2)))
 		end		
 	end
 end
