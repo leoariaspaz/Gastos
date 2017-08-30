@@ -51,12 +51,7 @@ module ApplicationHelper
 			content_tag(:li, content, html_options)
 	end
 
-private
-	def add_content(amodel)
-		if params[:controller] == amodel.model_name.name + "Controller"
-			content += content_tag(:li, link_to(amodel.model_name.human(count: 2), path), class: "active")
-		else
-			content += content_tag(:li, link_to(amodel.model_name.human(count: 2)))
-		end		
-	end
+	def format_date(date)
+		date.strftime('%d/%m/%Y') if date
+	end	
 end

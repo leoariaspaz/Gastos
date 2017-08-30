@@ -22,9 +22,9 @@
     <tbody>
       <% @movimientos.each do |movimiento| %>
         <tr>
-          <td><%= movimiento.fecha_mov %></td>
+          <td class="col-sm-2"><%= I18n.localize movimiento.fecha_mov, format: :fecmov %></td>
           <td><%= movimiento.transaccion.descripcion %></td>
-          <td><%= movimiento.importe %></td>
+          <td class="text-right"><%= number_to_currency movimiento.importe %></td>
           <td class="text-center">
             <%= link_to edit_movimiento_path(movimiento) do %>
               <span class="glyphicon glyphicon-edit"></span>

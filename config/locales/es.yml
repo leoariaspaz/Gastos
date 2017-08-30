@@ -60,6 +60,7 @@ es:
       default: "%d/%m/%Y"
       long: "%A, %d de %B de %Y"
       short: "%d de %b"
+      fecmov: "%a %d %b, %Y"
     month_names:
     -
     - enero

@@ -5,7 +5,7 @@ class MovimientosController < ApplicationController
   # GET /movimientos
   # GET /movimientos.json
   def index
-    @movimientos = Movimiento.all    
+    @movimientos = Movimiento.all
   end
 
   # GET /movimientos/1
@@ -29,7 +29,7 @@ class MovimientosController < ApplicationController
 
     respond_to do |format|
       if @movimiento.save
-        format.html { redirect_to @movimiento, notice: 'Movimiento was successfully created.' }
+        format.html { redirect_to movimientos_url, notice: 'El movimiento se creó correctamente.' }
         format.json { render :show, status: :created, location: @movimiento }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class MovimientosController < ApplicationController
   def update
     respond_to do |format|
       if @movimiento.update(movimiento_params)
-        format.html { redirect_to @movimiento, notice: 'Movimiento was successfully updated.' }
+        format.html { redirect_to movimientos_url, notice: 'El movimiento se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @movimiento }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class MovimientosController < ApplicationController
   def destroy
     @movimiento.destroy
     respond_to do |format|
-      format.html { redirect_to movimientos_url, notice: 'Movimiento was successfully destroyed.' }
+      format.html { redirect_to movimientos_url, notice: 'El movimiento se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end
