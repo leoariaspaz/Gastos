@@ -9,7 +9,4 @@ $.fn.extend
       $(this).css
         color: settings.color
   any: ->
-  	if ($(this).length > 0)
-  		return true
-  	else
-  		return false
+  	if ($(this).length > 0) then true else false

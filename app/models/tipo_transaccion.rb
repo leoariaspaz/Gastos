@@ -3,6 +3,6 @@ class TipoTransaccion < ApplicationRecord
 	validates :descripcion, presence: true
 
 	def self.all_for_select
-		where(habilitado: true).map { |t| [t.descripcion, t.id] }
+		select(:descripcion, :id).where(habilitado: true).order(:descripcion).map { |t| [t.descripcion, t.id] }		
 	end
 end

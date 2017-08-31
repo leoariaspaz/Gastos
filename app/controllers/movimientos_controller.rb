@@ -5,7 +5,7 @@ class MovimientosController < ApplicationController
   # GET /movimientos
   # GET /movimientos.json
   def index
-    @movimientos = Movimiento.all
+    @movimientos = Movimiento.all.order :fecha_mov
   end
 
   # GET /movimientos/1
@@ -20,6 +20,7 @@ class MovimientosController < ApplicationController
 
   # GET /movimientos/1/edit
   def edit
+    @transacciones = Transaccion.where(tipo_transaccion_id: @movimiento.tipo_transaccion_id).map { |t| [t.descripcion, t.id] }
   end
 
   # POST /movimientos

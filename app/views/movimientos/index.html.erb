@@ -23,7 +23,7 @@
       <% @movimientos.each do |movimiento| %>
         <tr>
           <td class="col-sm-2"><%= I18n.localize movimiento.fecha_mov, format: :fecmov %></td>
-          <td><%= movimiento.transaccion.descripcion %></td>
+          <td><%= movimiento.transaccion.descripcion_completa %></td>
           <td class="text-right"><%= number_to_currency movimiento.importe %></td>
           <td class="text-center">
             <%= link_to edit_movimiento_path(movimiento) do %>

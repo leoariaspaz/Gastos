@@ -14,5 +14,9 @@ tipo_transaccion_id_change = ->
 
 ready = ->
 	tipo_transaccion_id_change()
+	$('input:text').focus ->
+    $(this).select()
+    return
+  return
 
 $(document).on("turbolinks:load", ready)
