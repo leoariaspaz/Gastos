@@ -1,0 +1,6 @@
+20/07/2017	Bancos	Acreditación Provincia	28400,00
+21/07/2017	Bancos	Envío de transferencias	-20000,00
+01/08/2017	Bancos	Extracción por ATM	-2000,00
+04/08/2017	Bancos	Acreditación Provincia	7100,00
+08/08/2017	Bancos	Envío de transferencias	-7100,00
+19/08/2017	Bancos	Extracción por ATM	-500,00

@@ -1,0 +1,154 @@
+02/10/2016	Impuesto/Servicio	Recarga celular	-100,00
+05/10/2016	Bancos	Envío de transferencias	-3000,00
+06/10/2016	Beneficios	Devolución IVA	15,56
+13/10/2016	Impuesto/Servicio	Nueva licencia de conducir	-125,00
+13/10/2016	Bancos	Envío de transferencias	-4000,00
+24/10/2016	Bancos	Recepción de depósito en efectivo	7000,00
+27/10/2016	Sueldos	Acreditación BSE	23057,28
+28/10/2016	Bancos	Envío de transferencias	-7000,00
+29/10/2016	Impuesto/Servicio	Edese	-136,64
+02/11/2016	Impuesto/Servicio	Recarga celular	-100,00
+02/11/2016	Bancos	Envío de transferencias	-30000,00
+04/11/2016	Sueldos	Bono por día del bancario	17870,20
+04/11/2016	Bancos	Extracción por ATM	-200,00
+05/11/2016	Indumentaria	Zapatillas	-190,00
+12/11/2016	Bancos	Envío de transferencias	-1500,00
+17/11/2016	Bancos	Envío de transferencias	-10000,00
+24/11/2016	Bancos	Extracción por caja	-200,00
+29/11/2016	Sueldos	Acreditación BSE	18921,77
+01/12/2016	Impuesto/Servicio	Recarga celular	-140,00
+02/12/2016	Impuesto/Servicio	Aguas de Santiago	-107,13
+02/12/2016	Impuesto/Servicio	Edese	-147,54
+05/12/2016	Bancos	Depósito por ventanilla	70000,00
+06/12/2016	Bancos	Envío de transferencias	-70500,00
+06/12/2016	Bancos	Envío de transferencias	-10000,00
+07/12/2016	Bancos	Devolución IVA	7,85
+07/12/2016	Impuesto/Servicio	Gasnor	-50,79
+12/12/2016	Bancos	Envío de transferencias	-5000,00
+13/12/2016	Sueldos	Acreditación BSE	5729,56
+23/12/2016	Bancos	Envío de transferencias	-7000,00
+23/12/2016	Sueldos	Acreditación BSE	10000,00
+23/12/2016	Bancos	Extracción por caja	-100,00
+26/12/2016	Bancos	Extracción por ATM	-100,00
+29/12/2016	Sueldos	Acreditación BSE	36207,67
+02/01/2017	Bancos	Envío de transferencias	-2000,00
+05/01/2017	Sueldos	Acreditación BSE	5925,15
+05/01/2017	Impuesto/Servicio	Edese	-147,54
+05/01/2017	Impuesto/Servicio	Aguas de Santiago	-108,23
+05/01/2017	Impuesto/Servicio	Gasnor	-50,79
+06/01/2017	Impuesto/Servicio	Recarga celular	-170,00
+08/01/2017	Bancos	Envío de transferencias	-50000,00
+13/01/2017	Farmacia	Varios	-150,88
+13/01/2017	Perfumería	Varios	-29,90
+13/01/2017	Comida	Varios	-102,46
+13/01/2017	Supermercado	Varios	-0,50
+14/01/2017	Bancos	Envío de transferencias	-5000,00
+19/01/2017	Bancos	Envío de transferencias	-2000,00
+20/01/2017	Sueldos	Plus vacacional	4032,06
+23/01/2017	Comida	Varios	-173,96
+23/01/2017	Supermercado	Varios	-0,50
+23/01/2017	Supermercado	Supermercado	19,80
+23/01/2017	Impuesto/Servicio	Pago de impuesto/servicio	-107,13
+23/01/2017	Impuesto/Servicio	Pago de impuesto/servicio	-117,52
+23/01/2017	Impuesto/Servicio	Pago de impuesto/servicio	-205,21
+24/01/2017	Bancos	Compra de dólares	-11501,00
+24/01/2017	Bancos	Depósito por ventanilla	13000,00
+27/01/2017	Bancos	Envío de transferencias	-5000,00
+31/01/2017	Sueldos	Acreditación BSE	19299,71
+05/02/2017	Salidas	Comidas	-224,00
+05/02/2017	Impuesto/Servicio	Recarga celular	-70,00
+05/02/2017	Impuesto/Servicio	Recarga celular	-70,00
+06/02/2017	Bancos	Envío de transferencias	-5000,00
+06/02/2017	Bancos	Extracción por ATM	-300,00
+14/02/2017	Bancos	Envío de transferencias	-10000,00
+15/02/2017	Bancos	Envío de transferencias	-2000,00
+21/02/2017	Bancos	Envío de transferencias	-1,00
+23/02/2017	Sueldos	Acreditación BSE	27016,40
+26/02/2017	Perfumería	Varios	-34,94
+26/02/2017	Comida	Varios	-552,79
+26/02/2017	Supermercado	Varios	-3,00
+26/02/2017	Comida	Carnicería	-695,22
+26/02/2017	Hogar	Ferretería	-139,00
+26/02/2017	Supermercado	Descuentos	209,89
+26/02/2017	Impuesto/Servicio	Edese	-205,22
+02/03/2017	Impuesto/Servicio	Envío de transferencias	-5000,00
+06/03/2017	Impuesto/Servicio	Recarga celular	-140,00
+12/03/2017	Impuesto/Servicio	Gasnor	-115,29
+12/03/2017	Bancos	Envío de transferencias	-15000,00
+15/03/2017	Bancos	Extracción por caja	-460,00
+15/03/2017	Impuesto/Servicio	Recarga celular	-50,00
+16/03/2017	Bancos	Envío de transferencias	-11000,00
+28/03/2017	Bancos	Envío de transferencias	-3000,00
+30/03/2017	Sueldos	Acreditación BSE	24630,78
+30/03/2017	Impuesto/Servicio	Edese	-71,51
+30/03/2017	Impuesto/Servicio	Aguas de Santiago	-133,90
+30/03/2017	Impuesto/Servicio	Gasnor	-115,29
+30/03/2017	Bancos	Envío de transferencias	-5000,00
+30/03/2017	Hobbies	Inglés	-1150,00
+04/04/2017	Comida	Varios	-95,50
+07/04/2017	Perfumería	Varios	-108,80
+07/04/2017	Hogar	Varios	-69,58
+07/04/2017	Comida	Varios	-1474,49
+07/04/2017	Hogar	Limpieza	-165,62
+07/04/2017	Comida	Carnicería	-85,44
+07/04/2017	Supermercado	Varios	-2,90
+07/04/2017	Supermercado	Descuentos	156,10
+12/04/2017	Impuesto/Servicio	Recarga celular	-140,00
+13/04/2017	Papelería	Varios	-39,76
+13/04/2017	Ropa	Varios	-279,98
+13/04/2017	Hogar	Varios	-107,00
+13/04/2017	Regalos	Varios	-460,00
+15/04/2017	Bancos	Envío de transferencias	-2000,00
+17/04/2017	Bancos	Extracción por ATM	-400,00
+18/04/2017	Impuesto/Servicio	Recarga celular	-50,00
+19/04/2017	Bancos	Envío de transferencias	-5000,00
+19/04/2017	Hobbies	Inglés	-1170,00
+26/04/2017	Sueldos	Acreditación BSE	26323,06
+03/05/2017	Bancos	Envío de transferencias	-15000,00
+12/05/2017	Impuesto/Servicio	Recarga celular	-170,00
+12/05/2017	Bancos	Extracción por ATM	-2000,00
+17/05/2017	Automóvil	Repuestos	-205,00
+22/05/2017	Impuesto/Servicio	Gasnor	-127,45
+22/05/2017	Impuesto/Servicio	Gasnor	-127,45
+23/05/2017	Impuesto/Servicio	Aguas de Santiago	-133,90
+23/05/2017	Impuesto/Servicio	Rentas municipal	-492,54
+23/05/2017	Impuesto/Servicio	Edese	-71,53
+26/05/2017	Bancos	Extracción por ATM	-300,00
+30/05/2017	Bancos	Acreditación BSE	26557,89
+30/05/2017	Bancos	Colaboraciones	-50,00
+30/05/2017	Impuesto/Servicio	Edese	-391,16
+10/06/2017	Impuesto/Servicio	Recarga celular	-220,00
+13/06/2017	Bancos	Envío de transferencias	-20000,00
+16/06/2017	Perfumería	Varios	-89,08
+16/06/2017	Hogar	Varios	-29,19
+16/06/2017	Comida	Varios	-1220,28
+16/06/2017	Hogar	Limpieza	-109,67
+16/06/2017	Comida	Carnicería	-688,32
+16/06/2017	Comida	Fiambrería	-77,33
+16/06/2017	Supermercado	Varios	-3,48
+16/06/2017	Supermercado	Descuentos	162,11
+28/06/2017	Bancos	Recepción de transferencias	3302,00
+28/06/2017	Bancos	Extracción por caja	-26400,00
+29/06/2017	Bancos	Acreditación BSE	39989,89
+29/06/2017	Bancos	Colaboraciones	-50,00
+02/07/2017	Impuesto/Servicio	Aguas de Santiago	-133,90
+02/07/2017	Impuesto/Servicio	Edese	-377,25
+07/07/2017	Bancos	Extracción por caja	-10000,00
+09/07/2017	Impuesto/Servicio	Recarga celular	-220,00
+09/07/2017	Impuesto/Servicio	Monotributo AFIP	-66,77
+14/07/2017	Bancos	Extracción por caja	-1000,00
+20/07/2017	Bancos	Extracción por caja	-15000,00
+20/07/2017	Impuesto/Servicio	Gasnor	-338,34
+21/07/2017	Bancos	Recepción de transferencias	20000,00
+28/07/2017	Bancos	Acreditación BSE	24598,76
+01/08/2017	Bancos	Extracción por caja	-7000,00
+01/08/2017	Bancos	Extracción por ATM	-2000,00
+02/08/2017	Impuesto/Servicio	Aguas de Santiago	-133,90
+02/08/2017	Impuesto/Servicio	Edese	-235,10
+04/08/2017	Bancos	Extracción por ATM	-300,00
+07/08/2017	Bancos	Extracción por ATM	-5000,00
+08/08/2017	Bancos	Recepción de transferencias	7100,00
+08/08/2017	Bancos	Extracción por ATM	-4500,00
+09/08/2017	Impuesto/Servicio	Recarga celular	-220,00
+12/08/2017	Bancos	Envío de transferencias	-5000,00
+18/08/2017	Impuesto/Servicio	Aguas de Santiago	-133,90

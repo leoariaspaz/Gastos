@@ -1,4 +1,6 @@
 class Cuenta < ApplicationRecord
+	has_many :movimientos
+
 	validates :descripcion, presence: true
 	validates_numericality_of :saldo_inicial, greather_than_or_equal_to: 0
 

@@ -1,4 +1,6 @@
 class Transaccion < ApplicationRecord
+  has_many :transacciones
+
   validates :descripcion, presence: true
   validates_uniqueness_of :descripcion, scope: :tipo_transaccion_id
   belongs_to :tipo_transaccion

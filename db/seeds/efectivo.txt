@@ -1,0 +1,705 @@
+02/10/2016	Supermercado	Varios	-100,00
+03/10/2016	Construcción	Materiales de construcción	-115,00
+03/10/2016	Salidas	Bebidas	-54,00
+04/10/2016	Estudio	Fotocopias	-12,00
+06/10/2016	Perfumería	Cosmética	-490,00
+06/10/2016	Salidas	Bebidas	-93,00
+06/10/2016	Comida	Verdulería	-60,00
+06/10/2016	Estudio	Fotocopias	-88,00
+06/10/2016	Comida	Pollería	-85,00
+06/10/2016	Transporte	Remisse	-48,00
+06/10/2016	Comida	Varios	-7,00
+07/10/2016	Construcción	Mano de obra	-400,00
+07/10/2016	Estudio	Honorarios profesionales	2000,00
+07/10/2016	Estudio	Honorarios profesionales	2000,00
+08/10/2016	Indumentaria	Calzados	-120,00
+08/10/2016	Salidas	Comidas	-100,00
+09/10/2016	Comida	Varios	-13,00
+11/10/2016	Comida	Golosinas	-7,00
+11/10/2016	Transporte	Crédito colectivo	-100,00
+11/10/2016	Comida	Verdulería	-12,00
+12/10/2016	Estudio	Honorarios profesionales	1000,00
+12/10/2016	Comida	Varios	-7,00
+12/10/2016	Regalos	Papelería	-5,00
+12/10/2016	Estudio	Alquiler	-2100,00
+15/10/2016	Regalos	Jardinería	-470,00
+16/10/2016	Regalos	Limosna	-2,00
+17/10/2016	Librería	Fotocopias	-8,00
+17/10/2016	Comida	Varios	-35,00
+18/10/2016	Comida	Verdulería	-86,00
+18/10/2016	Comida	Varios	-6,00
+19/10/2016	Estudio	Honorarios profesionales	1500,00
+19/10/2016	Estudio	Expensas	-233,00
+19/10/2016	Estudio	Honorarios profesionales	1000,00
+19/10/2016	Juegos de azar	Rifa	-40,00
+20/10/2016	Comida	Varios	-6,00
+20/10/2016	Comida	Golosinas	-6,00
+20/10/2016	Estudio	Cédulas	-105,00
+20/10/2016	Estudio	Fotocopias	-4,50
+20/10/2016	Médicos	Nueva licencia de conducir	-100,00
+20/10/2016	Transporte	Recarga de tarjeta de colectivo	-100,00
+21/10/2016	Comida	Pescadería	-50,00
+21/10/2016	Transporte	Nueva licencia de conducir	-85,00
+21/10/2016	Estudio	Honorarios profesionales	1500,00
+22/10/2016	Comida	Pollería	-140,00
+22/10/2016	Comida	Papas fritas	-20,00
+22/10/2016	Salidas	Comidas	-240,00
+22/10/2016	Salidas	Propinas	-10,00
+22/10/2016	Salidas	Limosna	-9,00
+24/10/2016	Estudio	Sueldo de la Cooperativa	7000,00
+24/10/2016	Bancos	Depósito por ventanilla	-7000,00
+24/10/2016	Estudio	Honorarios profesionales	2000,00
+24/10/2016	Estudio	Devolución de gastos	105,00
+24/10/2016	Transporte	Recarga de tarjeta de colectivo	-100,00
+24/10/2016	Comida	Golosinas	-10,00
+25/10/2016	Perfumería	Varios	-110,00
+26/10/2016	Comida	Pollería	-50,00
+26/10/2016	Comida	Verdulería	-60,00
+26/10/2016	Comida	Varios	-6,00
+26/10/2016	Transporte	Remisse	-55,00
+27/10/2016	Transporte	Recarga de tarjeta de colectivo	-50,00
+27/10/2016	Transporte	Taxi	-39,00
+27/10/2016	Salidas	Comidas	-95,00
+27/10/2016	Transporte	Propinas	-9,00
+27/10/2016	Salidas	Comidas	-100,00
+28/10/2016	Salidas	Comidas	-170,00
+29/10/2016	Comida	Varios	-15,00
+29/10/2016	Transporte	Propinas	-9,00
+29/10/2016	Comida	Varios	-46,00
+29/10/2016	Comida	Verdulería	-28,00
+29/10/2016	Ventas	Venta de mampara y mesada	400,00
+30/10/2016	Caja	Fallo de caja	-2,25
+31/10/2016	Comida	Varios	-6,00
+31/10/2016	Hobbies	Pilates	-450,00
+31/10/2016	Indumentaria	Ropa	-100,00
+03/11/2016	Médicos	Plus de consulta	-100,00
+04/11/2016	Estudio	Honorarios profesionales	300,00
+04/11/2016	Comida	Pollería	-86,00
+04/11/2016	Comida	Verdulería	-26,00
+04/11/2016	Estudio	Fotocopias	-34,00
+04/11/2016	Transporte	Estacionamiento	-180,00
+05/11/2016	Comida	Varios	-62,00
+05/11/2016	Farmacia	Medicamentos	-12,00
+05/11/2016	Hobbies	Fotocopias	-15,00
+07/11/2016	Estudio	Honorarios profesionales	1700,00
+07/11/2016	Estudio	Cédulas	-105,00
+07/11/2016	Estudio	Fotocopias	-54,00
+07/11/2016	Transporte	Nafta	-45,00
+07/11/2016	Transporte	Recarga de tarjeta de colectivo	-100,00
+08/11/2016	Estudio	Fotocopias	-7,00
+08/11/2016	Comida	Pescadería	-50,00
+08/11/2016	Plomería	Materiales de construcción	-370,00
+08/11/2016	Plomería	Mano de obra	-500,00
+08/11/2016	Automóvil	Mano de obra	-300,00
+09/11/2016	Estudio	Honorarios profesionales	500,00
+09/11/2016	Transporte	Boleto de colectivo	-12,00
+09/11/2016	Estudio	Expensas	-223,00
+09/11/2016	Estudio	Pago de honorarios profesionales	-750,00
+10/11/2016	Comida	Verdulería	-10,00
+10/11/2016	Farmacia	Medicamentos	-180,65
+11/11/2016	Comida	Pollería	-60,00
+11/11/2016	Estudio	Fotocopias	-9,00
+11/11/2016	Comida	Varios	-6,00
+11/11/2016	Colaboraciones	Varios	-200,00
+11/11/2016	Estudio	Honorarios profesionales	2500,00
+11/11/2016	Estudio	Devolución de gastos	400,00
+12/11/2016	Hobbies	Fotocopias	-7,00
+12/11/2016	Salidas	Comidas	-280,00
+14/11/2016	Hobbies	Pilates	-450,00
+15/11/2016	Transporte	Nafta	-200,00
+15/11/2016	Comida	Pollería	-66,00
+16/11/2016	Comida	Pollería	-11,00
+16/11/2016	Estudio	Honorarios profesionales	1500,00
+16/11/2016	Comida	Varios	-6,00
+17/11/2016	Impuesto/Servicio	Impuesto municipal	-114,46
+17/11/2016	Transporte	Recarga de tarjeta de colectivo	-100,50
+17/11/2016	Transporte	Remisse	-62,00
+17/11/2016	Comida	Pescadería	-35,00
+17/11/2016	Comida	Pollería	-56,00
+18/11/2016	Estudio	Fotocopias	-43,00
+18/11/2016	Comida	Varios	-6,00
+19/11/2016	Comida	Verdulería	-66,00
+19/11/2016	Comida	Heladería	-190,00
+21/11/2016	Estudio	Fotocopias	-65,00
+22/11/2016	Estudio	Fotocopias	-152,00
+22/11/2016	Comida	Carnicería	-66,00
+23/11/2016	Comida	Varios	-6,00
+23/11/2016	Transporte	Nafta	-40,00
+24/11/2016	Comida	Pollería	-40,00
+24/11/2016	Estudio	Honorarios profesionales	1000,00
+24/11/2016	Salidas	Cena con personal BSE	-100,00
+25/11/2016	Estudio	Sueldo de la Cooperativa	8000,00
+25/11/2016	Estudio	Devolución de gastos	280,00
+25/11/2016	Hogar	Materiales de construcción	-380,00
+25/11/2016	Comida	Verdulería	-30,00
+26/11/2016	Salidas	Comidas	-350,00
+26/11/2016	Salidas	Propinas	-15,00
+29/11/2016	Comida	Varios	-55,00
+30/11/2016	Estudio	Fotocopias	-27,00
+30/11/2016	Comida	Verdulería	-23,00
+30/11/2016	Estudio	Papelería	-28,00
+30/11/2016	Transporte	Recarga de tarjeta de colectivo	-100,00
+30/11/2016	Estudio	Cédulas	-30,00
+30/11/2016	Comida	Varios	-8,00
+01/12/2016	Comida	Pescadería	-50,00
+01/12/2016	Comida	Verdulería	-5,00
+01/12/2016	Transporte	Estacionamiento	-180,00
+02/12/2016	Comida	Varios	-6,00
+02/12/2016	Estudio	Honorarios profesionales	3000,00
+02/12/2016	Comida	Varios	-5,00
+03/12/2016	Comida	Varios	-20,00
+03/12/2016	Hogar	Bazar	-800,00
+03/12/2016	Comida	Heladería	-10,00
+03/12/2016	Hogar	Varios	-20,00
+04/12/2016	Bancos	Ajuste por sobrante de caja	347,11
+05/12/2016	Estudio	Expensas	-223,00
+05/12/2016	Colaboraciones	Donación	70000,00
+05/12/2016	Bancos	Depósito por ventanilla	-70000,00
+06/12/2016	Comida	Varios	-6,00
+06/12/2016	Comida	Verdulería	-10,00
+06/12/2016	Perfumería	Cosmética	-215,00
+07/12/2016	Transporte	Encomiendas	-160,00
+07/12/2016	Farmacia	Medicamentos	-105,00
+07/12/2016	Estudio	Honorarios profesionales	2200,00
+07/12/2016	Salidas	Desayunos	-47,00
+07/12/2016	Colaboraciones	Varios	-50,00
+07/12/2016	Comida	Varios	-10,00
+08/12/2016	Comida	Varios	-18,00
+08/12/2016	Comida	Pollería	-28,00
+09/12/2016	Salidas	Comidas	-135,00
+10/12/2016	Hogar	Carbón	-29,00
+10/12/2016	Comida	Carnicería de cerdo	-178,00
+12/12/2016	Estudio	Fotocopias	-1,50
+12/12/2016	Comida	Varios	-32,00
+12/12/2016	Transporte	Nafta	-40,00
+13/12/2016	Estudio	Fotocopias	-52,00
+13/12/2016	Transporte	Boleto de colectivo	-12,00
+14/12/2016	Transporte	Boleto de colectivo	-6,00
+14/12/2016	Comida	Pescadería	-50,00
+14/12/2016	Estudio	Honorarios profesionales	1500,00
+15/12/2016	Estudio	Honorarios profesionales	500,00
+15/12/2016	Transporte	Recarga de tarjeta de colectivo	-100,00
+15/12/2016	Estudio	Fotocopias	-4,50
+15/12/2016	Comida	Golosinas	-10,00
+15/12/2016	Electricidad	Materiales de construcción	-33,00
+15/12/2016	Comida	Pollería	56,50
+15/12/2016	Jardinería	Mano de obra	-1800,00
+15/12/2016	Hogar	Muebles	-9400,00
+16/12/2016	Comida	Golosinas	-11,50
+16/12/2016	Salidas	Comidas	-135,00
+17/12/2016	Hogar	Iluminación	-360,00
+17/12/2016	Electricidad	Mano de obra	-1500,00
+17/12/2016	Salidas	Bebidas	-35,00
+17/12/2016	Salidas	Comidas	-310,00
+18/12/2016	Jardinería	Mano de obra	-1000,00
+18/12/2016	Caja	Devolución de gastos	2590,00
+18/12/2016	Caja	Devolución de gastos	3970,00
+18/12/2016	Comida	Varios	-13,00
+19/12/2016	Estudio	Honorarios profesionales	500,00
+19/12/2016	Estudio	Pago de honorarios profesionales	-100,00
+20/12/2016	Comida	Pescadería	-90,00
+21/12/2016	Comida	Verdulería	-8,00
+21/12/2016	Comida	Pollería	-74,00
+21/12/2016	Estudio	Fotocopias	-6,00
+22/12/2016	Comida	Varios	-28,50
+22/12/2016	Regalos	Perfumería	-1200,00
+23/12/2016	Estudio	Sueldo de la Cooperativa	8000,00
+23/12/2016	Hogar	Decoración	-30,00
+23/12/2016	Colaboraciones	Comidas	-60,00
+24/12/2016	Comida	Varios	-90,00
+24/12/2016	Comida	Verdulería	-49,00
+24/12/2016	Comida	Pollería	-15,00
+24/12/2016	Hogar	Decoración	-22,50
+26/12/2016	Estudio	Alquiler	-2100,00
+26/12/2016	Transporte	Remisse	-40,00
+26/12/2016	Salidas	Comidas	-200,00
+26/12/2016	Caja	Extracción por ATM	100,00
+26/12/2016	Transporte	Recarga de tarjeta de colectivo	-100,00
+27/12/2016	Transporte	Remisse	-31,50
+28/12/2016	Comida	Carnicería	-68,00
+28/12/2016	Estudio	Fotocopias	-50,00
+28/12/2016	Transporte	Remisse	-32,00
+28/12/2016	Motocicleta	Mano de obra	-1150,00
+28/12/2016	Transporte	Recarga de tarjeta de colectivo	-100,00
+29/12/2016	Estudio	Fotocopias	-20,00
+29/12/2016	Comida	Verdulería	-13,00
+29/12/2016	Comida	Pollería	-58,00
+29/12/2016	Estudio	Honorarios profesionales	1000,00
+29/12/2016	Carpintería	Mano de obra	-350,00
+29/12/2016	Jardinería	Mano de obra	-2000,00
+30/12/2016	Estudio	Devolución de gastos	180,00
+30/12/2016	Computación	Accesorios	-50,00
+30/12/2016	Comida	Verdulería	-65,00
+30/12/2016	Comida	Varios	-80,00
+31/12/2016	Comida	Varios	-100,00
+02/01/2017	Hobbies	Natación	-900,00
+03/01/2017	Comida	Varios	-24,00
+04/01/2017	Estudio	Honorarios profesionales	-1000,00
+04/01/2017	Transporte	Estacionamiento	-180,00
+04/01/2017	Comida	Varios	-25,00
+06/01/2017	Comida	Pollería	-67,00
+06/01/2017	Comida	Varios	-7,00
+06/01/2017	Hogar	Varios	-25,00
+06/01/2017	Comida	Varios	-110,00
+07/01/2017	Comida	Varios	-16,00
+08/01/2017	Comida	Varios	-5,00
+10/01/2017	Estudio	Honorarios profesionales	2000,00
+10/01/2017	Comida	Pollería	-46,00
+10/01/2017	Comida	Varios	-6,00
+10/01/2017	Perfumería	Varios	-32,00
+11/01/2017	Comida	Varios	-545,00
+13/01/2017	Comida	Verdulería	-55,00
+14/01/2017	Comida	Verdulería	-25,00
+14/01/2017	Salidas	Varios	-150,00
+15/01/2017	Comida	Varios	-20,00
+16/01/2017	Transporte	Nafta	-50,00
+16/01/2017	Comida	Pescadería	-55,00
+16/01/2017	Comida	Varios	-6,00
+17/01/2017	Comida	Varios	-26,00
+17/01/2017	Hogar	Varios	-8,00
+18/01/2017	Comida	Pollería	-35,00
+18/01/2017	Comida	Verdulería	-20,00
+24/01/2017	Bancos	Depósito por ventanilla	-13000,00
+25/01/2017	Colaboraciones	Propinas	-10,00
+25/01/2017	Transporte	Remisse	-70,00
+25/01/2017	Hospedaje	Consigna de equipaje	-60,00
+25/01/2017	Comida	Desayunos	-68,00
+25/01/2017	Comida	Varios	-38,00
+25/01/2017	Salidas	Comidas	-173,00
+25/01/2017	Transporte	Taxi	-220,00
+01/02/2017	Impuesto/Servicio	Gasnor	-118,00
+03/02/2017	Transporte	Tarjeta bus	-45,00
+03/02/2017	Transporte	Carga tarjeta bus	-100,00
+03/02/2017	Comida	Devolución subway	15,00
+03/02/2017	Salidas	Baño	-6,00
+03/02/2017	Colaboraciones	Propinas	-2,00
+04/02/2017	Colaboraciones	Propinas	-2,00
+04/02/2017	Transporte	Remis a casa	-54,00
+07/02/2017	Comida	Pollería	-66,00
+07/02/2017	Transporte	Crédito colectivo	-100,00
+07/02/2017	Hobbies	Natación	-900,00
+08/02/2017	Transporte	Nafta	-35,00
+08/02/2017	Estudio	Sueldo de la Cooperativa	8000,00
+08/02/2017	Estudio	Honorarios profesionales	3000,00
+09/02/2017	Comida	Verdulería	-40,00
+09/02/2017	Comida	Varios	-10,00
+10/02/2017	Estudio	Honorarios profesionales	1000,00
+10/02/2017	Comida	Pollería	-70,00
+10/02/2017	Comida	Varios	-7,00
+10/02/2017	Colaboraciones	Donación	-100,00
+13/02/2017	Estudio	Honorarios profesionales	2000,00
+13/02/2017	Estudio	Fotocopias	-124,50
+13/02/2017	Comida	Varios	-7,00
+13/02/2017	Comida	Verdulería	-70,00
+14/02/2017	Comida	Golosinas	-120,00
+14/02/2017	Comida	Pescadería	-55,00
+15/02/2017	Estudio	Honorarios profesionales	800,00
+16/02/2017	Comida	Pescadería	-65,00
+16/02/2017	Comida	Pollería	-56,00
+16/02/2017	Transporte	Crédito colectivo	-100,00
+17/02/2017	Comida	Varios	-7,00
+19/02/2017	Comida	Varios	-24,00
+20/02/2017	Estudio	Expensas	-445,00
+20/02/2017	Comida	Rotisería	-75,00
+21/02/2017	Comida	Varios	-7,00
+21/02/2017	Transporte	Nafta	-38,00
+22/02/2017	Comida	Pescadería	-55,00
+22/02/2017	Estudio	Honorarios profesionales	400,00
+23/02/2017	Hogar	Impuesto municipal	-140,50
+23/02/2017	Transporte	Crédito colectivo	-159,50
+24/02/2017	Estudio	Fotocopias	-25,00
+24/02/2017	Comida	Verdulería	-12,00
+24/02/2017	Comida	Varios	-7,00
+24/02/2017	Comida	Pollería	-79,00
+24/02/2017	Estudio	Devolución de gastos	155,00
+24/02/2017	Estudio	Sueldo de la Cooperativa	8000,00
+25/02/2017	Hogar	Varios	-18,00
+25/02/2017	Comida	Verdulería	-55,00
+25/02/2017	Automóvil	Devolución de gastos	500,00
+26/02/2017	Perfumería	Cosmética	-316,00
+26/02/2017	Comida	Varios	-20,00
+26/02/2017	Comida	Varios	-8,00
+28/02/2017	Comida	Varios	-7,00
+28/02/2017	Salidas	Desayunos o meriendas	-50,00
+01/03/2017	Comida	Pescadería	-55,00
+01/03/2017	Estudio	Cédulas	-90,00
+01/03/2017	Hogar	Varios	-140,00
+02/03/2017	Comida	Varios	-7,00
+02/03/2017	Comida	Fotocopias	-3,00
+04/03/2017	Comida	Varios	-6,00
+04/03/2017	Comida	Verdulería	-30,00
+07/03/2017	Estudio	Honorarios profesionales	1000,00
+07/03/2017	Comida	Verdulería	-40,00
+08/03/2017	Estudio	Fotocopias	-28,50
+08/03/2017	Salidas	Bebidas	-30,00
+08/03/2017	Estudio	Alquiler	-1050,00
+08/03/2017	Comida	Varios	-20,00
+08/03/2017	Comida	Pollería	-38,00
+08/03/2017	Estudio	Honorarios profesionales	1000,00
+09/03/2017	Estudio	Honorarios profesionales	2000,00
+09/03/2017	Comida	Pescadería	-55,00
+09/03/2017	Transporte	Remisse	-21,00
+09/03/2017	Hogar	Varios	-300,00
+10/03/2017	Comida	Pollería	-45,00
+10/03/2017	Estudio	Fotocopias	-33,00
+10/03/2017	Estudio	Honorarios profesionales	200,00
+11/03/2017	Transporte	Estacionamiento	-10,00
+11/03/2017	Comida	Verdulería	-79,00
+11/03/2017	Comida	Varios	-20,00
+13/03/2017	Comida	Pollería	-45,00
+13/03/2017	Comida	Varios	-52,00
+15/03/2017	Construcción	Materiales de construcción	-150,00
+15/03/2017	Transporte	Crédito colectivo	-200,00
+15/03/2017	Estudio	Cédulas	-30,00
+15/03/2017	Farmacia	Medicamentos	-112,00
+15/03/2017	Salidas	Comidas	-50,00
+15/03/2017	Construcción	Mano de obra	-1000,00
+16/03/2017	Estudio	Honorarios profesionales	1000,00
+17/03/2017	Transporte	Remisse	-106,00
+18/03/2017	Comida	Verdulería	-25,00
+21/03/2017	Estudio	Fotocopias	-13,50
+22/03/2017	Comida	Pescadería	-110,00
+22/03/2017	Automóvil	Mano de obra	-300,00
+23/03/2017	Estudio	Cédulas	-45,00
+23/03/2017	Estudio	Sueldo de la Cooperativa	8000,00
+24/03/2017	Salidas	Meriendas	-50,00
+25/03/2017	Salidas	Comidas	-185,00
+25/03/2017	Hobbies	Fotocopias	-12,00
+25/03/2017	Automóvil	Varios	-120,00
+27/03/2017	Estudio	Fotocopias	-4,00
+27/03/2017	Estudio	Honorarios profesionales	400,00
+27/03/2017	Comida	Varios	-78,00
+27/03/2017	Estudio	Cédulas	-15,00
+29/03/2017	Estudio	Expensas	-233,00
+29/03/2017	Comida	Varios	-5,00
+29/03/2017	Comida	Verdulería	-10,00
+29/03/2017	Hobbies	Natación	-1100,00
+29/03/2017	Transporte	Nafta	-42,00
+30/03/2017	Comida	Verdulería	-20,00
+30/03/2017	Comida	Varios	-28,00
+31/03/2017	Estudio	Cédulas	-15,00
+31/03/2017	Impuesto/Servicio	Impuesto municipal	-70,00
+31/03/2017	Transporte	Crédito colectivo	-130,00
+01/04/2017	Hobbies	Fotocopias	-12,00
+01/04/2017	Comida	Verdulería	-10,00
+01/04/2017	Comida	Pollería	-29,00
+02/04/2017	Perfumería	Varios	-324,00
+04/04/2017	Transporte	Remisse	-35,00
+05/04/2017	Estudio	Alquiler	-1450,00
+05/04/2017	Comida	Pollería	-40,00
+05/04/2017	Estudio	Fotocopias	-75,00
+06/04/2017	Transporte	Remisse	-50,00
+06/04/2017	Estudio	Fotocopias	-10,50
+07/04/2017	Médicos	Plus de consulta	-200,00
+07/04/2017	Transporte	Remisse	-25,00
+07/04/2017	Librería	Varios	-100,00
+08/04/2017	Hobbies	Fotocopias	-7,00
+08/04/2017	Comida	Varios	-24,00
+10/04/2017	Transporte	Recarga de tarjeta de colectivo	-200,00
+10/04/2017	Comida	Varios	-10,00
+11/04/2017	Estudio	Fotocopias	-21,00
+11/04/2017	Estudio	Honorarios profesionales	1500,00
+12/04/2017	Comida	Pescadería	-157,00
+12/04/2017	Salidas	Comidas	-20,00
+12/04/2017	Comida	Pollería	-63,00
+12/04/2017	Comida	Varios	-22,00
+12/04/2017	Hobbies	Librería	-350,00
+13/04/2017	Comida	Varios	-10,00
+13/04/2017	Hogar	Varios	-180,00
+14/04/2017	Comida	Varios	-7,00
+14/04/2017	Comida	Verdulería	-33,00
+14/04/2017	Hogar	Perfumería	-25,60
+14/04/2017	Comida	Varios	-178,37
+14/04/2017	Comida	Pollería	-14,19
+14/04/2017	Comida	Fiambrería	-69,22
+14/04/2017	Supermercado	Varios	-0,58
+14/04/2017	Supermercado	Descuentos	15,00
+17/04/2017	Bancos	Extracción por ATM	400,00
+17/04/2017	Transporte	Estacionamiento	-300,00
+17/04/2017	Transporte	Nafta	-40,00
+17/04/2017	Estudio	Papelería	-15,00
+18/04/2017	Estudio	Cédulas	-150,00
+18/04/2017	Comida	Varios	-7,00
+18/04/2017	Salidas	Comidas	-160,00
+19/04/2017	Estudio	Honorarios profesionales	2000,00
+20/04/2017	Hogar	Muebles	-3500,00
+20/04/2017	Comida	Varios	-60,00
+23/04/2017	Comida	Carnicería	-227,00
+23/04/2017	Comida	Verdulería	-30,00
+24/04/2017	Estudio	Fotocopias	-42,00
+26/04/2017	Estudio	Honorarios profesionales	1050,00
+26/04/2017	Estudio	Sueldo de la Cooperativa	8000,00
+26/04/2017	Salidas	Comidas	-200,00
+26/04/2017	Transporte	Recarga de tarjeta de colectivo	-100,00
+28/04/2017	Salidas	Comidas	-200,00
+28/04/2017	Colaboraciones	Comidas	-50,00
+28/04/2017	Estudio	Alquiler	-2900,00
+29/04/2017	Comida	Varios	-6,50
+29/04/2017	Comida	Verdulería	-64,00
+01/05/2017	Farmacia	Medicamentos	-16,00
+02/05/2017	Colaboraciones	Comidas	-50,00
+02/05/2017	Estudio	Honorarios profesionales	700,00
+03/05/2017	Transporte	Recarga de tarjeta de colectivo	-150,00
+04/05/2017	Colaboraciones	Varios	-200,00
+04/05/2017	Comida	Fiambrería	-80,00
+04/05/2017	Comida	Verdulería	-45,00
+06/05/2017	Comida	Carnicería	-447,00
+06/05/2017	Comida	Verdulería	-15,00
+06/05/2017	Comida	Varios	-27,00
+09/05/2017	Comida	Varios	-12,00
+09/05/2017	Estudio	Fotocopias	-25,00
+09/05/2017	Farmacia	Medicamentos	-260,00
+09/05/2017	Comida	Verdulería	-71,00
+10/05/2017	Comida	Fiambrería	-32,00
+10/05/2017	Hobbies	Natación	-1100,00
+11/05/2017	Estudio	Cédulas	-100,00
+11/05/2017	Estudio	Fotocopias	-25,00
+11/05/2017	Transporte	Remisse	-90,00
+11/05/2017	Automóvil	Mano de obra	-70,00
+12/05/2017	Bancos	Extracción por ATM	2000,00
+12/05/2017	Salidas	Comidas	-310,00
+12/05/2017	Comida	Pollería	-58,00
+12/05/2017	Automóvil	Mano de obra	-70,00
+12/05/2017	Transporte	Remisse	-90,00
+13/05/2017	Comida	Varios	-18,00
+13/05/2017	Comida	Verdulería	-66,00
+15/05/2017	Comida	Varios	-7,00
+15/05/2017	Automóvil	Mano de obra	-500,00
+16/05/2017	Automóvil	Lavado	-80,00
+16/05/2017	Motocicleta	Lavado	-40,00
+17/05/2017	Transporte	Nafta	-40,00
+18/05/2017	Perfumería	Cosmética	-42,00
+19/05/2017	Comida	Pollería	-56,00
+19/05/2017	Automóvil	Mano de obra	-580,00
+19/05/2017	Comida	Verdulería	-56,00
+20/05/2017	Mascotas	Accesorios	-20,00
+20/05/2017	Hobbies	Fotocopias	-25,00
+20/05/2017	Comida	Verdulería	-9,00
+20/05/2017	Comida	Varios	-15,00
+22/05/2017	Estudio	Honorarios profesionales	1500,00
+23/05/2017	Transporte	Nafta	-40,00
+23/05/2017	Impuesto/Servicio	Impuesto municipal	-210,00
+23/05/2017	Transporte	Recarga de tarjeta de colectivo	-100,00
+23/05/2017	Hogar	Decoración	-500,00
+23/05/2017	Estudio	Honorarios profesionales	2000,00
+23/05/2017	Farmacia	Varios	-20,00
+24/05/2017	Estudio	Expensas	-504,00
+25/05/2017	Comida	Varios	-7,00
+26/05/2017	Transporte	Estacionamiento	-300,00
+26/05/2017	Comida	Verdulería	-111,00
+27/05/2017	Hogar	Decoración	-2000,00
+27/05/2017	Comida	Varios	-20,00
+27/05/2017	Comida	Pollería	-45,00
+27/05/2017	Salidas	Comidas	-140,00
+27/05/2017	Mascotas	Juguetes	-20,00
+29/05/2017	Estudio	Fotocopias	-26,00
+29/05/2017	Comida	Varios	-33,00
+30/05/2017	Comida	Pollería	-48,00
+30/05/2017	Estudio	Sueldo de la Cooperativa	8000,00
+30/05/2017	Estudio	Devolución de gastos	140,00
+31/05/2017	Estudio	Honorarios profesionales	700,00
+31/05/2017	Transporte	Remisse	-27,00
+31/05/2017	Comida	Varios	-8,00
+31/05/2017	Automóvil	Mano de obra	-200,00
+01/06/2017	Comida	Verdulería	-77,00
+01/06/2017	Comida	Varios	-25,00
+01/06/2017	Estudio	Fotocopias	-6,00
+01/06/2017	Comida	Pescadería	-164,00
+02/06/2017	Colaboraciones	Varios	-20,00
+02/06/2017	Automóvil	Accesorios	-30,00
+02/06/2017	Salidas	Comidas	-110,00
+03/06/2017	Indumentaria	Accesorios	-20,00
+04/06/2017	Comida	Varios	-6,00
+05/06/2017	Comida	Varios	-6,00
+05/06/2017	Comida	Verdulería	-11,00
+06/06/2017	Estudio	Fotocopias	-9,00
+07/06/2017	Comida	Pollería	-78,00
+07/06/2017	Comida	Varios	-7,00
+08/06/2017	Estudio	Fotocopias	-30,00
+10/06/2017	Comida	Verdulería	-22,00
+10/06/2017	Comida	Varios	-33,00
+10/06/2017	Comida	Fiambrería	-68,00
+10/06/2017	Hobbies	Fotocopias	-75,00
+10/06/2017	Salidas	Bebidas	-26,00
+12/06/2017	Mascotas	Comidas	-281,00
+13/06/2017	Comida	Pollería	-112,00
+13/06/2017	Comida	Verdulería	-16,00
+13/06/2017	Salidas	Comidas	-16,00
+13/06/2017	Comida	Varios	-30,00
+13/06/2017	Transporte	Recarga de tarjeta de colectivo	-120,00
+13/06/2017	Bancos	Extracción por línea de cajas	120000,00
+13/06/2017	Automóvil	Parte de pago	-121010,00
+14/06/2017	Estudio	Fotocopias	-45,00
+14/06/2017	Transporte	Nafta	-36,00
+15/06/2017	Estudio	Varios	-55,00
+15/06/2017	Estudio	Fotocopias	-6,00
+15/06/2017	Comida	Verdulería	-89,00
+15/06/2017	Comida	Varios	-12,00
+15/06/2017	Estudio	Honorarios profesionales	1700,00
+16/06/2017	Estudio	Fotocopias	-57,00
+16/06/2017	Salidas	Comidas	-300,00
+17/06/2017	Hogar	Varios	-92,00
+18/06/2017	Salidas	Comidas	-410,00
+18/06/2017	Indumentaria	Ropa	-750,00
+20/06/2017	Comida	Verdulería	-50,00
+20/06/2017	Comida	Varios	-7,00
+21/06/2017	Comida	Varios	-10,00
+21/06/2017	Estudio	Honorarios profesionales	2000,00
+22/06/2017	Construcción	Materiales de construcción	-9150,00
+22/06/2017	Comida	Pollería	-112,00
+22/06/2017	Comida	Varios	-10,00
+22/06/2017	Estudio	Honorarios profesionales	2000,00
+23/06/2017	Construcción	Materiales de construcción	-7700,00
+23/06/2017	Comida	Varios	-25,00
+23/06/2017	Construcción	Mano de obra	-10000,00
+23/06/2017	Estudio	Sueldo de la Cooperativa	8000,00
+23/06/2017	Estudio	Devolución de gastos	115,00
+23/06/2017	Hobbies	Natación	-1100,00
+23/06/2017	Salidas	Comidas	-120,00
+24/06/2017	Comida	Varios	-98,00
+24/06/2017	Comida	Verdulería	-60,00
+25/06/2017	Comida	Varios	-7,00
+26/06/2017	Construcción	Materiales de construcción	-6650,00
+26/06/2017	Transporte	Nafta	-200,00
+27/06/2017	Estudio	Fotocopias	-9,00
+27/06/2017	Transporte	Recarga de tarjeta de colectivo	-100,00
+28/06/2017	Bancos	Extracción por línea de cajas	26400,00
+28/06/2017	Automóvil	Derecho de adjudicación	-1645,00
+28/06/2017	Automóvil	Cambio de modelo	-24745,00
+28/06/2017	Construcción	Materiales de construcción	-1440,00
+28/06/2017	Hogar	Varios	-15,00
+28/06/2017	Comida	Varios	-15,00
+28/06/2017	Comida	Fiambrería	-50,00
+29/06/2017	Construcción	Materiales de construcción	-1000,00
+29/06/2017	Comida	Verdulería	-78,00
+30/06/2017	Estudio	Fotocopias	-184,00
+30/06/2017	Construcción	Materiales de construcción	-1725,00
+30/06/2017	Comida	Varios	-7,00
+01/07/2017	Hobbies	Fotocopias	-4,00
+01/07/2017	Comida	Verdulería	-68,00
+01/07/2017	Hogar	Varios	-60,00
+02/07/2017	Comida	Carnicería	-650,00
+04/07/2017	Comida	Fiambrería	-63,00
+04/07/2017	Farmacia	Medicamentos	-155,00
+05/07/2017	Comida	Varios	-8,00
+06/07/2017	Comida	Pollería	-114,00
+06/07/2017	Comida	Varios	-23,00
+06/07/2017	Construcción	Materiales de construcción	-800,00
+07/07/2017	Comida	Varios	-10,00
+07/07/2017	Bancos	Extracción por línea de cajas	10000,00
+07/07/2017	Construcción	Mano de obra	-14900,00
+08/07/2017	Comida	Verdulería	-10,00
+10/07/2017	Médicos	Plus de consulta	-150,00
+10/07/2017	Estudio	Papelería	-380,00
+10/07/2017	Automóvil	Repuestos	-55,00
+11/07/2017	Plomería	Mano de obra	-350,00
+13/07/2017	Salidas	Comidas	-110,00
+13/07/2017	Comida	Verdulería	-50,00
+13/07/2017	Estudio	Expensas	-630,00
+13/07/2017	Estudio	Honorarios profesionales	2000,00
+13/07/2017	Colaboraciones	Varios	-20,00
+14/07/2017	Bancos	Extracción por línea de cajas	1000,00
+14/07/2017	Estudio	Cuota del Colegio de Abogados	-1680,00
+15/07/2017	Construcción	Materiales de construcción	-1600,00
+15/07/2017	Automóvil	Varios	-65,00
+15/07/2017	Comida	Varios	-18,00
+15/07/2017	Indumentaria	Varios	-130,00
+15/07/2017	Comida	Verdulería	-2,00
+15/07/2017	Comida	Fiambrería	-40,00
+16/07/2017	Comida	Pollería	-125,00
+18/07/2017	Comida	Varios	-7,00
+18/07/2017	Comida	Verdulería	-104,00
+18/07/2017	Comida	Varios	-30,00
+18/07/2017	Mascotas	Varios	-20,00
+18/07/2017	Hobbies	Librería	-20,00
+20/07/2017	Bancos	Extracción por línea de cajas	15000,00
+20/07/2017	Salidas	Comidas	-230,00
+20/07/2017	Construcción	Parte de pago	-1000,00
+20/07/2017	Comida	Varios	-45,00
+20/07/2017	Comida	Fiambrería	-78,00
+21/07/2017	Estudio	Sueldo de la Cooperativa	8000,00
+21/07/2017	Estudio	Devolución de gastos	184,00
+21/07/2017	Construcción	Parte de pago	-15000,00
+22/07/2017	Construcción	Parte de pago	-1400,00
+23/07/2017	Comida	Varios	-10,00
+24/07/2017	Construcción	Materiales de construcción	-2875,00
+24/07/2017	Construcción	Varios	-600,00
+24/07/2017	Construcción	Parte de pago	-600,00
+24/07/2017	Estudio	Honorarios profesionales	3000,00
+24/07/2017	Hogar	Varios	-20,00
+24/07/2017	Hogar	Bebidas	-53,00
+25/07/2017	Indumentaria	Ropa	-250,00
+25/07/2017	Salidas	Comidas	-40,00
+25/07/2017	Hogar	Varios	-40,00
+26/07/2017	Construcción	Materiales de construcción	-320,00
+27/07/2017	Comida	Pollería	-125,00
+27/07/2017	Indumentaria	Reparación	-50,00
+27/07/2017	Indumentaria	Ropa	-837,00
+28/07/2017	Construcción	Parte de pago	-4100,00
+29/07/2017	Comida	Verdulería	-65,00
+31/07/2017	Comida	Fiambrería	-45,00
+01/08/2017	Bancos	Extracción por ATM	7000,00
+01/08/2017	Estudio	Fotocopias	-33,00
+01/08/2017	Comida	Pollería	-64,00
+01/08/2017	Comida	Varios	-347,00
+01/08/2017	Indumentaria	Regalos	-972,00
+02/08/2017	Comida	Golosinas	-16,00
+02/08/2017	Comida	Varios	-7,00
+02/08/2017	Construcción	Materiales de construcción	-2430,00
+02/08/2017	Comida	Verdulería	-55,00
+02/08/2017	Comida	Fiambrería	-35,00
+02/08/2017	Transporte	Nafta	-45,00
+03/08/2017	Transporte	Recarga de tarjeta de colectivo	-120,00
+03/08/2017	Transporte	Remisse	-37,00
+04/08/2017	Transporte	Estacionamiento	-300,00
+04/08/2017	Automóvil	Mano de obra	-400,00
+04/08/2017	Estudio	Fotocopias	-6,00
+04/08/2017	Construcción	Materiales de construcción	-82,00
+04/08/2017	Hobbies	Natación	-900,00
+05/08/2017	Automóvil	Lavado	-80,00
+05/08/2017	Indumentaria	Mano de obra	-70,00
+05/08/2017	Hogar	Varios	-35,00
+05/08/2017	Comida	Varios	-5,00
+05/08/2017	Comida	Verdulería	-15,00
+06/08/2017	Comida	Varios	-27,00
+07/08/2017	Bancos	Extracción por ATM	5000,00
+07/08/2017	Construcción	Mano de obra	-4200,00
+07/08/2017	Colaboraciones	Comidas	-50,00
+08/08/2017	Bancos	Extracción por ATM	4500,00
+09/08/2017	Automóvil	Cuota de plan de ahorro	-55,00
+09/08/2017	Estudio	Fotocopias	-55,00
+09/08/2017	Comida	Pollería	-123,00
+10/08/2017	Estudio	Alquiler	-2900,00
+10/08/2017	Comida	Verdulería	-50,00
+12/08/2017	Indumentaria	Calzados	-770,00
+12/08/2017	Comida	Verdulería	-65,00
+15/08/2017	Estudio	Fotocopias	-1,50
+15/08/2017	Transporte	Nafta	-46,00
+16/08/2017	Construcción	Materiales de construcción	-500,00
+17/08/2017	Comida	Varios	-25,00
+17/08/2017	Colaboraciones	Varios	-10,00
+17/08/2017	Comida	Verdulería	-91,00
+19/08/2017	Comida	Verdulería	-20,00
+19/08/2017	Comida	Varios	-50,00
+19/08/2017	Salidas	Comidas	-90,00
+19/08/2017	Indumentaria	Ropa	-299,00
+19/08/2017	Hogar	Varios	-20,00
+19/08/2017	Bancos	Extracción por ATM	500,00
+21/08/2017	Comida	Varios	-7,00
+22/08/2017	Comida	Pollería	-110,00
+23/08/2017	Transporte	Recarga de tarjeta de colectivo	-100,00
+23/08/2017	Estudio	Devolución de gastos	55,00
+23/08/2017	Estudio	Sueldo de la Cooperativa	8000,00
+24/08/2017	Comida	Verdulería	-18,00
+24/08/2017	Estudio	Honorarios profesionales	500,00
+24/08/2017	Comida	Varios	-13,00
+25/08/2017	Farmacia	Medicamentos	-125,00
+25/08/2017	Estudio	Honorarios profesionales	3000,00
+25/08/2017	Automóvil	Devolución de gastos	2688,50
+26/08/2017	Hogar	Varios	-80,00
+26/08/2017	Transporte	Nafta	-40,00
+29/08/2017	Salidas	Entradas	-300,00
+29/08/2017	Comida	Verdulería	-62,00
+30/08/2017	Comida	Pescadería	-160,00
+30/08/2017	Comida	Pollería	-61,00
+30/08/2017	Comida	Varios	-30,00
