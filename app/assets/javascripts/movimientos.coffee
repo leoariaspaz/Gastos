@@ -12,11 +12,21 @@ tipo_transaccion_id_change = ->
 			$("#new_movimiento #transacciones").html data
 		return false
 
+cargar_movimientos_por_cuenta_id = ->
+	id = $("#index_movimientos #cuenta_id").val()
+	if (id == "") || (id == undefined) then id = 0
+	lnk = '/movimientos/' + id + '/list'
+	$.get lnk, (data) ->
+		$("#index_movimientos #list").html data
+
 ready = ->
 	tipo_transaccion_id_change()
 	$('input:text').focus ->
     $(this).select()
     return
-  return
+	if $("#index_movimientos #cuenta_id").any()
+	  cargar_movimientos_por_cuenta_id()
+	  $("#index_movimientos #cuenta_id").change (e) ->
+	    cargar_movimientos_por_cuenta_id()
 
 $(document).on("turbolinks:load", ready)

@@ -5,7 +5,17 @@ class MovimientosController < ApplicationController
   # GET /movimientos
   # GET /movimientos.json
   def index
-    @movimientos = Movimiento.all.order :fecha_mov
+    # @movimientos = Movimiento.all.order(:fecha_mov, :cuenta_id)
+  end
+
+  def list
+    id = params[:id].to_i
+    if id == 0
+      @movimientos = Movimiento.all.order(:descripcion, :cuenta_id)
+    else
+      @movimientos = Movimiento.where(cuenta_id: id).order(:fecha_mov, :cuenta_id)
+    end
+    render partial: true    
   end
 
   # GET /movimientos/1
@@ -16,11 +26,18 @@ class MovimientosController < ApplicationController
   # GET /movimientos/new
   def new
     @movimiento = Movimiento.new
+    @transacciones = []
   end
 
   # GET /movimientos/1/edit
   def edit
-    @transacciones = Transaccion.where(tipo_transaccion_id: @movimiento.tipo_transaccion_id).map { |t| [t.descripcion, t.id] }
+    if @movimiento.tipo_transaccion_id > 0
+      @transacciones = Transaccion
+                          .where(tipo_transaccion_id: @movimiento.tipo_transaccion_id)
+                          .map { |t| [t.descripcion, t.id] }
+    else
+      @transacciones = []
+    end
   end
 
   # POST /movimientos
@@ -71,7 +88,7 @@ class MovimientosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movimiento_params
-      params.require(:movimiento).permit(:fecha_mov, :transaccion_id, :importe)
+      params.require(:movimiento).permit(:fecha_mov, :transaccion_id, :importe, :cuenta_id)
     end
 
     def set_tipos_transacciones

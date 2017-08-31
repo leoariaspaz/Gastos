@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :cuentas
-  resources :movimientos
+  resources :movimientos do
+    member do
+      get 'list'
+    end
+  end
   resources :transacciones do
   	member do
   		get 'select_by_tipoid'

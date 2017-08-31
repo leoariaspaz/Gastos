@@ -3,7 +3,7 @@
 
   <div class="form-group">
     <%= f.label :cuenta_id %>
-    <%= select_tag :cuenta_id, options_for_select(Cuenta.all_for_select, @movimiento.cuenta_id),
+    <%= f.select :cuenta_id, options_for_select(Cuenta.all_for_select, @movimiento.cuenta_id),
           {prompt: t('helpers.select.prompt'), class: "form-control"} %>
   </div>
 
@@ -20,7 +20,7 @@
 
   <div id="transacciones" class="form-group">
     <%= f.label :transaccion_id %>
-    <%= select_tag :transaccion_id, options_for_select(@transacciones, @movimiento.transaccion_id), 
+    <%= f.select :transaccion_id, options_for_select(@transacciones, @movimiento.transaccion_id), 
           {prompt: t('helpers.select.prompt'), class: 'form-control'} %>
   </div>
 

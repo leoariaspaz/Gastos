@@ -1,46 +1,20 @@
 <% content_for :title, "Movimientos" %>
 
-<div class="row">
-  <h1 class="col-sm-3">Movimientos</h1>
-  <div class="col-sm-6"><%= render 'notice' %></div>  
-  <div id="menu-abm" class="col-sm-3 text-right">
-    <%= link_to 'Nuevo movimiento', new_movimiento_path, class: 'btn btn-default', role: 'button' %>
-  </div>
-</div>
+<div id="index_movimientos">
 
-<% if @movimientos.any? %>
-  <table class="table table-striped table-responsive table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center">Fecha</th>
-        <th class="text-center">Movimiento</th>
-        <th class="text-center">Importe</th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @movimientos.each do |movimiento| %>
-        <tr>
-          <td class="col-sm-2"><%= I18n.localize movimiento.fecha_mov, format: :fecmov %></td>
-          <td><%= movimiento.transaccion.descripcion_completa %></td>
-          <td class="text-right"><%= number_to_currency movimiento.importe %></td>
-          <td class="text-center">
-            <%= link_to edit_movimiento_path(movimiento) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-            <% end %>
-            <%= link_to movimiento, method: :delete, data: { confirm: '¿Está seguro?' } do %>
-              <span class="glyphicon glyphicon-trash"></span>
-            <% end %>
-          </td>          
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <div id="notas-empty" class="row">
-    <div class="alert alert-success text-center col-sm-4 col-sm-offset-4">
-      Todavía no hay movimientos cargados.
+  <div class="row">
+    <h1 class="col-sm-3">Movimientos</h1>
+    <div class="col-sm-6"><%= render 'notice' %></div>  
+    <div id="menu-abm" class="col-sm-3 text-right">
+      <%= link_to 'Nuevo movimiento', new_movimiento_path, class: 'btn btn-default', role: 'button' %>
     </div>
   </div>
-<% end %>
+
+  <div class="form-group">
+    <%= label_tag :cuenta_id, "Cuenta:", { style: "display: inline;" } %>
+    <%= select_tag "cuenta_id", options_for_select(Cuenta.all_for_select),
+          {class: "form-control", style: "display: inline; max-width: 40%;"} %>
+  </div>
+
+  <div id="list"></div>
+</div>
