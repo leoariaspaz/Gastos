@@ -15,9 +15,10 @@ tipo_transaccion_id_change = ->
 cargar_movimientos_por_cuenta_id = ->
 	id = $("#index_movimientos #cuenta_id").val()
 	if (id == "") || (id == undefined) then id = 0
-	lnk = '/movimientos/' + id + '/list'
-	$.get lnk, (data) ->
-		$("#index_movimientos #list").html data
+	lnk = '/movimientos/cuenta/' + id
+	$.get lnk
+	#, (data) ->
+	#	$("#index_movimientos #list").html data
 
 ready = ->
 	tipo_transaccion_id_change()

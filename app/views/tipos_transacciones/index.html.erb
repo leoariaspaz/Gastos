@@ -17,25 +17,14 @@
       </tr>
     </thead>
 
-    <tbody>
-      <% @tipos_transacciones.each do |tipo_transaccion| %>
-        <tr>
-          <td><%= tipo_transaccion.descripcion %></td>
-          <td class="col-sm-5">
-            <%= render partial: "controls/checkbox", object: tipo_transaccion.habilitado %>
-          </td>          
-          <td class="col-sm-1">
-            <%= link_to edit_tipo_transaccion_path(tipo_transaccion) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-            <% end %>
-            <%= link_to tipo_transaccion, method: :delete, data: { confirm: '¿Está seguro?' } do %>
-              <span class="glyphicon glyphicon-trash"></span>
-            <% end %>
-          </td>          
-        </tr>
-      <% end %>
+    <tbody id="list">
+      <%= render 'list' %>
     </tbody>
   </table>
+
+  <div id="paginator">
+  <%= paginate @tipos_transacciones, remote: true %>      
+  </div>
 
 <% else %>
   <div id="notas-empty" class="row">

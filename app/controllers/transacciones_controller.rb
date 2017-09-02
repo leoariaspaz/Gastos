@@ -3,8 +3,7 @@ class TransaccionesController < ApplicationController
 
   # GET /transacciones
   # GET /transacciones.json
-  def index
-    @tipos_transacciones = TipoTransaccion.all_for_select
+  def index    
   end
 
   def list    

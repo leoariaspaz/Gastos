@@ -5,17 +5,16 @@ class MovimientosController < ApplicationController
   # GET /movimientos
   # GET /movimientos.json
   def index
-    # @movimientos = Movimiento.all.order(:fecha_mov, :cuenta_id)
   end
 
   def list
     id = params[:id].to_i
     if id == 0
-      @movimientos = Movimiento.all.order(:descripcion, :cuenta_id)
+      @movimientos = Movimiento.all
     else
-      @movimientos = Movimiento.where(cuenta_id: id).order(:fecha_mov, :cuenta_id)
+      @movimientos = Movimiento.where(cuenta_id: id)
     end
-    render partial: true    
+    @movimientos = @movimientos.order(:fecha_mov, :cuenta_id).page params[:page]
   end
 
   # GET /movimientos/1
