@@ -1,0 +1,36 @@
+<% if @movimientos.any? %>
+  <table class="table table-striped table-responsive table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">Fecha</th>
+        <th class="text-center">Movimiento</th>
+        <th class="text-center">Importe</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @movimientos.each do |movimiento| %>
+        <tr>
+          <td class="col-sm-2"><%= I18n.localize movimiento.fecha_mov, format: :fecmov %></td>
+          <td><%= movimiento.transaccion.descripcion_completa %></td>
+          <td class="text-right"><%= number_to_currency movimiento.importe %></td>
+          <td class="text-center">
+            <%= link_to edit_movimiento_path(movimiento) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+            <% end %>
+            <%= link_to movimiento, method: :delete, data: { confirm: '¿Está seguro?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </td>          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div id="notas-empty" class="row">
+    <div class="alert alert-success text-center col-sm-4 col-sm-offset-4">
+      Todavía no hay movimientos cargados.
+    </div>
+  </div>
+<% end %>

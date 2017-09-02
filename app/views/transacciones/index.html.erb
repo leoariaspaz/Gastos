@@ -11,10 +11,11 @@
 
   <div class="form-group">
     <%= label_tag :tipo_transaccion_id, "Tipo de transacción:", { style: "display: inline;" } %>
-    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select),
+    <%= select_tag "tipo_transaccion_id", options_for_select(@tipos_transacciones),
           {prompt: '(Todos los tipos de transacciones)', class: "form-control", 
             style: "display: inline; max-width: 40%;"} %>
   </div>
 
-  <div id="list"></div>  
+  <div id="list"></div>
 </div>
+

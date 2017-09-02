@@ -4,16 +4,16 @@ class TransaccionesController < ApplicationController
   # GET /transacciones
   # GET /transacciones.json
   def index
+    @tipos_transacciones = TipoTransaccion.all_for_select
   end
 
-  def list
-    id = params[:id].to_i
-    if id == 0
-      @transacciones = Transaccion.all.order(:descripcion, :tipo_transaccion_id)
+  def list    
+    if params[:id].to_i == 0
+      @transacciones = Transaccion.all
     else
-      @transacciones = Transaccion.where(tipo_transaccion_id: id).order(:descripcion, :tipo_transaccion_id)
+      @transacciones = Transaccion.where(tipo_transaccion_id: params[:id].to_i)
     end
-    render partial: true
+    @transacciones = @transacciones.order(:descripcion, :tipo_transaccion_id)
   end
 
   # GET /transacciones/1
