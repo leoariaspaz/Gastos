@@ -5,7 +5,7 @@
 cargar_transacciones_por_tipo_id = ->
 	id = $("#index_transaccion #tipo_transaccion_id").val()
 	if (id == "") || (id == undefined) then id = 0
-	lnk = '/transacciones/' + id + '/list'
+	lnk = '/transacciones/list/' + id
 	$.get lnk
 
 ready = ->

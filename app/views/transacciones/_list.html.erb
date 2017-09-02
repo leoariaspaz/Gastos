@@ -33,6 +33,8 @@
     </tbody>
   </table>
 
+  <%= paginate @transacciones, remote: true %>
+
 <% else %>
   <div id="notas-empty" class="row">
     <div class="alert alert-success text-center col-sm-4 col-sm-offset-4">

@@ -13,7 +13,7 @@ class TransaccionesController < ApplicationController
     else
       @transacciones = Transaccion.where(tipo_transaccion_id: params[:id].to_i)
     end
-    @transacciones = @transacciones.order(:descripcion, :tipo_transaccion_id)
+    @transacciones = @transacciones.order(:descripcion, :tipo_transaccion_id).page params[:page]
   end
 
   # GET /transacciones/1
