@@ -72,19 +72,55 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/transacciones_controller.rb",
+			"file": "app/controllers/tipos_transacciones_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2621,
+				"buffer_size": 2344,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/movimientos_controller.rb",
+			"file": "app/views/tipos_transacciones/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 2881,
+				"buffer_size": 879,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/movimientos/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 1348,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/transacciones/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 854,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/tipos_transacciones/_list.html.erb",
+			"settings":
+			{
+				"buffer_size": 612,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/tipos_transacciones/index.js.erb",
+			"settings":
+			{
+				"buffer_size": 162,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -93,53 +129,7 @@
 			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 439,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/transacciones/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 760,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/transacciones/list.js.erb",
-			"settings":
-			{
-				"buffer_size": 175,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "alert('entra');"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/transacciones.coffee",
-			"settings":
-			{
-				"buffer_size": 646,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/transacciones/_list.html.erb",
-			"settings":
-			{
-				"buffer_size": 1498,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/locales/es.yml",
-			"settings":
-			{
-				"buffer_size": 6373,
+				"buffer_size": 502,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -198,17 +188,27 @@
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/javascripts",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/application",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/controls",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/tipos_transacciones",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/db",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/db/migrate"
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones"
 	],
 	"file_history":
 	[
+		"/home/leonardo/Documentos/ruby/scripts/change_background.rb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos/list.js.erb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/controllers/movimientos_controller.rb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/controllers/transacciones_controller.rb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/index.html.erb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos/index.html.erb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/javascripts/transacciones.coffee",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/javascripts/movimientos.coffee",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/_list.html.erb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos/_list.html.erb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/tipos_transacciones/index.html.erb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/config/routes.rb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/list.js.erb",
+		"/media/leonardo/Programación/Ruby/Proyectos/gastos/config/locales/es.yml",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/Gemfile",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/index.js.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/log/development.log",
@@ -216,33 +216,22 @@
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/_transaccion.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/javascripts/index.js.coffee.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/controllers/application_controller.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/controllers/movimientos_controller.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos/_form.html.erb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos/index.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/db/seeds.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/index.html.erb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/javascripts/transacciones.coffee",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/config/routes.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos/_list.html.erb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/javascripts/movimientos.coffee",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/controllers/transacciones_controller.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/models/movimiento.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/models/tipo_transaccion.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/models/transaccion.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/models/cuenta.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/edit.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos/edit.html.erb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/config/locales/es.yml",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/javascripts/shared.coffee",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/helpers/application_helper.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/tipos_transacciones/index.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/config/initializers/inflections.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/application/_errores.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/assets/stylesheets/scaffolds.scss",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/cuentas/edit.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/controllers/cuentas_controller.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/cuentas/index.html.erb",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/_list.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/layouts/application.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/transacciones/_form.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/cuentas/_form.html.erb",
@@ -271,7 +260,6 @@
 		"/media/leonardo/Programación/Ruby/Proyectos/notas2/notas/app/assets/javascripts/notas.coffee",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas2/notas/app/views/notas/index.html.erb",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas2/notas/vendor/assets/stylesheets/jquery.splitter.css",
-		"/home/leonardo/Documentos/ruby/scripts/change_background.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/bin/rails",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/bin/spring",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/Gemfile",
@@ -334,9 +322,7 @@
 		"/media/leonardo/Programación/Ruby/Programas/depot/config/environments/development.rb",
 		"/media/leonardo/Programación/Ruby/Programas/depot/config/initializers/locales/en.yml",
 		"/media/leonardo/Programación/Ruby/Programas/depot/config/locales/locales/en.yml",
-		"/media/leonardo/Programación/Ruby/Programas/depot/config/initializers/locales/es.yml",
-		"/media/leonardo/Programación/Ruby/Programas/depot/app/views/admin/index.html.erb",
-		"/media/leonardo/Programación/Ruby/Programas/depot/test/controllers/sessions_controller_test.rb"
+		"/media/leonardo/Programación/Ruby/Programas/depot/config/initializers/locales/es.yml"
 	],
 	"find":
 	{
@@ -355,6 +341,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"transaccion",
 			"index_movimiento",
 			"tipo_transaccion_id",
 			"transaccion",
@@ -419,24 +406,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/transacciones_controller.rb",
+					"file": "app/controllers/tipos_transacciones_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2621,
+						"buffer_size": 2344,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								472,
-								472
+								218,
+								218
 							]
 						],
 						"settings":
@@ -450,61 +437,30 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/controllers/movimientos_controller.rb",
+					"file": "app/views/tipos_transacciones/index.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2881,
+						"buffer_size": 879,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								588,
-								564
+								601,
+								601
 							]
 						],
 						"settings":
 						{
 							"apply_syntax_touched": true,
-							"syntax": "Packages/Rails/Ruby on Rails.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "config/routes.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 439,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								439,
-								439
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"syntax": "Packages/Rails/Ruby on Rails.sublime-syntax",
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -516,20 +472,84 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/views/transacciones/index.html.erb",
+					"buffer": 2,
+					"file": "app/views/movimientos/_form.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 760,
+						"buffer_size": 1348,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								760,
-								760
+								424,
+								424
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/transacciones/_form.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								195,
+								195
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/tipos_transacciones/_list.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -543,30 +563,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/views/transacciones/list.js.erb",
+					"buffer": 5,
+					"file": "app/views/tipos_transacciones/index.js.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 175,
+						"buffer_size": 162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								78,
-								78
+								70,
+								70
 							]
 						],
 						"settings":
 						{
 							"apply_syntax_touched": true,
-							"auto_name": "alert('entra');",
 							"syntax": "Packages/Ruby on Rails snippets/JavaScript (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -577,55 +596,26 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/assets/javascripts/transacciones.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 646,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								383,
-								383
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
 					"buffer": 6,
-					"file": "app/views/transacciones/_list.html.erb",
+					"file": "config/routes.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1498,
+						"buffer_size": 502,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1251,
-								1251
+								491,
+								491
 							]
 						],
 						"settings":
 						{
 							"apply_syntax_touched": true,
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"syntax": "Packages/Rails/Ruby on Rails.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -634,37 +624,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "config/locales/es.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6373,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4651,
-								4651
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2524.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -723,12 +682,56 @@
 		"selected_items":
 		[
 			[
-				"movcont",
-				"app/controllers/movimientos_controller.rb"
+				"tranform",
+				"app/views/transacciones/_form.html.erb"
+			],
+			[
+				"movform",
+				"app/views/movimientos/_form.html.erb"
 			],
 			[
 				"route",
 				"config/routes.rb"
+			],
+			[
+				"listjs",
+				"app/views/movimientos/list.js.erb"
+			],
+			[
+				"tipoindex",
+				"app/views/tipos_transacciones/index.html.erb"
+			],
+			[
+				"tipocont",
+				"app/controllers/tipos_transacciones_controller.rb"
+			],
+			[
+				"tipotranindex",
+				"app/views/tipos_transacciones/index.html.erb"
+			],
+			[
+				"",
+				"app/assets/javascripts/transacciones.coffee"
+			],
+			[
+				"movcoffe",
+				"app/assets/javascripts/movimientos.coffee"
+			],
+			[
+				"movlist",
+				"app/views/movimientos/_list.html.erb"
+			],
+			[
+				"tranlist",
+				"app/views/transacciones/_list.html.erb"
+			],
+			[
+				"movinde",
+				"app/views/movimientos/index.html.erb"
+			],
+			[
+				"movcont",
+				"app/controllers/movimientos_controller.rb"
 			],
 			[
 				"es",
@@ -757,10 +760,6 @@
 			[
 				"seed",
 				"db/seeds.rb"
-			],
-			[
-				"movform",
-				"app/views/movimientos/_form.html.erb"
 			],
 			[
 				"tranindex",
@@ -861,14 +860,6 @@
 			[
 				"cuecon",
 				"app/controllers/cuentas_controller.rb"
-			],
-			[
-				"",
-				"app/views/transacciones/index.html.erb"
-			],
-			[
-				"tranform",
-				"app/views/transacciones/_form.html.erb"
 			],
 			[
 				"cueform",
@@ -1201,38 +1192,6 @@
 			[
 				"licont",
 				"app/controllers/line_items_controller.rb"
-			],
-			[
-				"carcotn",
-				"app/controllers/carts_controller.rb"
-			],
-			[
-				"sesscont",
-				"app/controllers/sessions_controller.rb"
-			],
-			[
-				"useryml",
-				"test/fixtures/users.yml"
-			],
-			[
-				"sesstest",
-				"test/controllers/sessions_controller_test.rb"
-			],
-			[
-				"admcontr",
-				"app/controllers/admin_controller.rb"
-			],
-			[
-				"admininde",
-				"app/views/admin/index.html.erb"
-			],
-			[
-				"newhtml",
-				"app/views/sessions/new.html.erb"
-			],
-			[
-				"sesscontr",
-				"app/controllers/sessions_controller.rb"
 			]
 		],
 		"width": 0.0

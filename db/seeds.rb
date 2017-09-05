@@ -36,6 +36,10 @@ def split_line(line)
 	return splitted_line
 end
 
+def is_number? string
+	true if Float(string) rescue false
+end
+
 def cargar_movimientos(cuenta, archivo)
 	Movimiento.where(cuenta: cuenta).delete_all
 	File.open(Rails.root.to_s + "/db/seeds/" + archivo, "r") do |f|
@@ -46,7 +50,10 @@ def cargar_movimientos(cuenta, archivo)
 				tipo_tran = TipoTransaccion.create(descripcion: mov[1].strip, habilitado: true)
 			end
 			tran = Transaccion.where(descripcion: mov[2].strip, tipo_transaccion: tipo_tran).first
-			importe = mov[3].to_f
+			if not is_number?(mov[3].gsub(",", "."))
+				raise "|#{mov[3]}| no es un número"
+			end
+			importe = mov[3].gsub(",", ".").to_f
 			if tran.nil?
 				tran = Transaccion.create(descripcion: mov[2].strip, tipo_transaccion: tipo_tran, habilitado: true,
 								es_debito: importe < 0)
