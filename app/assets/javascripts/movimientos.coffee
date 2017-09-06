@@ -6,10 +6,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 tipo_transaccion_id_change = ->
-	$("#new_movimiento #tipo_transaccion_id").change (e) ->
+	control = $("#new_movimiento #tipo_transaccion_id, .edit_movimiento #tipo_transaccion_id")
+	control.change (e) ->
 		lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
 		$.get lnk, (data) ->
-			$("#new_movimiento #transacciones").html data
+			$("#new_movimiento #transacciones, .edit_movimiento #transacciones").html data
 		return false
 
 cargar_movimientos_por_cuenta_id = ->
@@ -17,8 +18,6 @@ cargar_movimientos_por_cuenta_id = ->
 	if (id == "") || (id == undefined) then id = 0
 	lnk = '/movimientos/cuenta/' + id
 	$.get lnk
-	#, (data) ->
-	#	$("#index_movimientos #list").html data
 
 ready = ->
 	tipo_transaccion_id_change()

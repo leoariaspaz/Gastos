@@ -26,7 +26,7 @@
 
   <div class="form-group">
     <%= f.label :importe %>
-    <%= f.text_field :importe, value: number_with_precision(movimiento.importe, precision: 2), class: 'form-control text-right' %>
+    <%= f.text_field :importe, value: number_with_precision(movimiento.importe, precision: 2, separator: ".", delimiter: ""), class: 'form-control text-right number' %>
   </div>
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: movimientos_path} %>
