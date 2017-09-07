@@ -1,3 +1,4 @@
 <%= label_tag :transaccion_id %>
+<%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", id: "loader"} %>
 <%= select_tag "movimiento[transaccion_id]", options_for_select(@transacciones),
       {prompt: t('helpers.select.prompt'), class: "form-control"} %>

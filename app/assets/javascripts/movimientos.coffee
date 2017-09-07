@@ -8,9 +8,11 @@
 tipo_transaccion_id_change = ->
 	control = $("#new_movimiento #tipo_transaccion_id, .edit_movimiento #tipo_transaccion_id")
 	control.change (e) ->
+		$("#loader").show()
 		lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
 		$.get lnk, (data) ->
 			$("#new_movimiento #transacciones, .edit_movimiento #transacciones").html data
+			$("#loader").hide()
 		return false
 
 cargar_movimientos_por_cuenta_id = ->
@@ -24,10 +26,5 @@ ready = ->
 	tipo_transaccion_id_change()
 	$('input:text').focus ->
     $(this).select()
-    return
-	if $("#index_movimientos #cuenta_id").any()
-	  cargar_movimientos_por_cuenta_id()
-	  $("#index_movimientos #cuenta_id").change (e) ->
-	    cargar_movimientos_por_cuenta_id()
 
 $(document).on("turbolinks:load", ready)

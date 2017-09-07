@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 cargar_transacciones_por_tipo_id = ->
+	$('#index_transaccion #loader').show()
 	id = $("#index_transaccion #tipo_transaccion_id").val()
 	if (id == "") || (id == undefined) then id = 0
 	lnk = '/transacciones/tipo/' + id

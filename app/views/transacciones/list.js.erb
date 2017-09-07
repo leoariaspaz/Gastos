@@ -1,2 +1,3 @@
 $("#index_transaccion #list").html('<%= escape_javascript render "list" %>');
 $('#paginator').html('<%= escape_javascript(paginate(@transacciones, :remote => true).to_s) %>');
+$('#index_transaccion #loader').hide();
