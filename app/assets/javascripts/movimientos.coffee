@@ -14,6 +14,7 @@ tipo_transaccion_id_change = ->
 		return false
 
 cargar_movimientos_por_cuenta_id = ->
+	$('#index_movimientos #loader').show()
 	id = $("#index_movimientos #cuenta_id").val()
 	if (id == "") || (id == undefined) then id = 0
 	lnk = '/movimientos/cuenta/' + id
