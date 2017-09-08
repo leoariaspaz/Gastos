@@ -1,6 +1,7 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   resources :cuentas
+  get 'consolidado', action: :consolidado, controller: :movimientos
   resources :movimientos do
     get 'cuenta/:id(/pag/:page)', action: :list, on: :collection
   end
