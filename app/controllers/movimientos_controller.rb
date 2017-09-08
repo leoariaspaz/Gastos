@@ -92,22 +92,6 @@ class MovimientosController < ApplicationController
     end
   end
 
-  def consolidado
-    # movimientos = Movimiento.joins(:transaccion)
-    # debitos = movimientos.where("transacciones.es_debito = ?", true).sum(:importe)
-    # creditos = movimientos.where("transacciones.es_debito = ?", false).sum(:importe)
-    # saldo_inicial = Cuenta.find(id).saldo_inicial    
-    query = <<-SQL
-        SELECT SUM(case when t.es_debito = 't' then -m.importe else m.importe end) AS importe, 
-               c.descripcion AS cuenta
-        FROM movimientos m
-        INNER JOIN cuentas c ON c.id = m.cuenta_id 
-        INNER JOIN transacciones t ON t.id = m.transaccion_id 
-        GROUP BY c.descripcion
-    SQL
-    @movimientos = ActiveRecord::Base.connection.execute(query).values
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movimiento

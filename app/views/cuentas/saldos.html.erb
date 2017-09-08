@@ -1,0 +1,31 @@
+<% content_for :title, "Saldos de cuentas" %>
+
+<div class="row">
+  <h1 class="col-sm-12">Saldos de cuentas</h1>
+</div>
+
+<table class="table table-striped table-responsive table-bordered table-with-footer">
+  <thead>
+    <tr>
+      <th class="text-center">Cuenta</th>
+      <th class="text-center">Últ. Fec. Mov.</th>
+      <th class="text-center">Importe</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cuentas.each do |cuenta| %>
+      <tr>
+        <td><%= cuenta.descripcion_cuenta %></td>
+        <td class="text-center"><%= cuenta.max_fecha_mov %></td>
+        <td class="text-right"><%= number_to_currency cuenta.importe %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2" class="text-right"><strong>Total: </strong></td>
+      <td class="text-right"><%= number_to_currency @cuentas.sum(&:importe) %></td>
+    </tr>
+  </tfoot>
+</table>

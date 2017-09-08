@@ -10,16 +10,18 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+        <li>
+          <%= link_to 'Movimientos', movimientos_path %>
+        </li>
         <li class="dropdown active">
-          <%= link_to movimientos_path, class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
-            Movimientos <span class="caret"></span>
+          <%= link_to cuentas_path, class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+            Cuentas <span class="caret"></span>
           <% end %>
           <ul class="dropdown-menu">
-            <li><%= link_to 'Listado general', movimientos_path %></li>
-            <li><%= link_to 'Consolidado', movimientos_path %></li>
-          </ul>          
+            <li><%= link_to 'Listado general', cuentas_path %></li>
+            <li><%= link_to 'Saldos de cuentas', action: :saldos, controller: :cuentas %></li>
+          </ul>
         </li>
-        <li><%= link_to 'Cuentas', cuentas_path %></li>
         <li><%= link_to 'Tipos de transacciones', tipos_transacciones_path%></li>
         <li><%= link_to 'Transacciones', transacciones_path %></li>
       </ul>

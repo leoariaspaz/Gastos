@@ -62,6 +62,16 @@ class CuentasController < ApplicationController
     end
   end
 
+  def saldos
+    query = <<-SQL
+      SUM(case when transacciones.es_debito = 't' then -movimientos.importe 
+               else movimientos.importe end) AS importe, 
+      MAX(movimientos.fecha_mov) AS max_fecha_mov,
+      cuentas.descripcion AS descripcion_cuenta
+    SQL
+    @cuentas = Cuenta.joins(movimientos: [:transaccion]).select(query).group("cuentas.descripcion")
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cuenta
