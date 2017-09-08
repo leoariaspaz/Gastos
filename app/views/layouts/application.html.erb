@@ -9,10 +9,11 @@
   </head>
 
   <body>
+    <%= render 'controls/navbar' %>
   	<div class="container-fluid">
-      <div id="main-menu" class="row" style="padding-top: 10px;">
+      <%# div id="main-menu" class="row" style="padding-top: 10px;">
         <%= link_to_menu %>
-      </div>
+      <%# /div #%>
 
     	<%= yield %>  		
   	</div>
