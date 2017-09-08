@@ -26,5 +26,10 @@ ready = ->
 	tipo_transaccion_id_change()
 	$('input:text').focus ->
     $(this).select()
+    return
+	if $("#index_movimientos #cuenta_id").any()
+	  cargar_movimientos_por_cuenta_id()
+	  $("#index_movimientos #cuenta_id").change (e) ->
+		  cargar_movimientos_por_cuenta_id()
 
 $(document).on("turbolinks:load", ready)

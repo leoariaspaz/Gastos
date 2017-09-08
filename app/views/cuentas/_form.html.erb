@@ -8,8 +8,8 @@
 
   <div class="form-group">
     <%= f.label :saldo_inicial %>
-    <%= f.text_field :saldo_inicial, value: number_to_currency(cuenta.saldo_inicial), 
-      class: 'form-control text-right'%>
+    <%= f.text_field :saldo_inicial, value: currency_for_edition(cuenta.saldo_inicial), 
+            class: 'form-control text-right' %>
   </div>
 
   <div class="checkbox">

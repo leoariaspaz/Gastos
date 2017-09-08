@@ -54,4 +54,8 @@ module ApplicationHelper
 	def format_date(date)
 		date.strftime('%d/%m/%Y') if date
 	end	
+
+	def currency_for_edition(number)
+		number_with_precision(number, precision: 2, separator: ".", delimiter: "")
+	end
 end
