@@ -23,7 +23,6 @@ class MovimientosController < ApplicationController
     creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
     saldo_inicial = Cuenta.find(id).saldo_inicial
     saldo_anterior = saldo_inicial + creditos - debitos
-    logger.debug "saldo_inicial = #{saldo_inicial} | creditos = #{creditos} | debitos = #{debitos} | saldo_anterior = #{saldo_anterior}"    
     @movimientos.reverse_each do |m|
       m.saldo = saldo_anterior + m.importe_real
       saldo_anterior = m.saldo
@@ -37,7 +36,7 @@ class MovimientosController < ApplicationController
 
   # GET /movimientos/new
   def new
-    @movimiento = Movimiento.new
+    @movimiento = Movimiento.new(fecha_mov: Date.today)
     @transacciones = []
   end
 

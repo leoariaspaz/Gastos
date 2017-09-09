@@ -31,5 +31,7 @@ ready = ->
 	  cargar_movimientos_por_cuenta_id()
 	  $("#index_movimientos #cuenta_id").change (e) ->
 		  cargar_movimientos_por_cuenta_id()
+  if $("#new_movimiento, .edit_movimiento").any()
+	  $("#loader").hide()
 
 $(document).on("turbolinks:load", ready)

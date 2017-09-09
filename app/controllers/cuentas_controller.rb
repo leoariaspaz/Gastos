@@ -15,7 +15,6 @@ class CuentasController < ApplicationController
   # GET /cuentas/new
   def new
     @cuenta = Cuenta.new
-    logger.debug "cuenta.saldo_inicial = #{@cuenta.saldo_inicial}"
   end
 
   # GET /cuentas/1/edit
