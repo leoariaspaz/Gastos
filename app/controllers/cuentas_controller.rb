@@ -66,9 +66,12 @@ class CuentasController < ApplicationController
       SUM(case when transacciones.es_debito = 't' then -movimientos.importe 
                else movimientos.importe end) AS importe, 
       MAX(movimientos.fecha_mov) AS max_fecha_mov,
-      cuentas.descripcion AS descripcion_cuenta
+      cuentas.descripcion AS descripcion_cuenta,
+      cuentas.saldo_inicial
     SQL
-    @cuentas = Cuenta.joins(movimientos: [:transaccion]).select(query).group("cuentas.descripcion")
+    @cuentas = Cuenta.joins(movimientos: [:transaccion]).select(query)
+                 .group("cuentas.descripcion, cuentas.saldo_inicial")
+    @total = @cuentas.sum(&:saldo_inicial) + @cuentas.sum(&:importe)
   end  
 
   private

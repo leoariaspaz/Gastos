@@ -122,3 +122,17 @@ label {
 {
   margin: 5px;
 }
+
+.navbar li a {
+  color: #c7c7c7 !important;
+  font-weight: bold;
+}
+
+.navbar li.active a {
+  color: #00d9d9 !important;
+}
+
+input.date-picker
+{
+  width: 100px;
+}

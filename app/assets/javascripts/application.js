@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.min
+//= require bootstrap-datepicker.min
+//= require bootstrap-datepicker.es.min
 //= require jquery.splitter-0.14.0

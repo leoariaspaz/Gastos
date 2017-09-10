@@ -55,12 +55,14 @@ class MovimientosController < ApplicationController
   # POST /movimientos.json
   def create
     @movimiento = Movimiento.new(movimiento_params)
+    flash[:cuenta_id] = @movimiento.cuenta_id
 
     respond_to do |format|
       if @movimiento.save
         format.html { redirect_to movimientos_url, notice: 'El movimiento se creó correctamente.' }
         format.json { render :show, status: :created, location: @movimiento }
       else
+        @transacciones = Transaccion.all_for_select(@movimiento.tipo_transaccion_id)        
         format.html { render :new }
         format.json { render json: @movimiento.errors, status: :unprocessable_entity }
       end
@@ -72,9 +74,11 @@ class MovimientosController < ApplicationController
   def update
     respond_to do |format|
       if @movimiento.update(movimiento_params)
+        flash[:cuenta_id] = @movimiento.cuenta_id
         format.html { redirect_to movimientos_url, notice: 'El movimiento se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @movimiento }
       else
+        @transacciones = Transaccion.all_for_select(@movimiento.tipo_transaccion_id)
         format.html { render :edit }
         format.json { render json: @movimiento.errors, status: :unprocessable_entity }
       end

@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <%= label_tag :cuenta_id, "Cuenta:", { style: "display: inline;" } %>
-    <%= select_tag "cuenta_id", options_for_select(Cuenta.all_for_select),
+    <%= select_tag "cuenta_id", options_for_select(Cuenta.all_for_select, flash[:cuenta_id]),
           {class: "form-control", style: "display: inline; max-width: 40%;"} %>
     <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "30", id: "loader"} %>
   </div>

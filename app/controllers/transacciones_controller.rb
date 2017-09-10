@@ -70,7 +70,7 @@ class TransaccionesController < ApplicationController
 
   def select_by_tipoid
     id = params[:id].to_i
-    @transacciones = Transaccion.where(tipo_transaccion_id: id).order(:descripcion).map { |t| [t.descripcion, t.id] }
+    @transacciones = Transaccion.all_for_select(id)
     render partial: true
   end
 

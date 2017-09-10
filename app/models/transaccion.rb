@@ -10,6 +10,14 @@ class Transaccion < ApplicationRecord
   	"#{tipo_transaccion.descripcion} - #{descripcion}"
   end
 
+  def self.all_for_select(id)
+    if id
+      self.where(tipo_transaccion_id: id).order(:descripcion).map { |t| [t.descripcion, t.id] }
+    else
+      self.order(:descripcion).map { |t| [t.descripcion, t.id] }
+    end
+  end
+
 
 private
 	def tipo_transaccion_válido

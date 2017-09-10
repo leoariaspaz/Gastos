@@ -9,7 +9,9 @@
 
   <div class="form-group">
     <%= f.label :fecha_mov %><br/>
-    <%= f.date_select :fecha_mov %>
+    <%#= f.date_select :fecha_mov %>
+    <%= f.text_field :fecha_mov, value: format_date(@movimiento.fecha_mov), class: "date-picker" %>
+    <!--input type="text" name="form-control" class="date-picker"-->
   </div>
 
   <div class="form-group">
@@ -27,7 +29,7 @@
 
   <div class="form-group">
     <%= f.label :importe %>
-    <%= f.text_field :importe, value: currency_for_edition(movimiento.importe), class: 'form-control text-right number' %>
+    <%= f.text_field :importe, value: currency_for_edition(@movimiento.importe), class: 'form-control text-right number' %>
   </div>
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: movimientos_path} %>

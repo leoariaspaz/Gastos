@@ -4,7 +4,7 @@ class TiposTransaccionesController < ApplicationController
   # GET /tipos_transacciones
   # GET /tipos_transacciones.json
   def index
-    @tipos_transacciones = TipoTransaccion.all.page params[:page]
+    @tipos_transacciones = TipoTransaccion.all.order(:descripcion).page params[:page]
   end
 
   # GET /tipos_transacciones/1
