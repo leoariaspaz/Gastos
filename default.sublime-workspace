@@ -92,21 +92,11 @@
 	"buffers":
 	[
 		{
-			"file": "app/assets/javascripts/movimientos.coffee",
+			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 1408,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/movimientos_controller.rb",
-			"settings":
-			{
-				"buffer_size": 3450,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 573,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -160,13 +150,7 @@
 	},
 	"expanded_folders":
 	[
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/controls",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/layouts",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/app/views/movimientos",
-		"/media/leonardo/Programación/Ruby/Proyectos/gastos/db"
+		"/C/Proyectos/GitHub/gastos"
 	],
 	"file_history":
 	[
@@ -308,7 +292,6 @@
 		"height": 93.0,
 		"where_history":
 		[
-			""
 		]
 	},
 	"find_state":
@@ -316,51 +299,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"logger.",
-			"\"cuentas\"",
-			"anteriores",
-			"transaccion",
-			"index_movimiento",
-			"tipo_transaccion_id",
-			"transaccion",
-			"Transaccion",
-			"index_transaccion",
-			"cargar_transacciones_por_tipo_id",
-			"tipo_transaccion_id",
-			"name",
-			"title",
-			"model",
-			"one",
-			"class=\"field\"",
-			"transaccion",
-			"record",
-			"filtrar_por_categoria",
-			"default",
-			"default1",
-			"error",
-			"set_tipo_transaccion",
-			"\"form-group\"",
-			"\"field\"",
-			"field",
-			"bottom",
-			"header",
-			"sh",
-			"notas_dev",
-			"bundle",
-			"def render_error",
-			"render_error",
-			"Estado",
-			"estado",
-			"estados_validos",
-			"yesilucas",
-			"pablorlucatelli",
-			"available_locales",
-			"locale",
-			"local",
-			"password",
-			"Password",
-			"password",
-			"assert_equal"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -378,7 +316,7 @@
 	"folders":
 	[
 		{
-			"path": "/media/leonardo/Programación/Ruby/Proyectos/gastos"
+			"path": "C:\\Proyectos\\GitHub\\gastos"
 		}
 	],
 	"groups":
@@ -389,55 +327,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/assets/javascripts/movimientos.coffee",
+					"file": "config/routes.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1408,
+						"buffer_size": 573,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								454,
-								454
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"apply_syntax_touched": true,
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/movimientos_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3450,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								267,
-								267
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"syntax": "Packages/Rails/Ruby on Rails.sublime-syntax",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -445,7 +352,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -453,7 +360,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -494,7 +401,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 48.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -503,6 +410,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"route",
+				"config\\routes.rb"
+			],
+			[
+				"gemfi",
+				"C:\\Proyectos\\GitHub\\gastos\\app\\assets\\javascripts\\movimientos.coffee"
+			],
 			[
 				"movcon",
 				"app/controllers/movimientos_controller.rb"
@@ -538,10 +453,6 @@
 			[
 				"movfor",
 				"app/views/movimientos/_form.html.erb"
-			],
-			[
-				"route",
-				"config/routes.rb"
 			],
 			[
 				"movrb",
@@ -758,10 +669,6 @@
 			[
 				"cueindx",
 				"app/views/cuentas/index.html.erb"
-			],
-			[
-				"gemfi",
-				"Gemfile"
 			],
 			[
 				"gem",

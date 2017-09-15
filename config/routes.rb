@@ -1,10 +1,15 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  get 'informes/cuentas/saldos', action: :saldos, controller: :cuentas
+  root to: "movimientos#index"
+
+  get 'informes/cuentas/saldos', controller: :cuentas, action: :saldos
   resources :cuentas
+  
+  get '/movimientos/carga_masiva', controller: :movimientos, action: :carga_masiva
   resources :movimientos do
     get 'cuenta/:id(/pag/:page)', action: :list, on: :collection
   end
+
   resources :transacciones do
     member do
       get 'select_by_tipoid'

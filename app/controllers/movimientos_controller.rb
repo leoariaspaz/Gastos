@@ -95,6 +95,11 @@ class MovimientosController < ApplicationController
     end
   end
 
+  def carga_masiva
+    @movimiento = Movimiento.new(fecha_mov: Date.today)
+    @transacciones = []
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movimiento

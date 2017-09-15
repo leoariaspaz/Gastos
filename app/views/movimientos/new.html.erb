@@ -1,7 +1,5 @@
-<% content_for :title do %>
-  Nuevo Movimiento
-<% end %>
+<% content_for :title, "Nuevo Movimiento" %>
 
 <h1>Nuevo Movimiento</h1>
 
-<%= render 'form', movimiento: @movimiento %>
+<%= render 'form_carga_masiva', movimiento: @movimiento %>
