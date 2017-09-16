@@ -1,26 +1,28 @@
-<div class="row"> 
-  <div class="form-group col-sm-4">
-    <%= label_tag "tipo_transaccion_id", 'Tipo de transacción' %>
-    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select, @movimiento.tipo_transaccion_id), 
-          {prompt: t('helpers.select.prompt'), class: "form-control"} %>
-  </div>
+<%= fields_for "movimiento[item][]", movimiento do |f| -%>
+  <div class="row"> 
+    <div class="form-group col-sm-4 tipo-transaccion">
+      <%= label_tag "tipo_transaccion_id", 'Tipo de transacción' %>
+      <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select), 
+            {prompt: t('helpers.select.prompt'), class: "form-control"} %>
+    </div>
 
-  <div id="transacciones" class="form-group col-sm-4">
-    <%= label_tag :transaccion_id %>
-    <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", id: "loader"} %>
-    <%= select_tag options_for_select(@transacciones, @movimiento.transaccion_id), 
-          {prompt: t('helpers.select.prompt')}, {class: 'form-control'} %>
-  </div>
+    <div class="form-group col-sm-4 transaccion">
+      <%= f.label :transaccion_id %>
+      <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", id: "loader"} %>
+      <%= f.select :transaccion_id, options_for_select(@transacciones || []), {prompt: t('helpers.select.prompt')}, 
+            {class: 'form-control'} %>
+    </div>
 
-  <div class="form-group col-sm-2">
-    <%= label_tag :importe %>
-    <%= text_field_tag :importe, value: currency_for_edition(@movimiento.importe), class: 'form-control text-right number' %>
-  </div>
+    <div class="form-group col-sm-2">
+      <%= f.label :importe %>
+      <%= f.text_field :importe, value: currency_for_edition(@movimiento.importe), class: 'form-control text-right number' %>
+    </div>
 
-  <div class="col-sm-2">
-    <br/>
-    <br/>
-    <%= link_to "Nuevo", action: :nuevo_movimiento_masivo, controller: :movimientos, remote: true %>
-    <%= link_to "Eliminar", '#', class: 'eliminar' %>
+    <div class="col-sm-2">
+      <br/>
+      <br/>
+      <%= link_to "Nuevo", action: :nuevo_movimiento_masivo, controller: :movimientos, remote: true %>
+      <%= link_to "Eliminar", '#', class: 'eliminar' %>
+    </div>
   </div>
-</div>
+<% end -%>

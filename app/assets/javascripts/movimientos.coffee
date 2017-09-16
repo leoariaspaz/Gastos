@@ -6,7 +6,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 tipo_transaccion_id_change = ->
-	control = $("#new_movimiento #tipo_transaccion_id, .edit_movimiento #tipo_transaccion_id")
+	#control = $("#new_movimiento #tipo_transaccion_id, .edit_movimiento #tipo_transaccion_id")
+	#control.change (e) ->
+	#	$("#loader").show()
+	#	lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
+	#	$.get lnk, (data) ->
+	#		$("#new_movimiento #transacciones, .edit_movimiento #transacciones").html data
+	#		$("#loader").hide()
+	#	return false
+	control = $('.transaccion').siblings().filter('.tipo-transaccion').children('select')
 	control.change (e) ->
 		$("#loader").show()
 		lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
@@ -22,7 +30,7 @@ cargar_movimientos_por_cuenta_id = ->
 	lnk = '/movimientos/cuenta/' + id
 	$.get lnk
 
-remove_task = (e) ->
+eliminar_movimiento = (e) ->
   e.preventDefault()
   $(this).closest('.row').remove()
   false	
@@ -38,6 +46,6 @@ ready = ->
 		  cargar_movimientos_por_cuenta_id()
   if $("#new_movimiento, .edit_movimiento").any()
 	  $("#loader").hide()
-  $('form.carga_masiva').on("click", '.eliminar', remove_task)
+  $('form.carga_masiva').on("click", '.eliminar', eliminar_movimiento)
 
 $(document).on("turbolinks:load", ready)

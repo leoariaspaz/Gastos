@@ -17,7 +17,7 @@
   </div>
 
   <div id="movimientos">
-    <%= render 'movimientos/carga_masiva/movimiento' %>
+    <%= render 'movimientos/carga_masiva/movimiento', movimiento: @movimiento %>
   </div>
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: movimientos_path} %>

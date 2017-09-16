@@ -97,13 +97,11 @@ class MovimientosController < ApplicationController
 
   def carga_masiva
     @movimiento = Movimiento.new(fecha_mov: Date.today)
-    @transacciones = []
     render 'movimientos/carga_masiva/new'
   end
 
   def nuevo_movimiento_masivo
     @movimiento = Movimiento.new(fecha_mov: Date.today)
-    @transacciones = []
   end
 
   private

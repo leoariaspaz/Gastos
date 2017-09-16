@@ -1,1 +1,6 @@
-$("form #movimientos").append('<%= escape_javascript render "movimientos/carga_masiva/movimiento" %>');
+function getRow(argument) {
+	var h = $('<%= escape_javascript render "movimientos/carga_masiva/movimiento", movimiento: @movimiento %>');
+	h.find('#loader').hide();
+	return h;
+}
+$("form #movimientos").append(getRow());
