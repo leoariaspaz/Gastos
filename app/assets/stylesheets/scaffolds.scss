@@ -123,16 +123,33 @@ label {
   margin: 5px;
 }
 
-.navbar li a {
+.navbar li a 
+{
   color: #c7c7c7 !important;
   font-weight: bold;
 }
 
-.navbar li.active a {
+.navbar li.active a 
+{
   color: #00d9d9 !important;
 }
 
 input.date-picker
 {
   width: 100px;
+}
+
+.navbar .dropdown-menu
+{
+  background-color: #262626;
+
+  a
+  {
+    font-weight: bold;
+  }
+
+  a:focus, a:hover
+  {
+    color: #262626 !important;
+  }
 }

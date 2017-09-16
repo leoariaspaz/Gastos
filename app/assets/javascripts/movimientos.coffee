@@ -22,6 +22,11 @@ cargar_movimientos_por_cuenta_id = ->
 	lnk = '/movimientos/cuenta/' + id
 	$.get lnk
 
+remove_task = (e) ->
+  e.preventDefault()
+  $(this).closest('.row').remove()
+  false	
+
 ready = ->
 	tipo_transaccion_id_change()
 	$('input:text').focus ->
@@ -33,5 +38,6 @@ ready = ->
 		  cargar_movimientos_por_cuenta_id()
   if $("#new_movimiento, .edit_movimiento").any()
 	  $("#loader").hide()
+  $('form.carga_masiva').on("click", '.eliminar', remove_task)
 
 $(document).on("turbolinks:load", ready)

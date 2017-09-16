@@ -95,8 +95,8 @@
 			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 573,
-				"line_ending": "Windows"
+				"buffer_size": 692,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -150,7 +150,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Proyectos/GitHub/gastos"
+		"C:\\Proyectos\\GitHub\\gastos"
 	],
 	"file_history":
 	[
@@ -331,20 +331,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 573,
+						"buffer_size": 692,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								472,
+								472
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Rails/Ruby on Rails.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},

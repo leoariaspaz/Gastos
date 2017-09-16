@@ -2,10 +2,11 @@
 Rails.application.routes.draw do
   root to: "movimientos#index"
 
-  get 'informes/cuentas/saldos', controller: :cuentas, action: :saldos
+  get '/informes/cuentas/saldos', controller: :cuentas, action: :saldos
   resources :cuentas
   
   get '/movimientos/carga_masiva', controller: :movimientos, action: :carga_masiva
+  get '/movimientos/carga_masiva/nuevo_movimiento', controller: :movimientos, action: :nuevo_movimiento_masivo
   resources :movimientos do
     get 'cuenta/:id(/pag/:page)', action: :list, on: :collection
   end
