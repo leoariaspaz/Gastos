@@ -6,46 +6,41 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 tipo_transaccion_id_change = ->
-	#control = $("#new_movimiento #tipo_transaccion_id, .edit_movimiento #tipo_transaccion_id")
-	#control.change (e) ->
-	#	$("#loader").show()
-	#	lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
-	#	$.get lnk, (data) ->
-	#		$("#new_movimiento #transacciones, .edit_movimiento #transacciones").html data
-	#		$("#loader").hide()
-	#	return false
-	control = $('.transaccion').siblings().filter('.tipo-transaccion').children('select')
-	control.change (e) ->
-		$("#loader").show()
-		lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
-		$.get lnk, (data) ->
-			$("#new_movimiento #transacciones, .edit_movimiento #transacciones").html data
-			$("#loader").hide()
-		return false
+	$('body').on 'change', '.tipo-transaccion select', (e) ->
+	  t = $(this).parent().siblings('.transaccion')
+	  loader = t.find('#loader')
+	  loader.show()
+	  lnk = '/transacciones/' + $(this).val() + '/select_by_tipoid'
+	  $.get lnk, (data) ->
+	    t.find('select').html data
+	    loader.hide()
+	  return false
 
-cargar_movimientos_por_cuenta_id = ->
-	$('#index_movimientos #loader').show()
-	id = $("#index_movimientos #cuenta_id").val()
-	if (id == "") || (id == undefined) then id = 0
-	lnk = '/movimientos/cuenta/' + id
-	$.get lnk
+cargar_movimientos_por_cuenta = ->
+	cargar = ->
+	  $('.movidxcta #loader').show()
+	  id = $(".movidxcta select").first().val()
+	  lnk = '/movimientos/cuenta/' + id
+	  $.get lnk	
+	if $(".movidxcta").any()
+		cargar()
+  $(".movidxcta select").on("change", cargar)
 
 eliminar_movimiento = (e) ->
-  e.preventDefault()
-  $(this).closest('.row').remove()
-  false	
+	e.preventDefault()
+	$(this).closest('.row').remove()
+	false
+
+focus_importe = ->
+  $('.new_movimiento, .edit_movimiento, .carga_masiva').find('input:text').focus ->
+	  $(this).select()
+	  return
 
 ready = ->
-	tipo_transaccion_id_change()
-	$('input:text').focus ->
-    $(this).select()
-    return
-	if $("#index_movimientos #cuenta_id").any()
-	  cargar_movimientos_por_cuenta_id()
-	  $("#index_movimientos #cuenta_id").change (e) ->
-		  cargar_movimientos_por_cuenta_id()
-  if $("#new_movimiento, .edit_movimiento").any()
-	  $("#loader").hide()
+  tipo_transaccion_id_change()
+  focus_importe()
+  cargar_movimientos_por_cuenta()
+  $('.hide-on-load').hide()
   $('form.carga_masiva').on("click", '.eliminar', eliminar_movimiento)
 
 $(document).on("turbolinks:load", ready)
