@@ -1,4 +1,4 @@
-<%= form_for(@movimiento, html: {class: 'carga_masiva'}) do |f| %>
+<%= form_for(@movimiento, url: {controller: :movimientos, action: :carga_masiva},  html: {class: 'carga_masiva'}) do |f| %>
   <%= render 'errores', partial: true, model: movimiento, model_name: 'El movimiento' %>
 
   <div class="row">
@@ -17,7 +17,7 @@
   </div>
 
   <div id="movimientos">
-    <%= render 'movimientos/carga_masiva/movimiento', movimiento: @movimiento %>
+    <%= render partial: 'movimientos/carga_masiva/movimiento', collection: @movimiento.items %>
   </div>
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: movimientos_path} %>

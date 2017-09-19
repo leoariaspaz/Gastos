@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :cuentas
   
   get '/movimientos/carga_masiva', controller: :movimientos, action: :carga_masiva
+  post '/movimientos/carga_masiva', controller: :movimientos, action: :grabar_carga_masiva
   get '/movimientos/carga_masiva/nuevo_movimiento', controller: :movimientos, action: :nuevo_movimiento_masivo
   resources :movimientos do
     get 'cuenta/:id(/pag/:page)', action: :list, on: :collection

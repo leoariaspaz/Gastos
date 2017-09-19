@@ -100,6 +100,19 @@ class MovimientosController < ApplicationController
     render 'movimientos/carga_masiva/new'
   end
 
+  def grabar_carga_masiva
+    @movimiento = Movimiento.new(movimiento_masivo_params)
+    flash[:cuenta_id] = @movimiento.cuenta_id
+    respond_to do |format|
+      if @movimiento.save_items
+        format.html { redirect_to movimientos_url, notice: 'Los movimientos se crearon correctamente.' }
+      else
+        @transacciones = Transaccion.all_for_select(@movimiento.tipo_transaccion_id)
+        format.html { render 'movimientos/carga_masiva/new' }
+      end
+    end
+  end
+
   def nuevo_movimiento_masivo
     @movimiento = Movimiento.new(fecha_mov: Date.today)
   end
@@ -117,5 +130,9 @@ class MovimientosController < ApplicationController
 
     def set_tipos_transacciones
       @tipos_transacciones = TipoTransaccion.where(habilitado: true).map { |t| [t.descripcion, t.id] }
-    end    
+    end
+
+    def movimiento_masivo_params
+      params.require(:movimiento).permit(:fecha_mov, :cuenta_id, {items: [:transaccion_id, :importe]})
+    end
 end
