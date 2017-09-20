@@ -1,19 +1,25 @@
 <%= form_for(@movimiento, url: {controller: :movimientos, action: :carga_masiva},  html: {class: 'carga_masiva'}) do |f| %>
   <%= render 'errores', partial: true, model: movimiento, model_name: 'El movimiento' %>
 
-  <div class="row">
+  <div class="row panel panel-default" style="margin: 2px 2px 10px 2px; padding-top: 5px;">
     <div class="form-group col-sm-6">
       <%= f.label :cuenta_id %>
       <%= f.select :cuenta_id, options_for_select(Cuenta.all_for_select, movimiento.cuenta_id),
             {prompt: t('helpers.select.prompt')}, {class: "form-control"} %>
     </div>
 
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-3">
       <%= f.label :fecha_mov %><br/>
       <%#= f.date_select :fecha_mov %>
       <%= f.text_field :fecha_mov, value: format_date(movimiento.fecha_mov), class: "date-picker" %>
       <!--input type="text" name="form-control" class="date-picker"-->
-    </div>    
+    </div>
+
+    <div class="form-group col-sm-3"> 
+      <div class="checkbox">
+        <label><%= check_box "movimiento", "agrupar", {}, "true", "false" %>Agrupar movimientos similares</label>
+      </div>      
+    </div>
   </div>
 
   <div id="movimientos">

@@ -1,4 +1,6 @@
 class Movimiento < ApplicationRecord
+  paginates_per 10
+
   belongs_to :transaccion
   belongs_to :cuenta
 
@@ -10,6 +12,7 @@ class Movimiento < ApplicationRecord
   #attr_accesor :item_movimiento_id
 
   attr_writer :saldo
+  attr_accessor :agrupar
 
   def saldo
   	@saldo || 0
@@ -51,7 +54,20 @@ class Movimiento < ApplicationRecord
   def save_items
     logger.debug "- save_items -"
     if @errores.blank?
-      @items.each {|i| i.save}
+      if agrupar
+        logger.debug 'graba agrupando'
+        items_agrup = @items.group_by { |m| m.transaccion_id }
+        items_agrup.map do |k,v| 
+          total = items_agrup[k].sum { |m1| m1.importe }
+          m = @items.find{|m1| m1.transaccion_id == k }
+          m2 = Movimiento.new(m.attributes)
+          m2.importe = total
+          m2.save
+        end        
+      else
+        logger.debug 'grabando sin agrupar'
+        @items.each {|i| i.save}
+      end
     else
       logger.debug "cargando errores - errors = #{errors}"
       errors.clear

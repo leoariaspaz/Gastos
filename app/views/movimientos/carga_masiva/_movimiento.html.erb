@@ -9,7 +9,8 @@
     <div class="form-group col-sm-4 transaccion">
       <%= f.label :transaccion_id %>
       <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", id: "loader", class: 'hide-on-load'} %>
-      <%= f.select :transaccion_id, options_for_select(@transacciones || [], movimiento.transaccion_id), 
+      <% trxs = movimiento.tipo_transaccion_id.blank?? [] : Transaccion.all_for_select(movimiento.tipo_transaccion_id) %>
+      <%= f.select :transaccion_id, options_for_select(trxs, movimiento.transaccion_id), 
             {prompt: t('helpers.select.prompt')}, {class: 'form-control'} %>
     </div>
 

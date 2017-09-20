@@ -103,6 +103,7 @@ class MovimientosController < ApplicationController
   def grabar_carga_masiva
     @movimiento = Movimiento.new(movimiento_masivo_params)
     flash[:cuenta_id] = @movimiento.cuenta_id
+    logger.debug "agrupar = #{@movimiento.agrupar.to_s}"
     respond_to do |format|
       if @movimiento.save_items
         format.html { redirect_to movimientos_url, notice: 'Los movimientos se crearon correctamente.' }
@@ -133,6 +134,6 @@ class MovimientosController < ApplicationController
     end
 
     def movimiento_masivo_params
-      params.require(:movimiento).permit(:fecha_mov, :cuenta_id, {items: [:transaccion_id, :importe]})
+      params.require(:movimiento).permit(:fecha_mov, :cuenta_id, :agrupar, {items: [:transaccion_id, :importe]})
     end
 end
