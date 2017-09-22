@@ -8,19 +8,21 @@
             {prompt: t('helpers.select.prompt')}, {class: "form-control"} %>
     </div>
 
-    <div class="form-group col-sm-3">
+    <div class="form-group col-sm-2">
       <%= f.label :fecha_mov %><br/>
       <%#= f.date_select :fecha_mov %>
       <%= f.text_field :fecha_mov, value: format_date(movimiento.fecha_mov), class: "date-picker" %>
       <!--input type="text" name="form-control" class="date-picker"-->
     </div>
 
-    <div class="form-group col-sm-3"> 
+    <div class="form-group col-sm-2"> 
       <div class="checkbox">
         <label><%= check_box "movimiento", "agrupar", {}, "true", "false" %>Agrupar movimientos similares</label>
       </div>      
     </div>
   </div>
+
+  <div class="form-group col-sm-2 total"></div>
 
   <div id="movimientos">
     <%= render partial: 'movimientos/carga_masiva/movimiento', collection: @movimiento.items %>

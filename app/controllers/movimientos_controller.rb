@@ -118,6 +118,16 @@ class MovimientosController < ApplicationController
     @movimiento = Movimiento.new(fecha_mov: Date.today)
   end
 
+  def sumar
+    p = params.permit({items: [:trx, :importe]})
+    logger.debug "Parámetros: #{p}"
+    tmp = []
+    p.each { |k,v| tmp << v }
+    total = tmp.inject(0){|sum,x| sum + x["importe"].to_f }
+
+    render json: total, status: :ok
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movimiento

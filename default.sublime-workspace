@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"st",
+				"style\tAttr"
+			],
+			[
+				"tra",
+				"trans"
+			],
+			[
 				"tran",
 				"transaccion_id"
 			],
@@ -80,10 +88,6 @@
 				"col-sm-3"
 			],
 			[
-				"tra",
-				"transacciones"
-			],
-			[
 				"to",
 				"to_sym"
 			],
@@ -115,16 +119,26 @@
 			"file": "app/views/movimientos/carga_masiva/_form.html.erb",
 			"settings":
 			{
-				"buffer_size": 1043,
+				"buffer_size": 1324,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/src/tests.rb",
+			"settings":
+			{
+				"buffer_size": 939,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "m = Movimiento.new"
 			}
 		},
 		{
 			"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
 			"settings":
 			{
-				"buffer_size": 1261,
+				"buffer_size": 1367,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -133,7 +147,7 @@
 			"file": "app/models/movimiento.rb",
 			"settings":
 			{
-				"buffer_size": 1658,
+				"buffer_size": 2147,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -142,7 +156,7 @@
 			"file": "app/controllers/movimientos_controller.rb",
 			"settings":
 			{
-				"buffer_size": 4560,
+				"buffer_size": 4627,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -203,15 +217,20 @@
 		"/C/Proyectos/GitHub/gastos/app/views",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva",
-		"/C/Proyectos/GitHub/gastos/db",
-		"/C/Proyectos/GitHub/gastos/db/migrate"
+		"/C/Proyectos/GitHub/gastos/config",
+		"/C/Proyectos/GitHub/gastos/config/initializers",
+		"/C/Proyectos/GitHub/gastos/lib",
+		"/C/Proyectos/GitHub/gastos/lib/src"
 	],
 	"file_history":
 	[
+		"/C/Proyectos/GitHub/gastos/app/models/transaccion.rb",
+		"/C/Proyectos/GitHub/gastos/config/initializers/kaminari_config.rb",
+		"/C/Proyectos/GitHub/gastos/app/assets/javascripts/movimientos.coffee",
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos/index.html.erb",
 		"/C/Proyectos/GitHub/gastos/log/development.log",
 		"/C/Proyectos/GitHub/gastos/app/views/application/_errores.html.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/_form.html.erb",
-		"/C/Proyectos/GitHub/gastos/app/models/transaccion.rb",
 		"/C/Proyectos/GitHub/gastos/app/models/item_movimiento.rb",
 		"/C/Proyectos/GitHub/recipes/app/views/projects/_form2.html.erb",
 		"/C/Proyectos/GitHub/recipes/app/models/project.rb",
@@ -221,11 +240,9 @@
 		"/C/Proyectos/GitHub/gastos/db/migrate/20170819144149_create_movimientos.rb",
 		"/C/Proyectos/GitHub/gastos/db/migrate/20170918131046_create_item_movimientos.rb",
 		"/C/Proyectos/GitHub/gastos/app/models/cuenta.rb",
-		"/C/Proyectos/GitHub/gastos/app/assets/javascripts/movimientos.coffee",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/nuevo_movimiento_masivo.js.erb",
 		"/C/Proyectos/GitHub/gastos/app/controllers/movimientos_controller.rb",
 		"/C/Proyectos/GitHub/recipes/app/views/tasks/new_task.js.erb",
-		"/C/Proyectos/GitHub/gastos/app/views/movimientos/index.html.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/list.js.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva/nuevo_movimiento_masivo.js.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/new.html.erb",
@@ -334,8 +351,7 @@
 		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/app/assets/stylesheets/scaffolds.scss",
 		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/Gemfile",
 		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/db/migrate/20160512020338_create_plantillas.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/config/environment.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/config/initializers/I18n.rb"
+		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/config/environment.rb"
 	],
 	"find":
 	{
@@ -353,6 +369,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"m2",
+			"mov_agrup",
+			"mov",
+			"=>",
+			"m",
+			" panel-body",
+			"trans",
 			"@errors",
 			")",
 			"(",
@@ -382,7 +405,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -391,15 +414,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1043,
+						"buffer_size": 1324,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								170,
-								180
+								971,
+								978
 							]
 						],
 						"settings":
@@ -417,26 +440,25 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
+					"file": "lib/src/tests.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1261,
+						"buffer_size": 939,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1240,
-								1240
+								738,
+								939
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"auto_name": "m = Movimiento.new",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -447,19 +469,50 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/models/movimiento.rb",
+					"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1658,
+						"buffer_size": 1367,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1183,
-								1183
+								547,
+								547
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/models/movimiento.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1748,
+								1748
 							]
 						],
 						"settings":
@@ -469,27 +522,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 342.0,
+						"translation.y": 741.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "app/controllers/movimientos_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4560,
+						"buffer_size": 4627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3706,
-								3706
+								1807,
+								1807
 							]
 						],
 						"settings":
@@ -499,7 +552,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1463.0,
+						"translation.y": 684.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -514,7 +567,7 @@
 	},
 	"input":
 	{
-		"height": 34.0
+		"height": 37.0
 	},
 	"layout":
 	{
@@ -561,16 +614,28 @@
 		"selected_items":
 		[
 			[
+				"confkami",
+				"config\\initializers\\kaminari_config.rb"
+			],
+			[
+				"tran",
+				"app\\models\\transaccion.rb"
+			],
+			[
+				"movind",
+				"app\\views\\movimientos\\index.html.erb"
+			],
+			[
+				"movcoffe",
+				"app\\assets\\javascripts\\movimientos.coffee"
+			],
+			[
 				"errore",
 				"app\\views\\application\\_errores.html.erb"
 			],
 			[
 				"errores",
 				"app\\views\\application\\_errores.html.erb"
-			],
-			[
-				"tran",
-				"app\\models\\transaccion.rb"
 			],
 			[
 				"routes",
@@ -629,10 +694,6 @@
 				"app\\views\\movimientos\\list.js.erb"
 			],
 			[
-				"movcoffe",
-				"app\\assets\\javascripts\\movimientos.coffee"
-			],
-			[
 				"form",
 				"app\\views\\movimientos\\carga_masiva\\_form.html.erb"
 			],
@@ -650,10 +711,6 @@
 			],
 			[
 				"movi",
-				"app\\views\\movimientos\\index.html.erb"
-			],
-			[
-				"movind",
 				"app\\views\\movimientos\\index.html.erb"
 			],
 			[
@@ -1067,10 +1124,6 @@
 			[
 				"payty",
 				"app/models/pay_type.rb"
-			],
-			[
-				"order.rb",
-				"app/models/order.rb"
 			]
 		],
 		"width": 0.0
@@ -1100,7 +1153,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
