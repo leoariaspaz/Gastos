@@ -20,13 +20,23 @@
         <label><%= check_box "movimiento", "agrupar", {}, "true", "false" %>Agrupar movimientos similares</label>
       </div>      
     </div>
+
+    <div class="form-group col-sm-2 total text-center">
+      <h4 style="color: blue; background-color: #ededed; border: 1px solid #e0e0e0; padding: 3px;">
+        <span>$0.00</span>
+        <a href="#" title="Refrescar suma"><span class="glyphicon glyphicon-refresh"></span></a>
+      </h4>        
+    </div>
   </div>
 
-  <div class="form-group col-sm-2 total"></div>
 
   <div id="movimientos">
     <%= render partial: 'movimientos/carga_masiva/movimiento', collection: @movimiento.items %>
   </div>
+  <p id="nuevo-mov">
+    <%= link_to "Agregar fila", action: :nuevo_movimiento_masivo, controller: :movimientos, remote: true %>
+    <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", class: 'loader hide-on-load'} %>
+  </p>
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: movimientos_path} %>
 <% end %>

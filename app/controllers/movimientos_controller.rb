@@ -120,12 +120,10 @@ class MovimientosController < ApplicationController
 
   def sumar
     p = params.permit({items: [:trx, :importe]})
-    logger.debug "Parámetros: #{p}"
     tmp = []
-    p.each { |k,v| tmp << v }
-    total = tmp.inject(0){|sum,x| sum + x["importe"].to_f }
-
-    render json: total, status: :ok
+    p['items'].each { |k,v| tmp << v }
+    @cantidad = p['items'].to_h.count
+    @total = tmp.inject(0){|sum,x| sum + x["importe"].to_f }
   end
 
   private

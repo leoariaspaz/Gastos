@@ -36,11 +36,30 @@ focus_importe = ->
 	  $(this).select()
 	  return
 
+sumar_importes = ->
+	obtener_valores = ->
+	  result = new Object()
+	  result.trx = $(this).find('.transaccion select').val()
+	  result.importe = $(this).find('#movimiento_items__importe').val()
+	  return result
+
+  on_blur = ->
+	  valores = $('.row').not('.panel').map(obtener_valores).get()
+	  $.get('/movimientos/carga_masiva/sumar', {items: valores})
+
+  $('form.carga_masiva').on('blur', 'input[name*=importe]', on_blur)
+	$('.total a').click (e) ->
+  	e.preventDefault()
+  	on_blur()
+
 ready = ->
   tipo_transaccion_id_change()
   focus_importe()
   cargar_movimientos_por_cuenta()
   $('.hide-on-load').hide()
   $('form.carga_masiva').on("click", '.eliminar', eliminar_movimiento)
+  sumar_importes()
+  $('#nuevo-mov a').click ->
+  	$('#nuevo-mov .loader').show()
 
 $(document).on("turbolinks:load", ready)

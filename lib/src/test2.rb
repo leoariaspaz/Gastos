@@ -15,6 +15,7 @@ p = {"0"=>{"trx"=>"262", "importe"=>"100"},
 		 "5"=>{"trx"=>"212", "importe"=>"125"}}
 
 
+puts p.length
 tmp = []
 p.each { |k,v| tmp << v }
 total = tmp.inject(0){|sum,x| sum + x["importe"].to_f }
