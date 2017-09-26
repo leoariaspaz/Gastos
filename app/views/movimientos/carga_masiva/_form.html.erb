@@ -29,14 +29,28 @@
     </div>
   </div>
 
-
   <div id="movimientos">
+    <div class="row" style="font-weight: bold; margin-bottom: 5px;">
+        <div class="col-sm-4 text-center">Tipo de Transacción</div>
+        <div class="col-sm-4 text-center">Transacción</div>
+        <div class="col-sm-3 text-center">Importe</div>
+        <div class="col-sm-1 text-center"></div>
+    </div>
+
     <%= render partial: 'movimientos/carga_masiva/movimiento', collection: @movimiento.items %>
+
+    <div class="row">
+      <div class="col-sm-12 text-right" id="nuevo-mov">
+        <%= link_to action: :nuevo_movimiento_masivo, controller: :movimientos, remote: true do %>
+          <span class="glyphicon glyphicon-plus"></span> Agregar fila
+        <% end %>
+        <div style="display: inline-block; width: 25px;">
+          <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", class: 'loader hide-on-load', 
+                style: 'display: inline-block; width: 20px;'} %>
+        </div>
+      </div>    
+    </div>
   </div>
-  <p id="nuevo-mov">
-    <%= link_to "Agregar fila", action: :nuevo_movimiento_masivo, controller: :movimientos, remote: true %>
-    <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", class: 'loader hide-on-load'} %>
-  </p>
 
   <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: movimientos_path} %>
 <% end %>

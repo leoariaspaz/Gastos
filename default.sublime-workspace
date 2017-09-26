@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"tex",
+				"text-center"
+			],
+			[
+				"col-sm",
+				"col-sm-1"
+			],
+			[
+				"col",
+				"col-sm-3"
+			],
+			[
+				"th",
+				"thead\tTag"
+			],
+			[
+				"li",
+				"lia\tlink_to (action)"
+			],
+			[
 				"st",
 				"style\tAttr"
 			],
@@ -30,10 +50,6 @@
 			[
 				"movi",
 				"movimiento"
-			],
-			[
-				"li",
-				"lip\tlink_to (path)"
 			],
 			[
 				"lk",
@@ -80,10 +96,6 @@
 				"tipo_transaccion"
 			],
 			[
-				"col",
-				"col-sm-2"
-			],
-			[
 				"col-sm-",
 				"col-sm-3"
 			],
@@ -119,45 +131,43 @@
 			"file": "app/views/movimientos/carga_masiva/_form.html.erb",
 			"settings":
 			{
-				"buffer_size": 1324,
+				"buffer_size": 2490,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "lib/src/tests.rb",
-			"settings":
-			{
-				"buffer_size": 939,
-				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "m = Movimiento.new"
 			}
 		},
 		{
 			"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
 			"settings":
 			{
-				"buffer_size": 1367,
+				"buffer_size": 1343,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/models/movimiento.rb",
+			"file": "app/assets/stylesheets/scaffolds.scss",
 			"settings":
 			{
-				"buffer_size": 2147,
+				"buffer_size": 2052,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/controllers/movimientos_controller.rb",
+			"file": "app/views/cuentas/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 4627,
+				"buffer_size": 1510,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<%= fields_for \"movimiento[items][]\", movimiento do |f| -%>\n  <div class=\"row\"> \n    <div class=\"form-group col-sm-4 tipo-transaccion\">\n      <%= label_tag \"tipo_transaccion_id\", 'Tipo de transacción' %>\n      <%= select_tag \"tipo_transaccion_id\", options_for_select(TipoTransaccion.all_for_select, movimiento.tipo_transaccion_id), \n            {prompt: t('helpers.select.prompt'), class: \"form-control\"} %>\n    </div>\n\n    <div class=\"form-group col-sm-4 transaccion\">\n      <%= f.label :transaccion_id %>\n      <%= image_tag \"ajax-loader.gif\", { alt: \"Cargando...\", size: \"25\", id: \"loader\", class: 'hide-on-load'} %>\n      <% trxs = movimiento.tipo_transaccion_id.blank?? [] : Transaccion.all_for_select(movimiento.tipo_transaccion_id) %>\n      <%= f.select :transaccion_id, options_for_select(trxs, movimiento.transaccion_id), \n            {prompt: t('helpers.select.prompt')}, {class: 'form-control'} %>\n    </div>\n\n    <div class=\"form-group col-sm-2\">\n      <%= f.label :importe %>\n      <%= f.text_field :importe, value: currency_for_edition(movimiento.importe), class: 'form-control text-right number' %>\n    </div>\n\n    <div class=\"col-sm-2\">\n      <br/>\n      <br/>\n      <%= link_to \"Eliminar\", '#', class: 'eliminar' %>\n    </div>\n  </div>\n<% end -%>\n\n\n\n\n<%= fields_for \"movimiento[items][]\", movimiento do |f| -%>\n  <tr class=\"row\"> \n    <td class=\"form-group col-sm-4 tipo-transaccion\">\n      <%= select_tag \"tipo_transaccion_id\", options_for_select(TipoTransaccion.all_for_select, movimiento.tipo_transaccion_id), \n            {prompt: t('helpers.select.prompt'), class: \"form-control\"} %>\n    </td>\n\n    <td class=\"form-group col-sm-4 transaccion\">\n      <%= image_tag \"ajax-loader.gif\", { alt: \"Cargando...\", size: \"25\", id: \"loader\", class: 'hide-on-load'} %>\n      <% trxs = movimiento.tipo_transaccion_id.blank?? [] : Transaccion.all_for_select(movimiento.tipo_transaccion_id) %>\n      <%= f.select :transaccion_id, options_for_select(trxs, movimiento.transaccion_id), \n            {prompt: t('helpers.select.prompt')}, {class: 'form-control'} %>\n    </td>\n\n    <td class=\"form-group col-sm-2\">\n      <%= f.text_field :importe, value: currency_for_edition(movimiento.importe), class: 'form-control text-right number' %>\n    </td>\n\n    <td class=\"col-sm-2\">\n      <br/>\n      <br/>\n      <%= link_to \"Eliminar\", '#', class: 'eliminar' %>\n    </td>\n  </tr>\n<% end -%>\n",
+			"settings":
+			{
+				"buffer_size": 2387,
 				"line_ending": "Windows"
 			}
 		}
@@ -224,9 +234,23 @@
 	],
 	"file_history":
 	[
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos/nuevo_movimiento_masivo.js.erb",
+		"/C/Proyectos/GitHub/gastos/app/views/cuentas/index.html.erb",
+		"/C/Proyectos/GitHub/gastos/app/views/controls/_navbar.html.erb",
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva/_movimiento.html.erb",
+		"/C/Proyectos/GitHub/gastos/app/assets/stylesheets/scaffolds.scss",
+		"/C/Proyectos/GitHub/gastos/app/models/movimiento.rb",
+		"/C/Proyectos/GitHub/gastos/app/assets/javascripts/movimientos.coffee",
+		"/C/Proyectos/GitHub/gastos/app/controllers/movimientos_controller.rb",
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos/sumar.js.erb",
+		"/C/Proyectos/GitHub/gastos/lib/src/tests.rb",
+		"/C/Proyectos/GitHub/gastos/lib/src/test2.rb",
+		"/C/Proyectos/GitHub/gastos/app/views/layouts/application.html.erb",
+		"/C/Proyectos/GitHub/gastos/config/routes.rb",
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos/_list.html.erb",
+		"/C/Proyectos/GitHub/gastos/app/helpers/application_helper.rb",
 		"/C/Proyectos/GitHub/gastos/app/models/transaccion.rb",
 		"/C/Proyectos/GitHub/gastos/config/initializers/kaminari_config.rb",
-		"/C/Proyectos/GitHub/gastos/app/assets/javascripts/movimientos.coffee",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/index.html.erb",
 		"/C/Proyectos/GitHub/gastos/log/development.log",
 		"/C/Proyectos/GitHub/gastos/app/views/application/_errores.html.erb",
@@ -236,12 +260,9 @@
 		"/C/Proyectos/GitHub/recipes/app/models/project.rb",
 		"/C/Proyectos/GitHub/recipes/app/controllers/projects_controller.rb",
 		"/C/Proyectos/GitHub/recipes/app/views/tasks/_new_task.html.erb",
-		"/C/Proyectos/GitHub/gastos/config/routes.rb",
 		"/C/Proyectos/GitHub/gastos/db/migrate/20170819144149_create_movimientos.rb",
 		"/C/Proyectos/GitHub/gastos/db/migrate/20170918131046_create_item_movimientos.rb",
 		"/C/Proyectos/GitHub/gastos/app/models/cuenta.rb",
-		"/C/Proyectos/GitHub/gastos/app/views/movimientos/nuevo_movimiento_masivo.js.erb",
-		"/C/Proyectos/GitHub/gastos/app/controllers/movimientos_controller.rb",
 		"/C/Proyectos/GitHub/recipes/app/views/tasks/new_task.js.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/list.js.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva/nuevo_movimiento_masivo.js.erb",
@@ -340,18 +361,7 @@
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/config/application.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/config/database.yml",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/Rakefile",
-		"/media/leonardo/Programación/Ruby/Proyectos/Notas/db/migrate/20121019003011_create_agendas.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/app/models/plantilla.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/app/assets/stylesheets/application.css",
-		"/media/leonardo/Programación/Recursos web/Diseño base/styles.css",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/app/views/layouts/application.html.erb",
-		"/media/leonardo/Programación/Recursos web/Diseño base/page.html",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/app/controllers/plantillas_controller.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/app/assets/stylesheets/default.css",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/app/assets/stylesheets/scaffolds.scss",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/Gemfile",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/db/migrate/20160512020338_create_plantillas.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/Plantillas/config/environment.rb"
+		"/media/leonardo/Programación/Ruby/Proyectos/Notas/db/migrate/20121019003011_create_agendas.rb"
 	],
 	"find":
 	{
@@ -369,6 +379,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"th",
+			"div",
+			"tf",
+			"td",
+			"td>",
+			"<tr>",
+			"/tr>",
+			"tr",
+			"Tr",
+			"tr",
+			"td",
+			"sumar_importe",
+			"blur_importe",
+			";",
+			"rows",
+			"a",
+			"h3",
+			"h1",
 			"m2",
 			"mov_agrup",
 			"mov",
@@ -405,7 +433,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -414,15 +442,105 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1324,
+						"buffer_size": 2490,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								971,
-								978
+								1484,
+								1484
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 447.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1157,
+								1157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/assets/stylesheets/scaffolds.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2052,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2043,
+								2043
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2570.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/cuentas/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1510,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1089,
+								1257
 							]
 						],
 						"settings":
@@ -439,123 +557,32 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "lib/src/tests.rb",
+					"buffer": 4,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 939,
+						"buffer_size": 2387,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								738,
-								939
-							]
-						],
-						"settings":
-						{
-							"auto_name": "m = Movimiento.new",
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1367,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								547,
-								547
+								0,
+								1264
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": false
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/models/movimiento.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2147,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1748,
-								1748
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 741.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/controllers/movimientos_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4627,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1807,
-								1807
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 684.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -614,6 +641,54 @@
 		"selected_items":
 		[
 			[
+				"nuevo",
+				"app\\views\\movimientos\\nuevo_movimiento_masivo.js.erb"
+			],
+			[
+				"scaffo",
+				"app\\assets\\stylesheets\\scaffolds.scss"
+			],
+			[
+				"inde",
+				"app\\views\\cuentas\\index.html.erb"
+			],
+			[
+				"navbar",
+				"app\\views\\controls\\_navbar.html.erb"
+			],
+			[
+				"index",
+				"app\\views\\cuentas\\index.html.erb"
+			],
+			[
+				"layout",
+				"app\\views\\layouts\\application.html.erb"
+			],
+			[
+				"nuevo_movimiento_masivo",
+				"app\\views\\movimientos\\nuevo_movimiento_masivo.js.erb"
+			],
+			[
+				"movlis",
+				"app\\views\\movimientos\\_list.html.erb"
+			],
+			[
+				"apphel",
+				"app\\helpers\\application_helper.rb"
+			],
+			[
+				"movcon",
+				"app\\controllers\\movimientos_controller.rb"
+			],
+			[
+				"routes",
+				"config\\routes.rb"
+			],
+			[
+				"movcoff",
+				"app\\assets\\javascripts\\movimientos.coffee"
+			],
+			[
 				"confkami",
 				"config\\initializers\\kaminari_config.rb"
 			],
@@ -636,10 +711,6 @@
 			[
 				"errores",
 				"app\\views\\application\\_errores.html.erb"
-			],
-			[
-				"routes",
-				"config\\routes.rb"
 			],
 			[
 				"migmov",
@@ -675,14 +746,6 @@
 			],
 			[
 				"movcont",
-				"app\\controllers\\movimientos_controller.rb"
-			],
-			[
-				"movcoff",
-				"app\\assets\\javascripts\\movimientos.coffee"
-			],
-			[
-				"movcon",
 				"app\\controllers\\movimientos_controller.rb"
 			],
 			[
@@ -726,20 +789,12 @@
 				"app/views/cuentas/saldos.html.erb"
 			],
 			[
-				"movlis",
-				"app/views/movimientos/_list.html.erb"
-			],
-			[
 				"movfor",
 				"app/views/movimientos/_form.html.erb"
 			],
 			[
 				"movrb",
 				"app/models/movimiento.rb"
-			],
-			[
-				"apphel",
-				"app/helpers/application_helper.rb"
 			],
 			[
 				"notice",
@@ -906,10 +961,6 @@
 				"config/locales/es.yml"
 			],
 			[
-				"scaffo",
-				"app/assets/stylesheets/scaffolds.scss"
-			],
-			[
 				"cuenew",
 				"app/views/cuentas/new.html.erb"
 			],
@@ -934,24 +985,12 @@
 				"Gemfile"
 			],
 			[
-				"layout",
-				"app/views/layouts/application.html.erb"
-			],
-			[
 				"yml",
 				"config/database.yml"
 			],
 			[
 				"lis",
 				"app/views/transacciones/_list.html.erb"
-			],
-			[
-				"inde",
-				"app/views/transacciones/index.html.erb"
-			],
-			[
-				"index",
-				"app/views/transacciones/index.html.erb"
 			],
 			[
 				"contr",
@@ -1112,18 +1151,6 @@
 			[
 				"migpla",
 				"db/migrate/20160512020338_create_plantillas.rb"
-			],
-			[
-				"modpla",
-				"app/models/plantilla.rb"
-			],
-			[
-				"modgrup",
-				"app/models/grupo.rb"
-			],
-			[
-				"payty",
-				"app/models/pay_type.rb"
 			]
 		],
 		"width": 0.0
@@ -1153,7 +1180,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":

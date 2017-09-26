@@ -4,5 +4,6 @@ function getRow(argument) {
 	return h;
 }
 
-$("form #movimientos").append(getRow());
+//$("form #movimientos").append(getRow());
+$("form #movimientos .row").last().before(getRow());
 $('#nuevo-mov .loader').hide();
