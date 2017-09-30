@@ -128,28 +128,46 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/movimientos/carga_masiva/_form.html.erb",
+			"file": "app/views/layouts/application.html.erb",
 			"settings":
 			{
-				"buffer_size": 2490,
+				"buffer_size": 704,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
+			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 1343,
+				"buffer_size": 1778,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/scaffolds.scss",
+			"file": "app/views/controls/_navbar.html.erb",
 			"settings":
 			{
-				"buffer_size": 2052,
+				"buffer_size": 1401,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 1008,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/cuentas_controller.rb",
+			"settings":
+			{
+				"buffer_size": 2426,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -225,20 +243,27 @@
 		"/C/Proyectos/GitHub/gastos",
 		"/C/Proyectos/GitHub/gastos/app",
 		"/C/Proyectos/GitHub/gastos/app/views",
-		"/C/Proyectos/GitHub/gastos/app/views/movimientos",
-		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva",
-		"/C/Proyectos/GitHub/gastos/config",
-		"/C/Proyectos/GitHub/gastos/config/initializers",
-		"/C/Proyectos/GitHub/gastos/lib",
-		"/C/Proyectos/GitHub/gastos/lib/src"
+		"/C/Proyectos/GitHub/gastos/app/views/devise",
+		"/C/Proyectos/GitHub/gastos/app/views/devise/sessions",
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos"
 	],
 	"file_history":
 	[
+		"/C/Proyectos/GitHub/gastos/Gemfile",
+		"/C/Proyectos/GitHub/gastos/config/environments/development.rb",
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva/_form.html.erb",
+		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva/_movimiento.html.erb",
+		"/C/Proyectos/GitHub/gastos/db/migrate/20170930141527_devise_create_usuarios.rb",
+		"/C/Proyectos/GitHub/gastos/app/assets/stylesheets/scaffolds.scss",
+		"/C/Proyectos/GitHub/gastos/config/locales/es.yml",
+		"/C/Proyectos/GitHub/gastos/app/controllers/application_controller.rb",
+		"/C/Proyectos/GitHub/gastos/config/routes.rb",
+		"/C/Proyectos/GitHub/gastos/config/initializers/devise.rb",
+		"/C/Proyectos/GitHub/gastos/config/environments/test.rb",
+		"/C/Proyectos/GitHub/gastos/config/environments/production.rb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/nuevo_movimiento_masivo.js.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/cuentas/index.html.erb",
 		"/C/Proyectos/GitHub/gastos/app/views/controls/_navbar.html.erb",
-		"/C/Proyectos/GitHub/gastos/app/views/movimientos/carga_masiva/_movimiento.html.erb",
-		"/C/Proyectos/GitHub/gastos/app/assets/stylesheets/scaffolds.scss",
 		"/C/Proyectos/GitHub/gastos/app/models/movimiento.rb",
 		"/C/Proyectos/GitHub/gastos/app/assets/javascripts/movimientos.coffee",
 		"/C/Proyectos/GitHub/gastos/app/controllers/movimientos_controller.rb",
@@ -246,7 +271,6 @@
 		"/C/Proyectos/GitHub/gastos/lib/src/tests.rb",
 		"/C/Proyectos/GitHub/gastos/lib/src/test2.rb",
 		"/C/Proyectos/GitHub/gastos/app/views/layouts/application.html.erb",
-		"/C/Proyectos/GitHub/gastos/config/routes.rb",
 		"/C/Proyectos/GitHub/gastos/app/views/movimientos/_list.html.erb",
 		"/C/Proyectos/GitHub/gastos/app/helpers/application_helper.rb",
 		"/C/Proyectos/GitHub/gastos/app/models/transaccion.rb",
@@ -352,16 +376,7 @@
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/Gemfile",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/db/migrate/20161116234654_add_categoria_ref_to_hojas.rb",
 		"/media/leonardo/Programación/Ruby/Proyectos/notas/db/migrate/20161031224728_create_hojas.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/notas/db/migrate/20161116231415_create_categorias.rb",
-		"/home/leonardo/Escritorio/Windows7.desktop",
-		"/home/leonardo/Documentos/scripts/windows7.sh",
-		"/home/leonardo/Escritorio/Windows 7.desktop",
-		"/media/leonardo/Programación/Ruby/Proyectos/notas/db/schema.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/notas/db/migrate/20161029201809_create_hojas.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/notas/config/application.rb",
-		"/media/leonardo/Programación/Ruby/Proyectos/notas/config/database.yml",
-		"/media/leonardo/Programación/Ruby/Proyectos/notas/Rakefile",
-		"/media/leonardo/Programación/Ruby/Proyectos/Notas/db/migrate/20121019003011_create_agendas.rb"
+		"/media/leonardo/Programación/Ruby/Proyectos/notas/db/migrate/20161116231415_create_categorias.rb"
 	],
 	"find":
 	{
@@ -379,6 +394,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"user",
+			"notice",
+			"action_mailer",
 			"th",
 			"div",
 			"tf",
@@ -438,49 +456,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/movimientos/carga_masiva/_form.html.erb",
+					"file": "app/views/layouts/application.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2490,
+						"buffer_size": 704,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1484,
-								1484
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 447.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/movimientos/carga_masiva/_movimiento.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1343,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1157,
-								1157
+								528,
+								528
 							]
 						],
 						"settings":
@@ -493,34 +481,62 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/assets/stylesheets/scaffolds.scss",
+					"buffer": 1,
+					"file": "Gemfile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2052,
+						"buffer_size": 1778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2043,
-								2043
+								1138,
+								1138
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/controls/_navbar.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1018,
+								1018
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2570.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -528,24 +544,24 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/views/cuentas/index.html.erb",
+					"file": "config/routes.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1510,
+						"buffer_size": 1008,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1089,
-								1257
+								1001,
+								1001
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -558,6 +574,66 @@
 				},
 				{
 					"buffer": 4,
+					"file": "app/controllers/cuentas_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1560,
+								1560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 784.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/cuentas/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1510,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1089,
+								1089
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"semi_transient": false,
 					"settings":
 					{
@@ -582,7 +658,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -619,6 +695,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -641,6 +721,70 @@
 		"selected_items":
 		[
 			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"cuentco",
+				"app\\controllers\\cuentas_controller.rb"
+			],
+			[
+				"rout",
+				"config\\routes.rb"
+			],
+			[
+				"navbar",
+				"app\\views\\controls\\_navbar.html.erb"
+			],
+			[
+				"es.",
+				"config\\locales\\es.yml"
+			],
+			[
+				"layout",
+				"app\\views\\layouts\\application.html.erb"
+			],
+			[
+				"route",
+				"config\\routes.rb"
+			],
+			[
+				"appcon",
+				"app\\controllers\\application_controller.rb"
+			],
+			[
+				"appcont",
+				"app\\controllers\\application_controller.rb"
+			],
+			[
+				"devise",
+				"config\\initializers\\devise.rb"
+			],
+			[
+				"usuarios",
+				"db\\migrate\\20170930141527_devise_create_usuarios.rb"
+			],
+			[
+				"initializerdev",
+				"config\\initializers\\devise.rb"
+			],
+			[
+				"prodrb",
+				"config\\environments\\production.rb"
+			],
+			[
+				"testrb",
+				"config\\environments\\test.rb"
+			],
+			[
+				"devrb",
+				"config\\environments\\development.rb"
+			],
+			[
+				"gemfi",
+				"Gemfile"
+			],
+			[
 				"nuevo",
 				"app\\views\\movimientos\\nuevo_movimiento_masivo.js.erb"
 			],
@@ -653,16 +797,8 @@
 				"app\\views\\cuentas\\index.html.erb"
 			],
 			[
-				"navbar",
-				"app\\views\\controls\\_navbar.html.erb"
-			],
-			[
 				"index",
 				"app\\views\\cuentas\\index.html.erb"
-			],
-			[
-				"layout",
-				"app\\views\\layouts\\application.html.erb"
 			],
 			[
 				"nuevo_movimiento_masivo",
@@ -737,10 +873,6 @@
 				"app\\controllers\\movimientos_controller.rb"
 			],
 			[
-				"route",
-				"config\\routes.rb"
-			],
-			[
 				"masivfor",
 				"app\\views\\movimientos\\carga_masiva\\_form.html.erb"
 			],
@@ -775,10 +907,6 @@
 			[
 				"movi",
 				"app\\views\\movimientos\\index.html.erb"
-			],
-			[
-				"gemfi",
-				"C:\\Proyectos\\GitHub\\gastos\\app\\assets\\javascripts\\movimientos.coffee"
 			],
 			[
 				"movim",
@@ -819,10 +947,6 @@
 			[
 				"movinde",
 				"app/views/movimientos/index.html.erb"
-			],
-			[
-				"gemf",
-				"Gemfile"
 			],
 			[
 				"trancont",
@@ -957,10 +1081,6 @@
 				"app/helpers/application_helper.rb"
 			],
 			[
-				"es.",
-				"config/locales/es.yml"
-			],
-			[
 				"cuenew",
 				"app/views/cuentas/new.html.erb"
 			],
@@ -1023,10 +1143,6 @@
 			[
 				"script",
 				"app/assets/javascripts/movimientos.coffee"
-			],
-			[
-				"rout",
-				"config/routes.rb"
 			],
 			[
 				"scripts",
@@ -1115,42 +1231,6 @@
 			[
 				"scaffol",
 				"app/assets/stylesheets/scaffolds.scss"
-			],
-			[
-				"plcont",
-				"app/controllers/plantillas_controller.rb"
-			],
-			[
-				"modp",
-				"app/models/plantilla.rb"
-			],
-			[
-				"es.yml",
-				"config/locales/es-AR.yml"
-			],
-			[
-				"modplan",
-				"app/models/plantilla.rb"
-			],
-			[
-				"plantihtml",
-				"app/views/plantillas/index.html.erb"
-			],
-			[
-				"contplan",
-				"app/controllers/plantillas_controller.rb"
-			],
-			[
-				"apphe",
-				"app/helpers/application_helper.rb"
-			],
-			[
-				"viewplan",
-				"app/views/plantillas/_form.html.erb"
-			],
-			[
-				"migpla",
-				"db/migrate/20160512020338_create_plantillas.rb"
 			]
 		],
 		"width": 0.0
@@ -1180,7 +1260,7 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":

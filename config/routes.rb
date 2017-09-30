@@ -1,5 +1,5 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-Rails.application.routes.draw do
+Rails.application.routes.draw do     
   root to: "movimientos#index"
 
   get '/informes/cuentas/saldos', controller: :cuentas, action: :saldos
@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :tipos_transacciones do
     get 'pag/:page', action: :index, on: :collection
   end
+
+  devise_for :usuarios  
 end
