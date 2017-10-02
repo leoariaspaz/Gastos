@@ -26,7 +26,11 @@
         <li><%= link_to 'Transacciones', transacciones_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a></li>
+        <li>
+          <%= link_to destroy_usuario_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

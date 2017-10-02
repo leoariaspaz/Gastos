@@ -23,5 +23,5 @@ Rails.application.routes.draw do
     get 'pag/:page', action: :index, on: :collection
   end
 
-  devise_for :usuarios  
+  devise_for :usuarios, controllers: { sessions: 'usuarios/sessions' }
 end
