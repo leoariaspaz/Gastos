@@ -9,13 +9,8 @@
   </head>
 
   <body>
-  <% if usuario_signed_in? %>
-    <%= render 'controls/navbar' %>
-  <% else %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  <% end %>
     
+    <%= render 'controls/navbar' %>    
     <div class="container-fluid">
       <%= yield %>      
     </div>

@@ -22,6 +22,4 @@ Rails.application.routes.draw do
   resources :tipos_transacciones do
     get 'pag/:page', action: :index, on: :collection
   end
-
-  devise_for :usuarios, controllers: { sessions: 'usuarios/sessions' }
 end
