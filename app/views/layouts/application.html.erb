@@ -11,11 +11,12 @@
   <body>
   <% if usuario_signed_in? %>
     <%= render 'controls/navbar' %>
+  <% else %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <% end %>
     
     <div class="container-fluid">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= yield %>      
     </div>
   </body>
