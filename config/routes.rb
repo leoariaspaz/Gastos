@@ -1,6 +1,10 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do     
-  root to: "movimientos#index"
+  get 'sesiones/new'
+
+  get 'usuarios/new'
+
+  # root to: "movimientos#index"
 
   get '/informes/cuentas/saldos', controller: :cuentas, action: :saldos
   resources :cuentas
@@ -22,4 +26,11 @@ Rails.application.routes.draw do
   resources :tipos_transacciones do
     get 'pag/:page', action: :index, on: :collection
   end
+
+  delete "log_out" => "sesiones#destroy", :as => "log_out"
+  get "log_in" => "sesiones#new", :as => "log_in"
+  get "sign_up" => "usuarios#new", :as => "sign_up"
+  root :to => "sesiones#new"
+  resources :usuarios
+  resources :sesiones
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828114437) do
+ActiveRecord::Schema.define(version: 20171014133750) do
 
   create_table "cuentas", force: :cascade do |t|
     t.string   "descripcion",   limit: 50
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 20170828114437) do
     t.datetime "updated_at",                      null: false
     t.index ["descripcion", "tipo_transaccion_id"], name: "index_transacciones_on_descripcion_and_tipo_transaccion_id", unique: true
     t.index ["tipo_transaccion_id"], name: "index_transacciones_on_tipo_transaccion_id"
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
