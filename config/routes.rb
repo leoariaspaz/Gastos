@@ -27,9 +27,9 @@ Rails.application.routes.draw do
     get 'pag/:page', action: :index, on: :collection
   end
 
-  delete "log_out" => "sesiones#destroy", :as => "log_out"
-  get "log_in" => "sesiones#new", :as => "log_in"
-  get "sign_up" => "usuarios#new", :as => "sign_up"
+  delete "logout" => "sesiones#destroy", :as => "logout"
+  get "login" => "sesiones#new", :as => "login"
+  # get "signup" => "usuarios#new", :as => "signup"
   root :to => "sesiones#new"
   resources :usuarios
   resources :sesiones
