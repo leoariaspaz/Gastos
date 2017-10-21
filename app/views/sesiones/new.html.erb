@@ -1,18 +1,55 @@
-<% content_for :title, "Log in" %>
+<% content_for :title, "Iniciar sesión" %>
 
-<div class="row">
-  <h1 class="col-sm-3">Log in</h1>
-  <div class="col-sm-6"><%= render 'notice' %></div>  
-</div>
+<% content_for :headers do %>
+	<style type="text/css">
+		body {
+			background-color: #eee;
+		}
 
-<%= form_tag sesiones_path do %>
-  <p>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-  </p>
-  <p>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <p class="button"><%= submit_tag "Log in" %></p>
+		h2 {
+			font-weight: bold;
+			text-align: center;
+		}
+
+		h2, .checkbox {
+			margin-bottom: 30px;
+		}
+
+		.panel {
+	    position: absolute;
+	    top: 40%;
+	    left: 50%;
+	    transform: translateX(-50%) translateY(-50%);
+	    width: 400px;
+		}
+	</style>
 <% end %>
+
+<div class="container body-content">
+	<div class="panel panel-primary">
+		<div class="panel-body">
+		  <div><%= render 'notice' %></div>  
+			<%= form_tag sesiones_path do %>
+				<h2 class="text-primary">Gastos</h2>
+				<div class="form-group">
+				  <p>
+				    <%= label_tag :email, "Usuario o EMail:", class: "sr-only" %>
+				    <%= text_field_tag :email, params[:email], class: "form-control", placeholder: "Usuario o Email", required: true, autofocus: true, type: "email" %>
+				  </p>
+				  <p>
+				    <%= label_tag :password, "Contraseña:", class: "sr-only" %>
+				    <%= password_field_tag :password, nil, class: "form-control", placeholder: "Contraseña" %>
+				  </p>
+				  <p class="checkbox">
+	          <label>
+	            <input type="checkbox" value="remember-me"> Recuérdame
+	          </label>
+				  </p>
+				  <p>
+				  	<%= submit_tag "Iniciar sesión", class: "btn btn-lg btn-primary btn-block", role: "button" %>
+			  	</p>
+			  </div>
+			<% end %>
+		</div>
+	</div>
+</div>

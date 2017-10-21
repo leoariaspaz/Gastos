@@ -9,13 +9,13 @@ class SesionesController < ApplicationController
 	    redirect_to action: session[:intended_action],
 									controller: session[:intended_controller]
 	  else
-	    flash.now.notice = "Invalid email or password"
+	    flash.now.notice = "El usuario o la contraseña son incorrectos"
 	    render "new"
 	  end
   end
 
   def destroy  	
   	session[:usuario_id] = nil
-  	redirect_to root_url, :notice => "Logged out!"
+  	redirect_to root_url #, :notice => "Logged out!"
   end
 end
