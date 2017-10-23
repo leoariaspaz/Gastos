@@ -1,0 +1,49 @@
+<% content_for :title, "Usuarios" %>
+
+<div class="row">
+  <h1 class="col-sm-3">Usuarios</h1>
+  <div class="col-sm-6"><%= render 'notice' %></div>  
+</div>
+
+<% if @usuarios.any? %>
+<div class="row">
+  <div class="col-sm-6">
+    <table class="table table-striped table-responsive table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">EMail</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @usuarios.each do |usuario| %>
+          <tr>
+            <td><%= usuario.nombre %></td>
+            <td><%= usuario.email %></td>
+            <td class="text-center">
+              <%= link_to edit_usuario_path(usuario), title: "Editar usuario" do %>
+                <span class="glyphicon glyphicon-edit"></span>
+              <% end %>
+              <%= link_to edit_usuario_path(usuario), title: "Blanquear contraseña" do %>
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              <% end %>              
+              <%= link_to usuario, method: :delete, data: { confirm: '¿Está seguro?' }, title: "Eliminar usuario" do %>
+                <span class="glyphicon glyphicon-trash"></span>
+              <% end if usuario.id != current_user.id %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+</div>
+
+<% else %>
+  <div id="notas-empty" class="row">
+    <div class="alert alert-success text-center col-sm-4 col-sm-offset-4">
+      Todavía no hay usuarios cargados.
+    </div>
+  </div>
+<% end %>

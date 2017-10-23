@@ -13,6 +13,10 @@ class UsuariosController < ApplicationController
 	  end
   end
 
+  def index
+  	@usuarios = Usuario.all.order(:nombre)
+  end
+
 private
 	def usuario_params
 		params.require(:usuario).permit(:nombre, :email, :password, :password_confirmation)
