@@ -123,35 +123,48 @@ label {
   margin: 0 !important;
 }
 
-.navbar li a 
+.nav
 {
-  color: #c7c7c7 !important;
-  font-weight: bold;
-}
 
-.navbar li.active a 
-{
-  color: #00d9d9 !important;
+  li 
+  {
+    a
+    {
+      color: #ccc !important;
+      &:hover
+      {    
+        color: #fff !important;
+      }
+    }
+    &.active > a 
+    {
+      color: #fcf8e3 !important;
+      font-weight: bold;
+      border: 1px solid #fcf8e3;
+      padding-bottom: 3px;
+      padding-top: 3px;
+      margin-top: 10px;
+    }
+  }
+
+  .dropdown-menu
+  {
+    background-color: #262626;
+    font-size: 13px;
+    a
+    {
+      color: #9d9d9d;
+      &:focus, &:hover
+      {
+        color: #262626 !important;
+      }
+    }
+  }
 }
 
 input.date-picker
 {
   width: 100px;
-}
-
-.navbar .dropdown-menu
-{
-  background-color: #262626;
-
-  a
-  {
-    font-weight: bold;
-  }
-
-  a:focus, a:hover
-  {
-    color: #262626 !important;
-  }
 }
 
 .vertical-align {

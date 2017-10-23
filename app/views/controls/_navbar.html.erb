@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-static-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -10,7 +10,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active">
+        <li>
           <%= link_to 'Movimientos', movimientos_path %>
         </li>
         <li class="dropdown">
@@ -22,14 +22,23 @@
             <li><%= link_to 'Saldos de cuentas', informes_cuentas_saldos_path %></li>
           </ul>
         </li>
-        <li><%= link_to 'Tipos de transacciones', tipos_transacciones_path%></li>
+        <li class="active"><%= link_to 'Tipos de transacciones', tipos_transacciones_path%></li>
         <li><%= link_to 'Transacciones', transacciones_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to logout_path, method: :delete do %>
-            <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión
-          <% end %>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to "Editar usuarios", usuarios_path %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión
+              <% end %>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
