@@ -22,6 +22,7 @@ es:
       usuario:
         password: Contraseña
         password_confirmation: Confirmación
+        current_password: Contraseña actual
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

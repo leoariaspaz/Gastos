@@ -1,15 +1,13 @@
 class Usuario < ApplicationRecord
-  # attr_accessible :email, :password, :password_confirmation
-
   attr_accessor :password
-  attr_accessor :old_password
+  attr_accessor :current_password
   before_save :encrypt_password
 
-  validates_confirmation_of :password, message: "La confirmación no coincide con la contraseña ingresada."
+  validate :change_pwd
+  validates_confirmation_of :password, message: "no coincide con la nueva contraseña."
   validates_presence_of :password, :on => :create
   validates_presence_of :email
   validates_uniqueness_of :email
-  validate :change_pwd
 
   def self.authenticate(email, password)
     user = find_by_email(email)
@@ -29,11 +27,8 @@ protected
   end
 
   def change_pwd
-    if not old_password.nil? && password_hash != BCrypt::Engine.hash_secret(old_password, password_salt)
-      errors.add(:old_password, "Debe ingresar la contraseña actual.")
-      return false
-    else
-      return true
+    if not current_password.nil? && password_hash != BCrypt::Engine.hash_secret(current_password, password_salt)
+      errors.add(:current_password, "no es correcta.")
     end
   end
 end

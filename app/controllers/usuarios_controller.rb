@@ -24,7 +24,7 @@ class UsuariosController < ApplicationController
   end
 
   def update_pwd
-  	u = params.require(:usuario).permit(:old_password, :password, :password_confirmation)
+  	u = params.require(:usuario).permit(:current_password, :password, :password_confirmation)
   	logger.debug u
   	@usuario = Usuario.find(params[:id])
     respond_to do |format|

@@ -1,5 +1,10 @@
 class SesionesController < ApplicationController
+	layout false
+
   def new
+  	if current_user
+  		redirect_to action: :index, controller: :movimientos
+  	end
   end
 
   def create

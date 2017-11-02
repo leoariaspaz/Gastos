@@ -6,12 +6,12 @@
 	<%= render 'errores', partial: true, model: @usuario, model_name: 'El usuario' %>
 
   <div class="form-group">
-		<%= f.label :old_password, "Contraseña actual" %>
-		<%= f.password_field :old_password, class: "form-control" %>
+		<%= f.label :current_password %>
+		<%= f.password_field :current_password, class: "form-control" %>
 	</div>
 
   <div class="form-group">
-    <%= f.label :password %>
+    <%= f.label :password, "Nueva contraseña" %>
     <%= f.password_field :password, class: "form-control" %>
   </div>
 
