@@ -4,9 +4,9 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
-      <span style="color: #fff; font-weight: bold;" class="navbar-brand">Gastos</span>
+      <span style="color: #fff; font-weight: bold; font-size: 2.1em;" class="navbar-brand">Gastos</span>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -30,6 +30,9 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li>
+              <%= link_to "Cambiar contraseña", change_pwd_usuario_path(current_user) %>
+            </li>
             <li>
               <%= link_to "Editar usuarios", usuarios_path %>
             </li>

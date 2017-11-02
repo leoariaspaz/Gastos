@@ -17,8 +17,27 @@ class UsuariosController < ApplicationController
   	@usuarios = Usuario.all.order(:nombre)
   end
 
+  def change_pwd
+  	# id = params.require(:usuario).permit(:id)
+  	# @usuario = Usuario.find(id)
+  	@usuario = Usuario.find(params[:id])
+  end
+
+  def update_pwd
+  	u = params.require(:usuario).permit(:old_password, :password, :password_confirmation)
+  	logger.debug u
+  	@usuario = Usuario.find(params[:id])
+    respond_to do |format|
+      if @usuario.update(u)
+        format.html { redirect_to change_pwd_usuario_path, notice: 'La contraseña se actualizó correctamente.' }
+      else
+        format.html { render :change_pwd }
+      end
+    end
+  end
+
 private
 	def usuario_params
 		params.require(:usuario).permit(:nombre, :email, :password, :password_confirmation)
-	end	
+	end
 end

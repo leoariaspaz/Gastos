@@ -1,15 +1,15 @@
 es:
   activerecord:
     models:
-      tipo_transaccion: 
+      tipo_transaccion:
         one: tipo de transacción
         other: tipos de transacciones
-      transaccion: 
+      transaccion:
         one: transacción
         other: transacciones
       cuenta:
         one: cuenta
-        other: Cuentas      
+        other: Cuentas
     attributes:
       tipo_transaccion:
         descripcion: Descripción
@@ -19,6 +19,9 @@ es:
       movimiento:
         transaccion_id: Transacción
         fecha_mov: Fecha de movimiento
+      usuario:
+        password: Contraseña
+        password_confirmation: Confirmación
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"
@@ -177,7 +180,7 @@ es:
           one: "Displaying <b>1</b> %{entry_name}"
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
-        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"      
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
   number:
     currency:
       format:

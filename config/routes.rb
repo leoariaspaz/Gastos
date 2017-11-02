@@ -1,5 +1,5 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-Rails.application.routes.draw do     
+Rails.application.routes.draw do
   get 'sesiones/new'
 
   get 'usuarios/new'
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/informes/cuentas/saldos', controller: :cuentas, action: :saldos
   resources :cuentas
-  
+
   get '/movimientos/carga_masiva', controller: :movimientos, action: :carga_masiva
   post '/movimientos/carga_masiva', controller: :movimientos, action: :grabar_carga_masiva
   get '/movimientos/carga_masiva/nuevo_movimiento', controller: :movimientos, action: :nuevo_movimiento_masivo
@@ -31,6 +31,11 @@ Rails.application.routes.draw do
   get "login" => "sesiones#new", :as => "login"
   # get "signup" => "usuarios#new", :as => "signup"
   root :to => "sesiones#new"
-  resources :usuarios
+  resources :usuarios do
+    member do
+      get 'change_pwd'
+      patch 'update_pwd'
+    end
+  end
   resources :sesiones
 end

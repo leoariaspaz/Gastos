@@ -28,7 +28,7 @@
 <div class="container body-content">
 	<div class="panel panel-primary">
 		<div class="panel-body">
-		  <div><%= render 'notice' %></div>  
+		  <div><%= render 'notice' %></div>
 			<%= form_tag sesiones_path do %>
 				<h2 class="text-primary">Gastos</h2>
 				<div class="form-group">
@@ -40,11 +40,9 @@
 				    <%= label_tag :password, "Contraseña:", class: "sr-only" %>
 				    <%= password_field_tag :password, nil, class: "form-control", placeholder: "Contraseña" %>
 				  </p>
-				  <p class="checkbox">
-	          <label>
-	            <input type="checkbox" value="remember-me"> Recuérdame
-	          </label>
-				  </p>
+				  <div class="checkbox">
+	          <label><input type="checkbox" value="remember-me" style="margin-top: 0;"> Recuérdame</label>
+				  </div>
 				  <p>
 				  	<%= submit_tag "Iniciar sesión", class: "btn btn-lg btn-primary btn-block", role: "button" %>
 			  	</p>
