@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103164738) do
+ActiveRecord::Schema.define(version: 20171103213833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20171103164738) do
     t.boolean  "habilitado",                                        default: true
     t.datetime "created_at",                                                        null: false
     t.datetime "updated_at",                                                        null: false
+  end
+
+  create_table "empresas", force: :cascade do |t|
+    t.string   "razon_social",    limit: 255
+    t.string   "nombre_fantasia", limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "movimientos", force: :cascade do |t|
@@ -62,9 +69,12 @@ ActiveRecord::Schema.define(version: 20171103164738) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.boolean  "es_admin",                 default: false
+    t.integer  "empresa_id"
+    t.index ["empresa_id"], name: "index_usuarios_on_empresa_id", using: :btree
   end
 
   add_foreign_key "movimientos", "cuentas"
   add_foreign_key "movimientos", "transacciones"
   add_foreign_key "transacciones", "tipos_transacciones"
+  add_foreign_key "usuarios", "empresas"
 end

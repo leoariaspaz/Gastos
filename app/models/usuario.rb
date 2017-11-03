@@ -1,15 +1,17 @@
 class Usuario < ApplicationRecord
   EstadosUsuario = [["Habilitado", 1], ["Baja", 0]]
 
+  belongs_to :empresa, :class_name => "Empresa", :foreign_key => "empresa_id"
+
   attr_accessor :password
   attr_accessor :current_password
   before_save :encrypt_password
 
   validate :change_pwd
-  validates_confirmation_of :password, message: "no coincide con la nueva contraseña."
   validates_presence_of :password, :on => :create
   validates_presence_of :email
-  validates_uniqueness_of :email
+  validates_uniqueness_of :nombre, :email
+  validates_confirmation_of :password, message: "no coincide con la nueva contraseña."
 
   def self.authenticate(email, password)
     user = find_by_email(email)

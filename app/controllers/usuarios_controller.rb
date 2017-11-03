@@ -2,7 +2,8 @@ class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :reset_pwd]
 
   def index
-    @usuarios = Usuario.all.where("id <> ?", current_user.id).order(:nombre)
+    @usuarios = Usuario.where("id <> ? and empresa_id = ?", current_user.id, current_user.empresa_id)
+                  .order(:nombre)
   end
 
   def new
@@ -10,9 +11,8 @@ class UsuariosController < ApplicationController
   end
 
 	def create
-	  # @usuario = Usuario.new(params[:user])
 	  @usuario = Usuario.new(usuario_params)
-    @usuario.estado = 1
+    @usuario.empresa = current_user.empresa
 	  if @usuario.save
 	    redirect_to usuarios_path, notice: "El usuario se creó correctamente."
 	  else
