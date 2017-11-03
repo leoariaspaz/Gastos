@@ -1,20 +1,40 @@
 class UsuariosController < ApplicationController
+  before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @usuarios = Usuario.all.where("id <> ?", current_user.id).order(:nombre)
+  end
+
   def new
-  	@user = Usuario.new
+    @usuario = Usuario.new
   end
 
 	def create
-	  # @user = Usuario.new(params[:user])
-	  @user = Usuario.new(usuario_params)
-	  if @user.save
-	    redirect_to root_url, :notice => "Signed up!"
+	  # @usuario = Usuario.new(params[:user])
+	  @usuario = Usuario.new(usuario_params)
+    @usuario.estado = 1
+	  if @usuario.save
+	    redirect_to usuarios_path, notice: "El usuario se creó correctamente."
 	  else
-	    render "new"
+	    render :new
 	  end
   end
 
-  def index
-  	@usuarios = Usuario.all.order(:nombre)
+  def edit
+  end
+
+  # PATCH/PUT /usuarios/1
+  # PATCH/PUT /usuarios/1.json
+  def update
+    respond_to do |format|
+      if @usuario.update(usuario_params)
+        format.html { redirect_to usuarios_path, notice: 'El usuario se actualizó correctamente.' }
+        format.json { render :show, status: :ok, location: @usuario }
+      else
+        format.html { render :edit }
+        format.json { render json: @usuario.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def change_pwd
@@ -37,7 +57,11 @@ class UsuariosController < ApplicationController
   end
 
 private
+  def set_usuario
+    @usuario = Usuario.find(params[:id])
+  end
+
 	def usuario_params
-		params.require(:usuario).permit(:nombre, :email, :password, :password_confirmation)
+		params.require(:usuario).permit(:nombre, :email, :password, :password_confirmation, :estado)
 	end
 end

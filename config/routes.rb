@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     member do
       get 'change_pwd'
       patch 'update_pwd'
+      patch 'reset_pwd'
     end
   end
   resources :sesiones

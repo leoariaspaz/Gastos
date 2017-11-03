@@ -53,7 +53,11 @@ module ApplicationHelper
 
 	def format_date(date)
 		date.strftime('%d/%m/%Y') if date
-	end	
+	end
+
+	def format_date_time(date)
+		l(date, format: "%A %d/%m/%Y a las %I:%M %p") if date
+	end
 
 	def currency_for_edition(number)
 		number_with_precision(number, precision: 2, separator: ".", delimiter: "")

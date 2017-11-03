@@ -2,7 +2,7 @@
 
 <div class="row">
   <h1 class="col-sm-3">Cuentas</h1>
-  <div class="col-sm-6"><%= render 'notice' %></div>  
+  <div class="col-sm-6"><%= render 'notice' %></div>
   <div id="menu-abm" class="col-sm-3 text-right">
     <%= link_to 'Nueva cuenta', new_cuenta_path, class: 'btn btn-default', role: 'button' %>
   </div>
@@ -26,7 +26,7 @@
         <td class="text-right"><%= number_to_currency(cuenta.saldo_inicial) %></td>
         <td class="col-sm-2 text-center">
           <%= render partial: "controls/checkbox", object: cuenta.habilitado %>
-        </td>        
+        </td>
         <td class="text-center">
           <%= link_to edit_cuenta_path(cuenta) do %>
             <span class="glyphicon glyphicon-edit"></span>

@@ -1,4 +1,6 @@
 class Usuario < ApplicationRecord
+  EstadosUsuario = [["Habilitado", 1], ["Baja", 0]]
+
   attr_accessor :password
   attr_accessor :current_password
   before_save :encrypt_password
@@ -27,7 +29,8 @@ protected
   end
 
   def change_pwd
-    if not current_password.nil? && password_hash != BCrypt::Engine.hash_secret(current_password, password_salt)
+    if current_password && password_salt &&
+        password_hash != BCrypt::Engine.hash_secret(current_password, password_salt)
       errors.add(:current_password, "no es correcta.")
     end
   end

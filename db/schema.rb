@@ -54,12 +54,13 @@ ActiveRecord::Schema.define(version: 20171014133750) do
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.string   "nombre"
-    t.string   "email"
+    t.string   "nombre",        limit: 50
+    t.string   "email",         limit: 50
     t.string   "password_hash"
     t.string   "password_salt"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "estado"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_foreign_key "movimientos", "cuentas"

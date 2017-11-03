@@ -1,24 +1,5 @@
-<h1>Sign Up</h1>
+<% content_for :title, "Nuevo usuario" %>
 
-<%= form_for @user do |f| %>
-	<%= render 'errores', partial: true, model: @user, model_name: 'El usuario' %>
+<h1>Nuevo Usuario</h1>
 
-  <p>
-  	<%= f.label :nombre %><br/>
-  	<%= f.text_field :nombre %>
-  </p>
-
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p class="button"><%= f.submit %></p>
-<% end %>
+<%= render 'form', usuario: @usuario %>

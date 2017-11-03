@@ -1,0 +1,33 @@
+<%= form_for usuario do |f| %>
+	<%= render 'errores', partial: true, model: @usuario, model_name: 'El usuario' %>
+
+  <div class="form-group">
+  	<%= f.label :nombre %><br/>
+  	<%= f.text_field :nombre, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+
+  <% if not usuario.id %>
+    <div class="form-group">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+  <% end %>
+
+  <div id="transacciones" class="form-group transaccion">
+    <%= f.label :estado %>
+    <%= f.select :estado, options_for_select(Usuario::EstadosUsuario, usuario.estado), {},
+          {class: 'form-control'} %>
+  </div>
+
+  <%= render partial: "controls/form_actions", locals: { form: f, cancelar_path: usuarios_path} %>
+<% end %>
