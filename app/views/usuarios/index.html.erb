@@ -31,12 +31,10 @@
           <%= link_to edit_usuario_path(usuario), title: "Editar usuario" do %>
             <span class="glyphicon glyphicon-edit"></span>
           <% end %>
-          <%= link_to reset_pwd_usuario_path(usuario), title: "Blanquear contraseña" do %>
+          <%= link_to reset_pwd_usuario_path(usuario), title: "Blanquear contraseña", method: :patch,
+                data: { confirm: '¿Está seguro que desea blanquear la contraseña de ' + usuario.nombre + '?' } do %>
             <span class="glyphicon glyphicon-remove-circle"></span>
           <% end %>
-          <%= link_to usuario, method: :delete, data: { confirm: '¿Está seguro?' }, title: "Eliminar usuario" do %>
-            <span class="glyphicon glyphicon-trash"></span>
-          <% end if usuario.id != current_user.id %>
         </td>
       </tr>
     <% end %>

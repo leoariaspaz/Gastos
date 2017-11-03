@@ -28,14 +28,16 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
-          <span class="caret"></span></a>
+          <%= current_user.nombre %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
               <%= link_to "Cambiar contraseña", change_pwd_usuario_path(current_user) %>
             </li>
+            <% if current_user.es_admin %>
             <li>
               <%= link_to "Editar usuarios", usuarios_path %>
             </li>
+            <% end %>
             <li>
               <%= link_to logout_path, method: :delete do %>
                 <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión

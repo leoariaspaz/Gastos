@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  before_action :set_usuario, only: [:show, :edit, :update, :reset_pwd]
 
   def index
     @usuarios = Usuario.all.where("id <> ?", current_user.id).order(:nombre)
@@ -45,13 +45,23 @@ class UsuariosController < ApplicationController
 
   def update_pwd
   	u = params.require(:usuario).permit(:current_password, :password, :password_confirmation)
-  	logger.debug u
   	@usuario = Usuario.find(params[:id])
     respond_to do |format|
       if @usuario.update(u)
         format.html { redirect_to change_pwd_usuario_path, notice: 'La contraseña se actualizó correctamente.' }
       else
         format.html { render :change_pwd }
+      end
+    end
+  end
+
+  def reset_pwd
+    @usuario = Usuario.find(params[:id])
+    respond_to do |format|
+      if @usuario.update(password: "123456")
+        format.html { redirect_to usuarios_path, notice: 'La contraseña se asignó a 123456.' }
+      else
+        format.html { render usuarios_path }
       end
     end
   end
