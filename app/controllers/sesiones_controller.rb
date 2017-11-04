@@ -1,4 +1,5 @@
 class SesionesController < ApplicationController
+	skip_before_action :authorize, only: [:new, :create]
 	layout false
 
   def new
@@ -22,13 +23,16 @@ class SesionesController < ApplicationController
 				redirect_to root_url
 	    end
 	  else
-	    flash.now.notice = "El usuario o la contraseña son incorrectos"
-	    render "new"
+	    flash[:error] = "El usuario o la contraseña son incorrectos"
+	    redirect_to root_url
 	  end
   end
 
   def destroy
   	session[:usuario_id] = nil
+  	session[:intended_action] = nil
+  	session[:intended_controller] = nil
+  	session[:intented_params] = nil
   	redirect_to root_url #, :notice => "Logged out!"
   end
 end

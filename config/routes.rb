@@ -38,5 +38,5 @@ Rails.application.routes.draw do
       patch 'reset_pwd'
     end
   end
-  resources :sesiones
+  resources :sesiones, only: [:create, :new, :destroy]
 end
