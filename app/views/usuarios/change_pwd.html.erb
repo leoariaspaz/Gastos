@@ -1,6 +1,9 @@
 <% content_for :title, "Cambiar contraseña" %>
 
-<h1>Cambiar contraseña</h1>
+<div class="row">
+  <h1 class="col-sm-4">Cambiar contraseña</h1><br/>
+  <div class="col-sm-6"><%= render 'notice' %></div>
+</div>
 
 <%= form_for @usuario, url: update_pwd_usuario_path do |f| %>
 	<%= render 'errores', partial: true, model: @usuario, model_name: 'El usuario' %>

@@ -2,6 +2,7 @@ class Usuario < ApplicationRecord
   EstadosUsuario = [["Habilitado", 1], ["Baja", 0]]
 
   belongs_to :empresa, :class_name => "Empresa", :foreign_key => "empresa_id"
+  has_and_belongs_to_many :roles
 
   attr_accessor :password
   attr_accessor :current_password

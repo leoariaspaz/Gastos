@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  # before_action :authorize_admin
+  before_action :autorizar_por_rol, except: [:change_pwd, :update_pwd]
   before_action :set_usuario, only: [:show, :edit, :update, :reset_pwd]
 
   def index

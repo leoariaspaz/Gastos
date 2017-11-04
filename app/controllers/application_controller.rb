@@ -17,4 +17,18 @@ private
 			redirect_to login_url, error: "No está autorizado a ver esta página."
 		end
 	end
+
+	def autorizar_por_rol
+		unless current_user.roles.detect {|rol|
+			rol.permisos.detect{|permiso|
+				logger.debug "autorizar_por_rol => #{permiso.controller} + #{permiso.action} <-> #{self.class.controller_path} + #{action_name}"
+				permiso.action == action_name && permiso.controller == self.class.controller_path
+			}
+		}
+			flash[:error] = "No está autorizado para ver esta página."
+			redirect_back fallback_location: root_url
+			# request.env["HTTP_REFERER"]? (redirect_to :back) : (redirect_to root_url)
+			return false
+		end
+	end
 end

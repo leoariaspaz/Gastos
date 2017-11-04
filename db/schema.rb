@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103213833) do
+ActiveRecord::Schema.define(version: 20171104160003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,32 @@ ActiveRecord::Schema.define(version: 20171103213833) do
     t.integer  "cuenta_id"
     t.index ["cuenta_id"], name: "index_movimientos_on_cuenta_id", using: :btree
     t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id", using: :btree
+  end
+
+  create_table "permisos", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "controller"
+    t.string   "action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "permisos_roles", id: false, force: :cascade do |t|
+    t.integer "rol_id",     null: false
+    t.integer "permiso_id", null: false
+    t.index ["permiso_id", "rol_id"], name: "index_permisos_roles_on_permiso_id_and_rol_id", using: :btree
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles_usuarios", id: false, force: :cascade do |t|
+    t.integer "rol_id",     null: false
+    t.integer "usuario_id", null: false
+    t.index ["usuario_id", "rol_id"], name: "index_roles_usuarios_on_usuario_id_and_rol_id", using: :btree
   end
 
   create_table "tipos_transacciones", force: :cascade do |t|
