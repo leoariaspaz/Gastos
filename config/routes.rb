@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get "login" => "sesiones#new", :as => "login"
   # get "signup" => "usuarios#new", :as => "signup"
   root :to => "sesiones#new"
-  resources :usuarios do
+  resources :usuarios, except: [:show, :destroy] do
     member do
       get 'change_pwd'
       patch 'update_pwd'
