@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104160003) do
+ActiveRecord::Schema.define(version: 20171109150446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20171104160003) do
     t.boolean  "habilitado",                                        default: true
     t.datetime "created_at",                                                        null: false
     t.datetime "updated_at",                                                        null: false
+    t.integer  "empresa_id"
+    t.index ["empresa_id"], name: "index_cuentas_on_empresa_id", using: :btree
   end
 
   create_table "empresas", force: :cascade do |t|
@@ -37,7 +39,9 @@ ActiveRecord::Schema.define(version: 20171104160003) do
     t.datetime "created_at",                                                     null: false
     t.datetime "updated_at",                                                     null: false
     t.integer  "cuenta_id"
+    t.integer  "empresa_id"
     t.index ["cuenta_id"], name: "index_movimientos_on_cuenta_id", using: :btree
+    t.index ["empresa_id"], name: "index_movimientos_on_empresa_id", using: :btree
     t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id", using: :btree
   end
 
@@ -72,7 +76,9 @@ ActiveRecord::Schema.define(version: 20171104160003) do
     t.boolean  "habilitado"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "empresa_id"
     t.index ["descripcion"], name: "index_tipos_transacciones_on_descripcion", unique: true, using: :btree
+    t.index ["empresa_id"], name: "index_tipos_transacciones_on_empresa_id", using: :btree
   end
 
   create_table "transacciones", force: :cascade do |t|
@@ -82,7 +88,9 @@ ActiveRecord::Schema.define(version: 20171104160003) do
     t.integer  "tipo_transaccion_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "empresa_id"
     t.index ["descripcion", "tipo_transaccion_id"], name: "index_transacciones_on_descripcion_and_tipo_transaccion_id", unique: true, using: :btree
+    t.index ["empresa_id"], name: "index_transacciones_on_empresa_id", using: :btree
     t.index ["tipo_transaccion_id"], name: "index_transacciones_on_tipo_transaccion_id", using: :btree
   end
 
@@ -99,8 +107,12 @@ ActiveRecord::Schema.define(version: 20171104160003) do
     t.index ["empresa_id"], name: "index_usuarios_on_empresa_id", using: :btree
   end
 
+  add_foreign_key "cuentas", "empresas"
   add_foreign_key "movimientos", "cuentas"
+  add_foreign_key "movimientos", "empresas"
   add_foreign_key "movimientos", "transacciones"
+  add_foreign_key "tipos_transacciones", "empresas"
+  add_foreign_key "transacciones", "empresas"
   add_foreign_key "transacciones", "tipos_transacciones"
   add_foreign_key "usuarios", "empresas"
 end

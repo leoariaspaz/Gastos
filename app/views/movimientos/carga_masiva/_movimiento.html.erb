@@ -1,20 +1,19 @@
 <%= fields_for "movimiento[items][]", movimiento do |f| -%>
-  <div class="row"> 
+  <div class="row">
     <div class="form-group col-sm-4 tipo-transaccion">
-      <span style="font-weight: bold;" class="vertical-align">00</span>
-      <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select, movimiento.tipo_transaccion_id), 
-            {prompt: t('helpers.select.prompt'), class: "form-control", style: 'display: inline; max-width: 95%; float: right;'} %>
+      <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select, movimiento.tipo_transaccion_id),
+            {prompt: t('helpers.select.prompt'), class: "form-control"} %>
     </div>
 
     <div class="form-group col-sm-4 transaccion">
       <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", id: "loader", class: 'hide-on-load'} %>
       <% trxs = movimiento.tipo_transaccion_id.blank?? [] : Transaccion.all_for_select(movimiento.tipo_transaccion_id) %>
-      <%= f.select :transaccion_id, options_for_select(trxs, movimiento.transaccion_id), 
+      <%= f.select :transaccion_id, options_for_select(trxs, movimiento.transaccion_id),
             {prompt: t('helpers.select.prompt')}, {class: 'form-control'} %>
     </div>
 
     <div class="form-group col-sm-4">
-      <%= f.text_field :importe, value: currency_for_edition(movimiento.importe), class: 'form-control text-right number', 
+      <%= f.text_field :importe, value: currency_for_edition(movimiento.importe), class: 'form-control text-right number',
             style: 'display: inline; max-width: 93%;' %>
       <%= link_to '#', class: 'eliminar', title: 'Eliminar esta fila' do %>
         <span class="glyphicon glyphicon-trash"></span>

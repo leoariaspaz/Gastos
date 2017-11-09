@@ -3,11 +3,12 @@ class Movimiento < ApplicationRecord
 
   belongs_to :transaccion
   belongs_to :cuenta
+  belongs_to :empresa
 
   validates_presence_of :cuenta_id, :fecha_mov, :transaccion_id, :importe
   validates_numericality_of :importe, greater_than: 0
   validates_inclusion_of :transaccion_id, in: -> (transaccion_id) { Transaccion.all_for_select.map { |t| t[1] } }
-  
+
   #has_many :item_movimiento
   #attr_accesor :item_movimiento_id
 
@@ -40,7 +41,7 @@ class Movimiento < ApplicationRecord
     @items, @errores = [], []
     values.each do |i|
       logger.debug i.to_yaml
-      m = Movimiento.new(cuenta_id: cuenta_id, fecha_mov: fecha_mov, transaccion: Transaccion.find_by_id(i[:transaccion_id]), 
+      m = Movimiento.new(cuenta_id: cuenta_id, fecha_mov: fecha_mov, transaccion: Transaccion.find_by_id(i[:transaccion_id]),
             importe: i[:importe])
       if not m.valid?
         @errores = (@errores + m.errors.full_messages).uniq
@@ -57,13 +58,13 @@ class Movimiento < ApplicationRecord
       if agrupar
         logger.debug 'graba agrupando'
         items_agrup = @items.group_by { |m| m.transaccion_id }
-        items_agrup.map do |k,v| 
+        items_agrup.map do |k,v|
           total = items_agrup[k].sum { |m1| m1.importe }
           m = @items.find{|m1| m1.transaccion_id == k }
           m2 = Movimiento.new(m.attributes)
           m2.importe = total
           m2.save
-        end        
+        end
       else
         logger.debug 'grabando sin agrupar'
         @items.each {|i| i.save}

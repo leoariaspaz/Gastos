@@ -1,10 +1,17 @@
 class Transaccion < ApplicationRecord
   has_many :transacciones
+  belongs_to :empresa
 
   validates :descripcion, presence: true
   validates_uniqueness_of :descripcion, scope: :tipo_transaccion_id
   belongs_to :tipo_transaccion
   validate :tipo_transaccion_válido
+
+  def self.default_scope
+    if session[:usuario_id]
+      where(empresa: Usuario.find(session[:usuario_id]).empresa)
+    end
+  end
 
   def descripcion_completa
   	"#{tipo_transaccion.descripcion} - #{descripcion}"
@@ -23,5 +30,5 @@ private
 		if (not tipo_transaccion_id.nil?) and TipoTransaccion.where(habilitado: true, id: tipo_transaccion_id).empty?
  			errors.add(:tipo_transaccion_id, "es incorrecto")
 		end
-	end 
+	end
 end
