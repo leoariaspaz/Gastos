@@ -3,7 +3,7 @@
 <div id="index_transaccion">
   <div class="row">
     <h1 class="col-sm-3">Transacciones</h1>
-    <div class="col-sm-6"><%= render 'notice' %></div>  
+    <div class="col-sm-6"><%= render 'notice' %></div>
     <div id="menu-abm" class="col-sm-3 text-right">
       <%= link_to 'Nueva transacción', new_transaccion_path, class: 'btn btn-default', role: 'button' %>
     </div>
@@ -11,8 +11,8 @@
 
   <div class="form-group">
     <%= label_tag :tipo_transaccion_id, "Tipo de transacción:", { style: "display: inline;" } %>
-    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select),
-          {prompt: '(Todos los tipos de transacciones)', class: "form-control", 
+    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select(current_user)),
+          {prompt: '(Todos los tipos de transacciones)', class: "form-control",
             style: "display: inline; max-width: 40%;"} %>
     <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "30", id: "loader"} %>
   </div>

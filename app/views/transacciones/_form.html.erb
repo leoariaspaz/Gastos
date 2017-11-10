@@ -3,7 +3,8 @@
 
   <div class="form-group">
     <%= f.label :tipo_transaccion_id %>
-    <%= f.select :tipo_transaccion_id, TipoTransaccion.all_for_select, {prompt: true}, {class: "form-control"} %>
+    <%= f.select :tipo_transaccion_id, TipoTransaccion.all_for_select(current_user), {prompt: true},
+          {class: "form-control"} %>
   </div>
 
   <div class="form-group">
@@ -13,7 +14,7 @@
 
   <div class="checkbox">
     <%= f.label :habilitado do %>
-      <%= f.check_box :habilitado %> 
+      <%= f.check_box :habilitado %>
       Habilitada
     <% end %>
   </div>

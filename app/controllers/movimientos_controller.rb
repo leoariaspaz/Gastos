@@ -139,7 +139,7 @@ class MovimientosController < ApplicationController
     end
 
     def set_tipos_transacciones
-      @tipos_transacciones = TipoTransaccion.where(habilitado: true).map { |t| [t.descripcion, t.id] }
+      @tipos_transacciones = current_user.tipos_transacciones.where(habilitado: true).map { |t| [t.descripcion, t.id] }
     end
 
     def movimiento_masivo_params

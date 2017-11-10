@@ -16,8 +16,8 @@
 
   <div class="form-group tipo-transaccion">
     <%= label_tag "tipo_transaccion_id", 'Tipo de transacción' %>
-    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select, @movimiento.tipo_transaccion_id),
-          {prompt: t('helpers.select.prompt'), class: "form-control"} %>
+    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select(current_user),
+          @movimiento.tipo_transaccion_id), {prompt: t('helpers.select.prompt'), class: "form-control"} %>
   </div>
 
   <div id="transacciones" class="form-group transaccion">
