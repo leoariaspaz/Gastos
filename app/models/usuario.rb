@@ -24,19 +24,19 @@ class Usuario < ApplicationRecord
   end
 
   def transacciones
-    Transaccion.where(empresa: empresa_id)
+    Transaccion.where(empresa_id: empresa_id)
   end
 
   def cuentas
-    Cuenta.where(empresa: empresa_id)
+    Cuenta.where(empresa_id: empresa_id)
   end
 
   def tipos_transacciones
-    TipoTransaccion.where(empresa: empresa_id)
+    TipoTransaccion.where(empresa_id: empresa_id)
   end
 
   def movimientos
-    Movimiento.where(empresa: empresa_id)
+    Movimiento.where(empresa_id: empresa_id)
   end
 
 protected

@@ -10,12 +10,12 @@ class MovimientosController < ApplicationController
   def list
     id = params[:id].to_i
     if id == 0
-      @movimientos = Movimiento.all
+      @movimientos = current_user.movimientos.all
     else
-      @movimientos = Movimiento.where(cuenta_id: id)
+      @movimientos = current_user.movimientos.where(cuenta_id: id)
     end
     @movimientos = @movimientos.order(fecha_mov: :desc, created_at: :desc, cuenta_id: :asc).page params[:page]
-    anteriores = Movimiento
+    anteriores = current_user.movimientos
                   .where(cuenta_id: id)
                   .joins(:transaccion)
                   .where("movimientos.created_at < ?", @movimientos.last.created_at)
@@ -56,6 +56,8 @@ class MovimientosController < ApplicationController
   # POST /movimientos.json
   def create
     @movimiento = Movimiento.new(movimiento_params)
+    @movimiento.empresa_id = current_user.empresa_id
+    @movimiento.usuario = current_user
     flash[:cuenta_id] = @movimiento.cuenta_id
 
     respond_to do |format|
@@ -103,10 +105,12 @@ class MovimientosController < ApplicationController
 
   def grabar_carga_masiva
     @movimiento = Movimiento.new(movimiento_masivo_params)
+    @movimiento.empresa_id = current_user.empresa_id
+    @movimiento.usuario = current_user
     flash[:cuenta_id] = @movimiento.cuenta_id
     logger.debug "agrupar = #{@movimiento.agrupar.to_s}"
     respond_to do |format|
-      if @movimiento.save_items
+      if @movimiento.save_items(current_user.empresa_id)
         format.html { redirect_to movimientos_url, notice: 'Los movimientos se crearon correctamente.' }
       else
         @transacciones = current_user.transacciones.all_for_select(@movimiento.tipo_transaccion_id)
@@ -130,7 +134,8 @@ class MovimientosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movimiento
-      @movimiento = Movimiento.find(params[:id])
+      @movimiento = current_user.movimientos.find(params[:id])
+      @movimiento.usuario = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

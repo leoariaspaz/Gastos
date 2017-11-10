@@ -5,10 +5,12 @@ class Movimiento < ApplicationRecord
   belongs_to :cuenta
   belongs_to :empresa
 
+  attr_accessor :usuario
+
   validates_presence_of :cuenta_id, :fecha_mov, :transaccion_id, :importe
   validates_numericality_of :importe, greater_than: 0
-  validates_inclusion_of :transaccion_id,
-    in: -> (transaccion_id) { current_user.transacciones.all_for_select.map { |t| t[1] } }
+  validates_inclusion_of :transaccion_id, in: :transacciones
+
 
   #has_many :item_movimiento
   #attr_accesor :item_movimiento_id
@@ -43,7 +45,7 @@ class Movimiento < ApplicationRecord
     values.each do |i|
       logger.debug i.to_yaml
       m = Movimiento.new(cuenta_id: cuenta_id, fecha_mov: fecha_mov,
-            transaccion: current_user.transacciones.find_by_id(i[:transaccion_id]),
+            transaccion: transacciones.find_by_id(i[:transaccion_id]),
             importe: i[:importe])
       if not m.valid?
         @errores = (@errores + m.errors.full_messages).uniq
@@ -54,7 +56,7 @@ class Movimiento < ApplicationRecord
     end
   end
 
-  def save_items
+  def save_items(empresa_id)
     logger.debug "- save_items -"
     if @errores.blank?
       if agrupar
@@ -65,11 +67,15 @@ class Movimiento < ApplicationRecord
           m = @items.find{|m1| m1.transaccion_id == k }
           m2 = Movimiento.new(m.attributes)
           m2.importe = total
+          m2.empresa_id = empresa_id
           m2.save
         end
       else
         logger.debug 'grabando sin agrupar'
-        @items.each {|i| i.save}
+        @items.each do |i|
+          i.empresa_id = empresa_id
+          i.save
+        end
       end
     else
       logger.debug "cargando errores - errors = #{errors}"
@@ -78,5 +84,9 @@ class Movimiento < ApplicationRecord
     end
     logger.debug "@errores.blank? = #{@errores.blank?} | @errores = #{@errores} | errors = #{errors}"
     return @errores.blank?
+  end
+
+  def transacciones
+    usuario.transacciones.all_for_select.map { |t| t[1] }
   end
 end
