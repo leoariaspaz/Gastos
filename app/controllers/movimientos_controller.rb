@@ -21,7 +21,7 @@ class MovimientosController < ApplicationController
                   .where("movimientos.created_at < ?", @movimientos.last.created_at)
     debitos = anteriores.where("transacciones.es_debito = ?", true).sum(:importe)
     creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
-    saldo_inicial = Cuenta.find(id).saldo_inicial
+    saldo_inicial = current_user.cuentas.find(id).saldo_inicial
     saldo_anterior = saldo_inicial + creditos - debitos
     @movimientos.reverse_each do |m|
       m.saldo = saldo_anterior + m.importe_real

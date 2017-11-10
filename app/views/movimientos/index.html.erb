@@ -4,7 +4,7 @@
 
   <div class="row">
     <h1 class="col-sm-3">Movimientos</h1>
-    <div class="col-sm-6"><%= render 'notice' %></div>  
+    <div class="col-sm-6"><%= render 'notice' %></div>
     <div id="menu-abm" class="col-sm-3 text-right">
       <%= link_to 'Nuevo movimiento', new_movimiento_path, class: 'btn btn-default', role: 'button' %>
       <%= link_to "Carga masiva", movimientos_carga_masiva_path, class: 'btn btn-default', role: 'button' %>
@@ -13,7 +13,7 @@
 
   <div class="form-group movidxcta">
     <%= label_tag :cuenta_id, "Cuenta:", { style: "display: inline;" } %>
-    <%= select_tag "cuenta_id", options_for_select(Cuenta.all_for_select, flash[:cuenta_id]),
+    <%= select_tag "cuenta_id", options_for_select(current_user.cuentas.all_for_select, flash[:cuenta_id]),
           {class: "form-control", style: "display: inline; max-width: 40%;"} %>
     <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "30", id: "loader"} %>
   </div>

@@ -3,7 +3,7 @@
 
   <div class="form-group">
     <%= f.label :cuenta_id %>
-    <%= f.select :cuenta_id, options_for_select(Cuenta.all_for_select, @movimiento.cuenta_id),
+    <%= f.select :cuenta_id, options_for_select(current_user.cuentas.all_for_select, @movimiento.cuenta_id),
           {prompt: t('helpers.select.prompt')}, {class: "form-control"} %>
   </div>
 
@@ -16,14 +16,14 @@
 
   <div class="form-group tipo-transaccion">
     <%= label_tag "tipo_transaccion_id", 'Tipo de transacción' %>
-    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select, @movimiento.tipo_transaccion_id), 
+    <%= select_tag "tipo_transaccion_id", options_for_select(TipoTransaccion.all_for_select, @movimiento.tipo_transaccion_id),
           {prompt: t('helpers.select.prompt'), class: "form-control"} %>
   </div>
 
   <div id="transacciones" class="form-group transaccion">
     <%= f.label :transaccion_id %>
     <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "25", id: "loader", class: 'hide-on-load'} %>
-    <%= f.select :transaccion_id, options_for_select(@transacciones, @movimiento.transaccion_id), 
+    <%= f.select :transaccion_id, options_for_select(@transacciones, @movimiento.transaccion_id),
           {prompt: t('helpers.select.prompt')}, {class: 'form-control'} %>
   </div>
 
