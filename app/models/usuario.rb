@@ -23,6 +23,22 @@ class Usuario < ApplicationRecord
     end
   end
 
+  def transacciones
+    Transaccion.where(empresa: empresa_id)
+  end
+
+  def cuentas
+    Cuenta.where(empresa: empresa_id)
+  end
+
+  def tipos_transacciones
+    TipoTransaccion.where(empresa: empresa_id)
+  end
+
+  def movimientos
+    Movimiento.where(empresa: empresa_id)
+  end
+
 protected
   def encrypt_password
     if password.present?

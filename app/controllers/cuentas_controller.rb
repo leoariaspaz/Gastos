@@ -4,7 +4,7 @@ class CuentasController < ApplicationController
   # GET /cuentas
   # GET /cuentas.json
   def index
-    @cuentas = Cuenta.all
+    @cuentas = current_user.cuentas.all
   end
 
   # GET /cuentas/1
@@ -15,6 +15,7 @@ class CuentasController < ApplicationController
   # GET /cuentas/new
   def new
     @cuenta = Cuenta.new
+    @cuenta.empresa = current_user.empresa
   end
 
   # GET /cuentas/1/edit
@@ -63,8 +64,8 @@ class CuentasController < ApplicationController
 
   def saldos
     query = <<-SQL
-      SUM(case when transacciones.es_debito = 't' then -movimientos.importe 
-               else movimientos.importe end) AS importe, 
+      SUM(case when transacciones.es_debito = 't' then -movimientos.importe
+               else movimientos.importe end) AS importe,
       MAX(movimientos.fecha_mov) AS max_fecha_mov,
       cuentas.descripcion AS descripcion_cuenta,
       cuentas.saldo_inicial
@@ -72,7 +73,7 @@ class CuentasController < ApplicationController
     @cuentas = Cuenta.joins(movimientos: [:transaccion]).select(query)
                  .group("cuentas.descripcion, cuentas.saldo_inicial")
     @total = @cuentas.sum(&:saldo_inicial) + @cuentas.sum(&:importe)
-  end  
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

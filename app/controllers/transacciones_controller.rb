@@ -3,14 +3,14 @@ class TransaccionesController < ApplicationController
 
   # GET /transacciones
   # GET /transacciones.json
-  def index    
+  def index
   end
 
-  def list    
+  def list
     if params[:id].to_i == 0
-      @transacciones = Transaccion.all
+      @transacciones = current_user.transacciones.all
     else
-      @transacciones = Transaccion.where(tipo_transaccion_id: params[:id].to_i)
+      @transacciones = current_user.transacciones.where(tipo_transaccion_id: params[:id].to_i)
     end
     @transacciones = @transacciones.order(:descripcion, :tipo_transaccion_id).page params[:page]
   end
@@ -33,6 +33,7 @@ class TransaccionesController < ApplicationController
   # POST /transacciones.json
   def create
     @transaccion = Transaccion.new(transaccion_params)
+    @transaccion.empresa_id = current_user.empresa_id
     respond_to do |format|
       if @transaccion.save
         format.html { redirect_to transacciones_url, notice: 'La transacción se grabó correctamente.' }
@@ -70,14 +71,14 @@ class TransaccionesController < ApplicationController
 
   def select_by_tipoid
     id = params[:id].to_i
-    @transacciones = Transaccion.all_for_select(id)
+    @transacciones = current_user.transacciones.all_for_select(id)
     render partial: true
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transaccion
-      @transaccion = Transaccion.find(params[:id])
+      @transaccion = current_user.transacciones.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,6 +1,6 @@
 class MovimientosController < ApplicationController
   before_action :set_movimiento, only: [:show, :edit, :update, :destroy]
-  before_action :set_tipos_transacciones, only: [:new, :create, :edit, :update]  
+  before_action :set_tipos_transacciones, only: [:new, :create, :edit, :update]
 
   # GET /movimientos
   # GET /movimientos.json
@@ -14,7 +14,7 @@ class MovimientosController < ApplicationController
     else
       @movimientos = Movimiento.where(cuenta_id: id)
     end
-    @movimientos = @movimientos.order(fecha_mov: :desc, created_at: :desc, cuenta_id: :asc).page params[:page]    
+    @movimientos = @movimientos.order(fecha_mov: :desc, created_at: :desc, cuenta_id: :asc).page params[:page]
     anteriores = Movimiento
                   .where(cuenta_id: id)
                   .joins(:transaccion)
@@ -43,8 +43,9 @@ class MovimientosController < ApplicationController
   # GET /movimientos/1/edit
   def edit
     if @movimiento.tipo_transaccion_id > 0
-      @transacciones = Transaccion
+      @transacciones = current_user.transacciones
                           .where(tipo_transaccion_id: @movimiento.tipo_transaccion_id)
+                          .order(:descripcion)
                           .map { |t| [t.descripcion, t.id] }
     else
       @transacciones = []
@@ -62,7 +63,7 @@ class MovimientosController < ApplicationController
         format.html { redirect_to movimientos_url, notice: 'El movimiento se creó correctamente.' }
         format.json { render :show, status: :created, location: @movimiento }
       else
-        @transacciones = Transaccion.all_for_select(@movimiento.tipo_transaccion_id)        
+        @transacciones = current_user.transacciones.all_for_select(@movimiento.tipo_transaccion_id)
         format.html { render :new }
         format.json { render json: @movimiento.errors, status: :unprocessable_entity }
       end
@@ -78,7 +79,7 @@ class MovimientosController < ApplicationController
         format.html { redirect_to movimientos_url, notice: 'El movimiento se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @movimiento }
       else
-        @transacciones = Transaccion.all_for_select(@movimiento.tipo_transaccion_id)
+        @transacciones = current_user.transacciones.all_for_select(@movimiento.tipo_transaccion_id)
         format.html { render :edit }
         format.json { render json: @movimiento.errors, status: :unprocessable_entity }
       end
@@ -108,7 +109,7 @@ class MovimientosController < ApplicationController
       if @movimiento.save_items
         format.html { redirect_to movimientos_url, notice: 'Los movimientos se crearon correctamente.' }
       else
-        @transacciones = Transaccion.all_for_select(@movimiento.tipo_transaccion_id)
+        @transacciones = current_user.transacciones.all_for_select(@movimiento.tipo_transaccion_id)
         format.html { render 'movimientos/carga_masiva/new' }
       end
     end

@@ -7,11 +7,11 @@ class Transaccion < ApplicationRecord
   belongs_to :tipo_transaccion
   validate :tipo_transaccion_válido
 
-  def self.default_scope
-    if session[:usuario_id]
-      where(empresa: Usuario.find(session[:usuario_id]).empresa)
-    end
-  end
+  #def self.default_scope
+  #  if current_user
+  #    self.where(empresa_id: current_user.empresa_id)
+  #  end
+  #end
 
   def descripcion_completa
   	"#{tipo_transaccion.descripcion} - #{descripcion}"
