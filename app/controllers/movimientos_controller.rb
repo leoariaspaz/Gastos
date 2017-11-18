@@ -131,6 +131,11 @@ class MovimientosController < ApplicationController
     @total = tmp.inject(0){|sum,x| sum + x["importe"].to_f }
   end
 
+  def entre_fechas
+    # p = params.require(:movimiento).permit(:desde, :hasta, :cuenta_id)    
+    render 'movimientos/reportes/cons_entre_fechas/index'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movimiento

@@ -99,8 +99,18 @@ GEM
     passenger (5.1.10)
       rack
       rake (>= 0.8.1)
+    pdf-core (0.7.0)
     pg (0.21.0)
     pg (0.21.0-x64-mingw32)
+    prawn (2.2.2)
+      pdf-core (~> 0.7.0)
+      ttfunk (~> 1.5)
+    prawn-rails (1.0.1)
+      prawn
+      prawn-table
+      rails (>= 3.1.0)
+    prawn-table (0.2.2)
+      prawn (>= 1.3.0, < 3.0.0)
     puma (3.10.0)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -155,6 +165,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    ttfunk (1.5.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -181,7 +192,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt (~> 3.1.11)
   byebug
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
@@ -190,6 +201,7 @@ DEPENDENCIES
   kaminari
   passenger
   pg
+  prawn-rails
   puma (~> 3.0)
   rails (~> 5.0.2)
   sass-rails (~> 5.0)
