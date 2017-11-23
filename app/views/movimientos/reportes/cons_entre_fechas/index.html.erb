@@ -1,0 +1,23 @@
+<% content_for :title, "Movimientos entre fechas" %>
+
+<h1>Movimientos entre fechas</h1>
+
+<div class="row">
+	<div><%= render 'notice' %></div>
+</div>
+
+<div class="row">
+	<%= form_tag url_for(controller: :movimientos, action: :cons_entre_fechas), class: "form-inline" do %>
+		<div class="col-sm-12">
+					<%= label_tag "Período: " %>
+					<%= text_field_tag :desde, format_date(params[:desde]), class: "form-control date-picker", required: true, autofocus: true %>
+					 al 
+					<%= text_field_tag :hasta, format_date(params[:hasta]), class: "form-control date-picker", required: true %>
+					<span style="width: 10px; display: inline-block;"></span>
+					<%= label_tag "Cuenta: " %>
+					<%= select_tag :cuenta_id, options_for_select(current_user.cuentas.all_for_select), class: "form-control" %>
+					<span style="width: 10px; display: inline-block;"></span>
+ 					<%= submit_tag "Consultar", class: 'btn btn-default', role: 'button'%>
+		</div>
+	<% end %>
+</div>
