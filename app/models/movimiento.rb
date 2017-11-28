@@ -45,19 +45,23 @@ class Movimiento < ApplicationRecord
     values.each do |i|
       logger.debug i.to_yaml
       m = Movimiento.new(cuenta_id: cuenta_id, fecha_mov: fecha_mov,
-            transaccion: transacciones.find_by_id(i[:transaccion_id]),
+            transaccion: Transaccion.find_by_id(i[:transaccion_id]),
             importe: i[:importe])
-      if not m.valid?
-        @errores = (@errores + m.errors.full_messages).uniq
-        logger.debug "errores = #{m.errors.to_hash(true)}"
-        logger.debug "@errores = #{@errores}"
-      end
       @items << m
     end
   end
 
   def save_items(empresa_id)
     logger.debug "- save_items -"
+    @items.each do |m|
+      m.usuario = usuario
+      m.empresa_id = empresa_id
+      if not m.valid?
+        @errores = (@errores + m.errors.full_messages).uniq
+        logger.debug "errores = #{m.errors.to_hash(true)}"
+        logger.debug "@errores = #{@errores}"
+      end
+    end
     if @errores.blank?
       if agrupar
         logger.debug 'graba agrupando'

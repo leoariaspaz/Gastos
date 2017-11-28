@@ -88,9 +88,14 @@ label {
   display: block;
 }
 
-.no-padding {
+.no-padding-vert {
   padding-bottom: 0 !important;
   padding-top: 0px !important;
+}
+
+.no-padding-horiz {
+  padding-left: 0 !important;
+  padding-right: 0px !important;
 }
 
 #menu-abm{
@@ -106,8 +111,8 @@ label {
   text-decoration: none;
 }
 
-.nav-tabs.nav-justified a, 
-.nav-tabs.nav-justified a:focus, 
+.nav-tabs.nav-justified a,
+.nav-tabs.nav-justified a:focus,
 .nav-tabs.nav-justified a:hover {
   font-size: 1.3em;
 }
@@ -115,7 +120,7 @@ label {
 .table-with-footer tfoot
 {
   border-top-style: double;
-  border-top-color: rgb(221, 221, 221);  
+  border-top-color: rgb(221, 221, 221);
 }
 
 .navbar
@@ -126,17 +131,17 @@ label {
 .nav
 {
 
-  li 
+  li
   {
     a
     {
       color: #ccc !important;
       &:hover
-      {    
+      {
         color: #fff !important;
       }
     }
-    &.active > a 
+    &.active > a
     {
       color: #fcf8e3 !important;
       font-weight: bold;

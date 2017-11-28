@@ -105,6 +105,7 @@ class MovimientosController < ApplicationController
 
   def grabar_carga_masiva
     @movimiento = Movimiento.new(movimiento_masivo_params)
+    logger.debug "current_user.empresa_id = #{current_user.empresa_id}"
     @movimiento.empresa_id = current_user.empresa_id
     @movimiento.usuario = current_user
     flash[:cuenta_id] = @movimiento.cuenta_id
