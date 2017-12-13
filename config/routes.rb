@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/movimientos/carga_masiva/nuevo_movimiento', controller: :movimientos, action: :nuevo_movimiento_masivo
   get '/movimientos/carga_masiva/sumar', controller: :movimientos, action: :sumar
   get '/movimientos/consultas/entre-fechas', controller: :movimientos, action: :entre_fechas
-  post '/movimientos/consultas/entre_fechas', controller: :movimientos, action: :cons_entre_fechas
+  post '/movimientos/consultas/entre-fechas', controller: :movimientos, action: :cons_entre_fechas
   resources :movimientos do
     get 'cuenta/:id(/pag/:page)', action: :list, on: :collection
   end

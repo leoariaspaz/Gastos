@@ -131,8 +131,19 @@ class MovimientosController < ApplicationController
     @total = tmp.inject(0){|sum,x| sum + x["importe"].to_f }
   end
 
+  # GET '/movimientos/consultas/entre-fechas'
   def entre_fechas
-    # p = params.require(:movimiento).permit(:desde, :hasta, :cuenta_id)    
+    @movimiento = MovEntreFechasSearch.new
+    render 'movimientos/reportes/cons_entre_fechas/index'
+  end
+
+  # POST '/movimientos/consultas/entre_fechas'
+  def cons_entre_fechas
+    p = params.require(:mov_entre_fechas_search).permit(:fecha_desde, :fecha_hasta, :cuenta_id, :tipo_informe)
+    m = MovEntreFechasSearch.new(p)
+    logger.debug "movimiento = #{m.to_yaml}"
+    logger.debug "valid? #{m.valid?}"
+    @movimiento = m
     render 'movimientos/reportes/cons_entre_fechas/index'
   end
 
