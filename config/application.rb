@@ -16,11 +16,5 @@ module Gastos
 		# Ver https://stackoverflow.com/a/6118837/32173
 		config.time_zone = 'Buenos Aires'
 		config.active_record.default_timezone = :local # Or :utc
-
-		# Carga las validaciones personalizadas
-		# config.autoload_paths += %W["#{Rails.root}/app/validators/"]
-
-		# puts Rails.root
-		# puts config.autoload_paths
   end
 end

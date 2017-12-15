@@ -141,10 +141,27 @@ class MovimientosController < ApplicationController
   def cons_entre_fechas
     p = params.require(:mov_entre_fechas_search).permit(:fecha_desde, :fecha_hasta, :cuenta_id, :tipo_informe)
     m = MovEntreFechasSearch.new(p)
-    logger.debug "movimiento = #{m.to_yaml}"
-    logger.debug "valid? #{m.valid?}"
-    @movimiento = m
-    render 'movimientos/reportes/cons_entre_fechas/index'
+    # logger.debug "movimiento = #{m.to_yaml}"
+    # logger.debug "valid? #{m.valid?}"
+    # @movimiento = m
+    # render 'movimientos/reportes/cons_entre_fechas/index'
+
+    if m.valid?
+      pdf = MovEntreFechasPdf.new(m, view_context)
+      # case @movimiento.tipo_informe
+      #   when 1 # Ordenado por fecha
+      #     pdf = MovEntreFechasPdf.new(@movimiento, view_context)
+      #   when 2 # Agrupado por usuario
+      #     pdf = MovimientoUtilidadPdf.new(@movimiento, view_context)
+      # end
+      if not pdf.nil?
+        send_data pdf.render, filename: pdf.file_name,
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    else
+      render action: 'entre_fechas'
+    end
   end
 
   private
