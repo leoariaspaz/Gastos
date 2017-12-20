@@ -4,11 +4,11 @@ module PdfReport
   include ActionView::Helpers::AssetUrlHelper
 
   def header(title, subtitle = nil)
-    img_path = "#{Rails.root}/app/assets/images/taxi.png"
+    img_path = "#{Rails.root}/app/assets/images/logo.png"
     time = I18n.l Time.now, format: "%d/%m/%Y %H:%M"
     data = [[
               [[{image: img_path, image_width: 32, borders: [], padding: 0, position: :center}],
-              [{content: "Remis Ctrl", size: 7, borders: [], padding: 0, align: :center, font_style: :bold}]],
+              [{content: "Gastos", size: 7, borders: [], padding: 0, align: :center, font_style: :bold}]],
               {content: title, size: 24, align: :center},
               {content: time, size: 7, align: :center, font_style: :italic}
             ]]

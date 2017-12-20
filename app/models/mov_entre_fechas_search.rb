@@ -39,15 +39,6 @@ class MovEntreFechasSearch
 	# 	end
 	# end
 
-	def self.tipos_informe
-		TipoInforme.map{|k,v| [v, k]}
-	end
-
-	def to_s
-		"(tipo_informe: #{@tipo_informe}, fecha_desde: #{@fecha_desde}, fecha_hasta: #{@fecha_hasta}, " +
-		"nromovil_desde: #{@nromovil_desde}, nromovil_hasta: #{@nromovil_hasta})"
-	end
-
 private
 	def date_from_select_params(params, field_name)
 		Date.new(params["#{field_name}(1i)"].to_i, params["#{field_name}(2i)"].to_i, params["#{field_name}(3i)"].to_i)
@@ -55,6 +46,6 @@ private
 
 	def new_date(fecha, separador = "/")
 		fecha_array = Array.new(3).zip(fecha.split(separador)).transpose.last.reverse.map(&:to_i)
-		return Date.new(fecha_array[0], fecha_array[1], fecha_array[2])	
+		return Date.new(fecha_array[0], fecha_array[1], fecha_array[2])
 	end	
 end
