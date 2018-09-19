@@ -1,5 +1,5 @@
 class Movimiento < ApplicationRecord
-  paginates_per 10
+  paginates_per 50
 
   belongs_to :transaccion
   belongs_to :cuenta

@@ -17,7 +17,7 @@
     <% @cuentas.each do |cuenta| %>
       <tr>
         <td><%= cuenta.descripcion_cuenta %></td>
-        <td class="text-center"><%= I18n.localize cuenta.max_fecha_mov, format: :fecmov %></td>
+        <td class="text-center"><%= I18n.localize Date.parse cuenta.max_fecha_mov, format: :fecmov %></td>
         <td class="text-right"><%= number_to_currency cuenta.saldo_inicial + cuenta.importe %></td>
       </tr>
     <% end %>
