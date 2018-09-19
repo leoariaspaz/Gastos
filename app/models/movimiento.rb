@@ -1,5 +1,5 @@
 class Movimiento < ApplicationRecord
-  paginates_per 10
+  paginates_per 50
 
   belongs_to :transaccion
   belongs_to :cuenta
@@ -92,5 +92,28 @@ class Movimiento < ApplicationRecord
 
   def transacciones
     usuario.transacciones.all_for_select.map { |t| t[1] }
+  end
+
+  def self.movimientos_con_saldo(fecha_desde, fecha_hasta, cuenta_id)
+    movs = Movimiento.joins(:transaccion)
+                      .select("movimientos.updated_at, movimientos.fecha_mov, transacciones.descripcion AS trx_desc, 
+                        movimientos.importe, movimientos.created_at, movimientos.transaccion_id, transacciones.es_debito,
+                        movimientos.transaccion_id")
+                      .where("movimientos.cuenta_id = ? and movimientos.fecha_mov >= ? and movimientos.fecha_mov <= ?", 
+                        cuenta_id, fecha_desde, fecha_hasta)
+                      .order(fecha_mov: :asc, created_at: :asc)
+    if not movs.empty?
+      anteriores = Movimiento.joins(:transaccion)
+                    .where("movimientos.cuenta_id = ? and movimientos.created_at < ?", cuenta_id, movs.first.created_at)
+      debitos = anteriores.where("transacciones.es_debito = ?", true).sum(:importe)
+      creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
+      saldo_inicial = Cuenta.find(cuenta_id).saldo_inicial
+      saldo_anterior = saldo_inicial + creditos - debitos
+      movs.reverse_each do |m|
+        m.saldo = saldo_anterior + m.importe_real
+        saldo_anterior = m.saldo
+      end
+    end
+    return movs
   end
 end
