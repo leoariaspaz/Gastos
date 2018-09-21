@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
 
 private
 	def current_user
-		@current_user ||= Usuario.find(session[:usuario_id]) if session[:usuario_id]
+		begin
+			@current_user ||= Usuario.find(session[:usuario_id]) if session[:usuario_id]			
+		rescue Exception => e
+			@current_user = nil
+		end
 	end
 
 	def authorize
@@ -19,9 +23,11 @@ private
 	end
 
 	def autorizar_por_rol
+		logger.debug "autorizar_por_rol => buscando #{self.class.controller_path} + #{action_name}"
 		unless current_user.roles.detect {|rol|
 			rol.permisos.detect{|permiso|
-				logger.debug "autorizar_por_rol => #{permiso.controller} + #{permiso.action} <-> #{self.class.controller_path} + #{action_name}"
+				#logger.debug "autorizar_por_rol => #{permiso.controller} + #{permiso.action} <-> #{self.class.controller_path} + #{action_name}"
+				logger.debug "encontrado #{permiso.controller} + #{permiso.action}"
 				permiso.action == action_name && permiso.controller == self.class.controller_path
 			}
 		}

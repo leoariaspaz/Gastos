@@ -15,17 +15,19 @@ class MovimientosController < ApplicationController
       @movimientos = current_user.movimientos.where(cuenta_id: id)
     end
     @movimientos = @movimientos.order(fecha_mov: :desc, created_at: :desc, cuenta_id: :asc).page params[:page]
-    anteriores = current_user.movimientos
-                  .where(cuenta_id: id)
-                  .joins(:transaccion)
-                  .where("movimientos.created_at < ?", @movimientos.last.created_at)
-    debitos = anteriores.where("transacciones.es_debito = ?", true).sum(:importe)
-    creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
-    saldo_inicial = current_user.cuentas.find(id).saldo_inicial
-    saldo_anterior = saldo_inicial + creditos - debitos
-    @movimientos.reverse_each do |m|
-      m.saldo = saldo_anterior + m.importe_real
-      saldo_anterior = m.saldo
+    if @movimientos.any?
+      anteriores = current_user.movimientos
+                    .where(cuenta_id: id)
+                    .joins(:transaccion)
+                    .where("movimientos.created_at < ?", @movimientos.last.created_at)
+      debitos = anteriores.where("transacciones.es_debito = ?", true).sum(:importe)
+      creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
+      saldo_inicial = current_user.cuentas.find(id).saldo_inicial
+      saldo_anterior = saldo_inicial + creditos - debitos
+      @movimientos.reverse_each do |m|
+        m.saldo = saldo_anterior + m.importe_real
+        saldo_anterior = m.saldo
+      end
     end
   end
 

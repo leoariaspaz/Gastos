@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20171109150446) do
   end
 
   create_table "movimientos", force: :cascade do |t|
-    t.date     "fecha_mov",                               default: '2017-09-07'
+    t.date     "fecha_mov",                               default: '2018-09-19'
     t.integer  "transaccion_id"
     t.decimal  "importe",        precision: 18, scale: 2, default: "0.0"
     t.datetime "created_at",                                                     null: false
@@ -92,13 +92,14 @@ ActiveRecord::Schema.define(version: 20171109150446) do
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.string   "nombre"
-    t.string   "email"
+    t.string   "nombre",        limit: 50
+    t.string   "email",         limit: 50
     t.string   "password_hash"
     t.string   "password_salt"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.boolean  "es_admin",      default: false
+    t.integer  "estado"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.boolean  "es_admin",                 default: false
     t.integer  "empresa_id"
     t.index ["empresa_id"], name: "index_usuarios_on_empresa_id"
   end
