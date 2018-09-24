@@ -7,7 +7,7 @@ class Usuario < ApplicationRecord
   attr_accessor :password
   attr_accessor :current_password
   cattr_accessor :current_user, instance_writer: false, instance_reader: false
-  
+
   before_save :encrypt_password
 
   validate :change_pwd
@@ -17,7 +17,7 @@ class Usuario < ApplicationRecord
   validates_confirmation_of :password, message: "no coincide con la nueva contraseña."
 
   def self.authenticate(email, password)
-    user = find_by_email(email)
+    user = find_by_email_and_estado(email, 1) #sólo usuarios habilitados
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else
