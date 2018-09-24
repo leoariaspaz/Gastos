@@ -1,10 +1,9 @@
 class Transaccion < ApplicationRecord
-  has_many :transacciones
   belongs_to :empresa
+  belongs_to :tipo_transaccion
 
   validates :descripcion, presence: true
   validates_uniqueness_of :descripcion, scope: :tipo_transaccion_id
-  belongs_to :tipo_transaccion
   validate :tipo_transaccion_válido
 
   #def self.default_scope
@@ -27,7 +26,7 @@ class Transaccion < ApplicationRecord
 
 private
 	def tipo_transaccion_válido
-		if (not tipo_transaccion_id.nil?) and current_user.tipos_transacciones.where(habilitado: true, id: tipo_transaccion_id).empty?
+		if (not tipo_transaccion_id.nil?) and (not Usuario.current_user.tipos_transacciones(id: tipo_transaccion_id))
  			errors.add(:tipo_transaccion_id, "es incorrecto")
 		end
 	end

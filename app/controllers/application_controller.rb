@@ -11,6 +11,8 @@ private
 		rescue Exception => e
 			@current_user = nil
 		end
+		Usuario.current_user = @current_user
+		return @current_user
 	end
 
 	def authorize

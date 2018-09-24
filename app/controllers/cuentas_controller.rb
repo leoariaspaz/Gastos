@@ -60,10 +60,8 @@ class CuentasController < ApplicationController
         format.html { redirect_to cuentas_url, notice: 'La cuenta se eliminó correctamente.' }
         format.json { head :no_content }
       else
-        @cuentas = current_user.cuentas.all
-        logger.debug "errores: #{@cuenta.errors.full_messages.join(" ")}"
         format.html { redirect_to cuentas_path, error: @cuenta.errors.full_messages.join(" ") }
-        format.json { render json: @cuenta.errors, status: :unprocessable_entity }      
+        format.json { render json: @cuenta.errors, status: :unprocessable_entity }
       end
     end
   end

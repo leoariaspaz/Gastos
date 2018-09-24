@@ -25,7 +25,7 @@ class TiposTransaccionesController < ApplicationController
   # POST /tipos_transacciones.json
   def create
     @tipo_transaccion = TipoTransaccion.new(tipo_transaccion_params)
-    @tipo_transaccion = current_user.empresa_id
+    @tipo_transaccion.empresa = current_user.empresa
 
     respond_to do |format|
       if @tipo_transaccion.save
@@ -55,10 +55,14 @@ class TiposTransaccionesController < ApplicationController
   # DELETE /tipos_transacciones/1
   # DELETE /tipos_transacciones/1.json
   def destroy
-    @tipo_transaccion.destroy
     respond_to do |format|
-      format.html { redirect_to tipos_transacciones_url, notice: "#{@tipo_transaccion.descripcion} se ha eliminado." }
-      format.json { head :no_content }
+      if @tipo_transaccion.destroy
+        format.html { redirect_to tipos_transacciones_url, notice: "#{@tipo_transaccion.descripcion} se ha eliminado." }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to tipos_transacciones_url, error: @tipo_transaccion.errors.full_messages.join(" ")  }
+        format.json { head :no_content }
+      end
     end
   end
 

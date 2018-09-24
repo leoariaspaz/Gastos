@@ -27,7 +27,6 @@ class Cuenta < ApplicationRecord
 private
   def cuenta_con_movimientos?
     errors.add(:base, "No se puede eliminar una cuenta con movimientos.") if movimientos.any?
-    logger.debug "cuenta_con_movimientos -> movimientos relacionados: #{movimientos.count} - errores:  #{errors.count}"
     throw(:abort) if errors.any?
   end
 end
