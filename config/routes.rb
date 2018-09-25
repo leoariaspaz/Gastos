@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get '/movimientos/consultas/entre-fechas', controller: :movimientos, action: :entre_fechas
   post '/movimientos/consultas/entre-fechas', controller: :movimientos, action: :cons_entre_fechas
   resources :movimientos do
-    get 'cuenta/:id(/pag/:page)', action: :list, on: :collection
+    # get 'cuenta/:id(/pag/:page)', action: :list, on: :collection
+    get 'cuenta', action: :list, on: :collection, as: :cons_por_cta
   end
 
   resources :transacciones do

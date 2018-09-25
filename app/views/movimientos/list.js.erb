@@ -1,3 +1,5 @@
 $("#index_movimientos #list").html('<%= escape_javascript render "list" %>');
-$('#paginator').html('<%= escape_javascript(paginate(@movimientos, :remote => true).to_s) %>');
 $('#index_movimientos #loader').hide();
+$('.pagination a').click(function () {
+	$('.movidxcta #loader').show();
+});

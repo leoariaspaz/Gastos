@@ -12,10 +12,13 @@
   </div>
 
   <div class="form-group movidxcta">
-    <%= label_tag :cuenta_id, "Cuenta:", { style: "display: inline;" } %>
-    <%= select_tag "cuenta_id", options_for_select(current_user.cuentas.all_for_select, flash[:cuenta_id]),
-          {class: "form-control", style: "display: inline; max-width: 40%;"} %>
-    <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "30", id: "loader"} %>
+    <%= form_tag cons_por_cta_movimientos_path, remote: true, method: :get do  %>
+      <%= label_tag :cuenta_id, "Cuenta:", { style: "display: inline;" } %>
+      <%= select_tag "id", options_for_select(current_user.cuentas.all_for_select, flash[:cuenta_id]),
+            {class: "form-control", style: "display: inline; max-width: 40%;"} %>
+      <%= submit_tag "Consultar", class: 'btn btn-default', role: 'button'%>
+      <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "30", id: "loader", class: "hide-on-load" } %>
+    <% end %>
   </div>
 
   <div id="list"></div>

@@ -55,11 +55,14 @@ sumar_importes = ->
 ready = ->
   tipo_transaccion_id_change()
   focus_importe()
-  cargar_movimientos_por_cuenta()
+  # cargar_movimientos_por_cuenta()
   $('.hide-on-load').hide()
   $('form.carga_masiva').on("click", '.eliminar', eliminar_movimiento)
   sumar_importes()
   $('#nuevo-mov a').click ->
   	$('#nuevo-mov .loader').show()
+  $('.movidxcta .btn, .pagination a').click ->
+  	$('.movidxcta #loader').show()
+
 
 $(document).on("turbolinks:load", ready)
