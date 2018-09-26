@@ -61,8 +61,8 @@ ready = ->
   sumar_importes()
   $('#nuevo-mov a').click ->
   	$('#nuevo-mov .loader').show()
-  $('.movidxcta .btn, .pagination a').click ->
+  $('.movidxcta .btn').click ->
   	$('.movidxcta #loader').show()
-
+  
 
 $(document).on("turbolinks:load", ready)

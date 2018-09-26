@@ -1,49 +1,41 @@
-require File.expand_path('../../../config/environment',  __FILE__)
-require 'permiso'
-require 'rol'
-require 'usuario'
+# Debe estar creado el usuario Administrador
 
-# usuarios -> index, new, create, edit, update, reset_pwd
-id_usuario = 1
-nombre_rol = "Administrador"
-nombre_permiso = "Edición de usuarios"
-controller_permiso = "usuarios"
-action_permiso = "reset_pwd"
+# Rol.delete_all
+# Permiso.delete_all
 
-r = Rol.find_by_nombre(nombre_rol)
-if r
-	puts "Ya existe el rol #{nombre_rol}"
-else
-	r = Rol.create(nombre: nombre_rol)
-	puts "Se creó el rol"
+r = Rol.find_by_nombre("Administrador")
+if not r
+	puts "Creando el rol Administrador"
+	r = Rol.create! nombre: "Administrador"
 end
 
-p = Permiso.where(nombre: nombre_permiso, controller: controller_permiso, action: action_permiso)
-if p.any?
-	puts "Ya existe el permiso #{nombre_permiso} con la acción #{controller_permiso}\\#{action_permiso}"
-else
-	p = Permiso.create(nombre: nombre_permiso, controller: controller_permiso, action: action_permiso)
-	puts "Se creó el permiso"
+permisos = []
+# permisos del controlador Usuarios
+permisos << Permiso.new(nombre: "Listado de usuarios", controller: "usuarios", action: "index")
+permisos << Permiso.new(nombre: "Nuevo usuario", controller: "usuarios", action: "new")
+permisos << Permiso.new(nombre: "Grabación de nuevo usuario", controller: "usuarios", action: "create")
+permisos << Permiso.new(nombre: "Edición de usuarios", controller: "usuarios", action: "edit")
+permisos << Permiso.new(nombre: "Grabación de edición de usuarios", controller: "usuarios", action: "update")
+permisos << Permiso.new(nombre: "Resetear contraseña", controller: "usuarios", action: "reset_pwd")
+
+permisos.each do |p|
+	if not Permiso.where(nombre: p.nombre, controller: p.controller, action: p.action).any?
+		puts "Creando el permiso #{p.nombre} => #{p.controller}##{p.action}"
+		p.save!
+	end
 end
 
-if r.permisos.exists?(p)
-	puts "El permiso ya está asignado al rol"
-else
-	r.permisos << p
-	puts "Se asignó el permiso al rol"
+Permiso.all.each do |p|
+	if not r.permisos.where(nombre: p.nombre, controller: p.controller, action: p.action).any?
+		puts "Asignando el permiso #{p.nombre} al rol #{r.nombre}"
+		r.permisos << p
+	end
 end
 
-u = Usuario.find(1)
-if not u
-	puts "No existe un usuario con id: #{id_usuario}"
-	return
-end
-
-if u.roles.exists?(r)
-	puts "El rol ya está asignado al usuario #{u.nombre}"
-else
+u = Usuario.find_by_nombre("Administrador")
+if not u.roles.find_by_nombre(r.nombre)
+	puts "Asignando el rol #{r.nombre} al usuario #{u.nombre}"
 	u.roles << r
-	puts "Se asignó el rol al usuario #{u.nombre}"
 end
 
-puts "Fin.-"
+puts "Fin del script.-"
