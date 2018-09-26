@@ -23,7 +23,7 @@ puts "Se ha creado empresa default"
 # ======================
 # usuario
 # ======================
-usr = Usuario.create!(nombre: "Administrador", email: "leoariaspaz@gmail.com", password: "123456", es_admin: true, empresa: e)
+usr = Usuario.create!(nombre: "Administrador", email: "leoariaspaz@gmail.com", password: "123456", es_admin: true, empresa: e, estado: 1)
 puts "Se ha creado usuario Administrador"
 
 # ======================
