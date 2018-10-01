@@ -26,7 +26,7 @@ class Transaccion < ApplicationRecord
 
 private
 	def tipo_transaccion_válido
-		if (not tipo_transaccion_id.nil?) and (not Usuario.current_user.tipos_transacciones(id: tipo_transaccion_id))
+		if (not tipo_transaccion_id.nil?) and (not Usuario.current_user.tipos_transacciones.find(tipo_transaccion_id))
  			errors.add(:tipo_transaccion_id, "es incorrecto")
 		end
 	end

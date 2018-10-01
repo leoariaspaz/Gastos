@@ -2,7 +2,7 @@ class TipoTransaccion < ApplicationRecord
 	belongs_to :empresa
   has_many :transacciones
 
-	validates_uniqueness_of :descripcion, :message => "ya existe"
+	validates_uniqueness_of :descripcion, :message => "ya existe", scope: :empresa_id
 	validates :descripcion, presence: true
 
 	before_destroy :tipo_transaccion_con_transacciones?

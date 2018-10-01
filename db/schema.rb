@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109150446) do
+ActiveRecord::Schema.define(version: 20180927005909) do
 
   create_table "cuentas", force: :cascade do |t|
     t.string   "descripcion",   limit: 50
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171109150446) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "empresa_id"
-    t.index ["descripcion"], name: "index_tipos_transacciones_on_descripcion", unique: true
+    t.index ["descripcion", "empresa_id"], name: "index_tipos_transacciones_on_descripcion_and_empresa_id", unique: true
     t.index ["empresa_id"], name: "index_tipos_transacciones_on_empresa_id"
   end
 
