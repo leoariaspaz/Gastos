@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180927005909) do
+ActiveRecord::Schema.define(version: 20181002140106) do
 
   create_table "cuentas", force: :cascade do |t|
     t.string   "descripcion",   limit: 50
@@ -30,13 +30,14 @@ ActiveRecord::Schema.define(version: 20180927005909) do
   end
 
   create_table "movimientos", force: :cascade do |t|
-    t.date     "fecha_mov",                               default: '2018-09-19'
+    t.date     "fecha_mov",                                default: '2018-09-19'
     t.integer  "transaccion_id"
-    t.decimal  "importe",        precision: 18, scale: 2, default: "0.0"
-    t.datetime "created_at",                                                     null: false
-    t.datetime "updated_at",                                                     null: false
+    t.decimal  "importe",         precision: 18, scale: 2, default: "0.0"
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
     t.integer  "cuenta_id"
     t.integer  "empresa_id"
+    t.boolean  "es_contrasiento"
     t.index ["cuenta_id"], name: "index_movimientos_on_cuenta_id"
     t.index ["empresa_id"], name: "index_movimientos_on_empresa_id"
     t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id"

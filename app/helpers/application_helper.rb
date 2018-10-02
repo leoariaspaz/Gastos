@@ -51,7 +51,7 @@ module ApplicationHelper
 			content_tag(:li, content, html_options)
 	end
 
-	def format_date(date)
+	def format_date(date)		
 		date.strftime('%d/%m/%Y') if date
 	end
 

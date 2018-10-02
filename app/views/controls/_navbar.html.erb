@@ -17,8 +17,14 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li>
-          <%= link_to 'Movimientos', movimientos_path %>
+        <li class="dropdown">
+          <%= link_to movimientos_path, class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+            Movimientos <span class="caret"></span>
+          <% end %>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Listado general', movimientos_path %></li>
+            <li><%= link_to 'Entre fechas', movimientos_consultas_entre_fechas_path %></li>
+          </ul>
         </li>
         <li class="dropdown">
           <%= link_to cuentas_path, class: "dropdown-toggle", data: {toggle: "dropdown"} do %>

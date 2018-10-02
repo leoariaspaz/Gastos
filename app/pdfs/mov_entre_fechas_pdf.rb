@@ -2,6 +2,7 @@ class MovEntreFechasPdf < Prawn::Document
   include PdfReport
   include ApplicationHelper
   include ActionView::Helpers::NumberHelper 
+  include MovEntreFechasSearchHelper
 
   TABLE_HEADER = [["Fec. real", "Fec. Mov.", "Cód. Trx.", "Transacción", "Crédito", "Débito", "Saldo"]]
 
@@ -25,14 +26,9 @@ class MovEntreFechasPdf < Prawn::Document
   end
 
 private
-  def NewDate(fecha, separador = "/")
-    fecha_array = Array.new(3).zip(fecha.split(separador)).transpose.last.reverse.map(&:to_i)
-    return Date.new(fecha_array[0], fecha_array[1], fecha_array[2]) 
-  end
-
   def body(movimiento)
-    fecha_desde = NewDate(movimiento.fecha_desde)
-    fecha_hasta = NewDate(movimiento.fecha_hasta)
+    fecha_desde = str_to_date(movimiento.fecha_desde)
+    fecha_hasta = str_to_date(movimiento.fecha_hasta)
     movimientos = Movimiento.movimientos_con_saldo(fecha_desde, fecha_hasta, movimiento.cuenta_id)
     if movimientos.empty?
       text "- No se han encontrado movimientos para su consulta -", align: :center

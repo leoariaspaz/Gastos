@@ -3,9 +3,10 @@
     <thead>
       <tr>
         <th class="text-center">Fecha</th>
-        <th class="text-center">Movimiento</th>
+        <th class="text-center">Rubro</th>
+        <th class="text-center">Transacción</th>
+        <th class="text-center">Contr.</th>
         <th class="text-center">Importe</th>
-        <th class="text-center">Saldo</th>
         <th></th>
       </tr>
     </thead>
@@ -14,16 +15,19 @@
       <% @movimientos.each do |movimiento| %>
         <tr>
           <td class="col-sm-2"><%= I18n.localize movimiento.fecha_mov, format: :fecmov %></td>
-          <td><%= movimiento.transaccion.descripcion_completa %></td>
-          <td class="text-right"><%= number_to_currency movimiento.importe_real %></td>
-          <td class="text-right"><%= number_to_currency movimiento.saldo %></td>
+          <td><%= movimiento.transaccion.tipo_transaccion.descripcion %></td>
+          <td><%= movimiento.transaccion.descripcion %></td>
+          <td class="text-center"><%= render partial: "controls/checkbox", object: movimiento.es_contrasiento %></td>
+          <td class="text-right"><%= number_to_currency movimiento.importe %></td>
           <td class="text-center">
-            <%= link_to edit_movimiento_path(movimiento) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-            <% end %>
-            <%= link_to movimiento, method: :delete, data: { confirm: '¿Está seguro?' } do %>
-              <span class="glyphicon glyphicon-trash"></span>
-            <% end %>
+            <% if not movimiento.es_contrasiento %>
+              <%= link_to edit_movimiento_path(movimiento) do %>
+                <span class="glyphicon glyphicon-edit"></span>
+              <% end %>
+              <%= link_to movimiento, method: :delete, data: { confirm: '¿Está seguro que desea contrasentar el movimiento?' } do %>
+                <span class="glyphicon glyphicon-trash"></span>
+              <% end %>
+            <% end -%>
           </td>          
         </tr>
       <% end %>

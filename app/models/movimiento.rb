@@ -94,14 +94,19 @@ class Movimiento < ApplicationRecord
     usuario.transacciones.all_for_select.map { |t| t[1] }
   end
 
-  def self.movimientos_con_saldo(fecha_desde, fecha_hasta, cuenta_id)
+  def self.movimientos_entre_fechas(fecha_desde, fecha_hasta, cuenta_id)
     movs = Movimiento.joins(:transaccion)
                       .select("movimientos.updated_at, movimientos.fecha_mov, transacciones.descripcion AS trx_desc, 
                         movimientos.importe, movimientos.created_at, movimientos.transaccion_id, transacciones.es_debito,
-                        movimientos.transaccion_id")
+                        movimientos.transaccion_id, movimientos.es_contrasiento, movimientos.id")
                       .where("movimientos.cuenta_id = ? and movimientos.fecha_mov >= ? and movimientos.fecha_mov <= ?", 
                         cuenta_id, fecha_desde, fecha_hasta)
-                      .order(fecha_mov: :asc, created_at: :asc)
+    return movs
+  end
+
+  def self.movimientos_con_saldo(fecha_desde, fecha_hasta, cuenta_id)
+    movs = movimientos_entre_fechas(fecha_desde, fecha_hasta, cuenta_id)
+            .order(fecha_mov: :asc, created_at: :asc, created_at: :asc)
     if not movs.empty?
       anteriores = Movimiento.joins(:transaccion)
                     .where("movimientos.cuenta_id = ? and movimientos.created_at < ?", cuenta_id, movs.first.created_at)

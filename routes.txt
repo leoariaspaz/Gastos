@@ -1,0 +1,61 @@
+                                   Prefix Verb   URI Pattern                                          Controller#Action
+                             sesiones_new GET    /sesiones/new(.:format)                              sesiones#new
+                             usuarios_new GET    /usuarios/new(.:format)                              usuarios#new
+                  informes_cuentas_saldos GET    /informes/cuentas/saldos(.:format)                   cuentas#saldos
+                                  cuentas GET    /cuentas(.:format)                                   cuentas#index
+                                          POST   /cuentas(.:format)                                   cuentas#create
+                               new_cuenta GET    /cuentas/new(.:format)                               cuentas#new
+                              edit_cuenta GET    /cuentas/:id/edit(.:format)                          cuentas#edit
+                                   cuenta GET    /cuentas/:id(.:format)                               cuentas#show
+                                          PATCH  /cuentas/:id(.:format)                               cuentas#update
+                                          PUT    /cuentas/:id(.:format)                               cuentas#update
+                                          DELETE /cuentas/:id(.:format)                               cuentas#destroy
+                 movimientos_carga_masiva GET    /movimientos/carga_masiva(.:format)                  movimientos#carga_masiva
+                                          POST   /movimientos/carga_masiva(.:format)                  movimientos#grabar_carga_masiva
+movimientos_carga_masiva_nuevo_movimiento GET    /movimientos/carga_masiva/nuevo_movimiento(.:format) movimientos#nuevo_movimiento_masivo
+           movimientos_carga_masiva_sumar GET    /movimientos/carga_masiva/sumar(.:format)            movimientos#sumar
+       movimientos_consultas_entre_fechas GET    /movimientos/consultas/entre-fechas(.:format)        movimientos#entre_fechas
+                                          POST   /movimientos/consultas/entre-fechas(.:format)        movimientos#cons_entre_fechas
+                 cons_por_cta_movimientos GET    /movimientos/cuenta(.:format)                        movimientos#list
+                              movimientos GET    /movimientos(.:format)                               movimientos#index
+                                          POST   /movimientos(.:format)                               movimientos#create
+                           new_movimiento GET    /movimientos/new(.:format)                           movimientos#new
+                          edit_movimiento GET    /movimientos/:id/edit(.:format)                      movimientos#edit
+                               movimiento GET    /movimientos/:id(.:format)                           movimientos#show
+                                          PATCH  /movimientos/:id(.:format)                           movimientos#update
+                                          PUT    /movimientos/:id(.:format)                           movimientos#update
+                                          DELETE /movimientos/:id(.:format)                           movimientos#destroy
+             select_by_tipoid_transaccion GET    /transacciones/:id/select_by_tipoid(.:format)        transacciones#select_by_tipoid
+                                          GET    /transacciones/tipo/:id(/pag/:page)(.:format)        transacciones#list
+                            transacciones GET    /transacciones(.:format)                             transacciones#index
+                                          POST   /transacciones(.:format)                             transacciones#create
+                          new_transaccion GET    /transacciones/new(.:format)                         transacciones#new
+                         edit_transaccion GET    /transacciones/:id/edit(.:format)                    transacciones#edit
+                              transaccion GET    /transacciones/:id(.:format)                         transacciones#show
+                                          PATCH  /transacciones/:id(.:format)                         transacciones#update
+                                          PUT    /transacciones/:id(.:format)                         transacciones#update
+                                          DELETE /transacciones/:id(.:format)                         transacciones#destroy
+                                          GET    /tipos_transacciones/pag/:page(.:format)             tipos_transacciones#index
+                      tipos_transacciones GET    /tipos_transacciones(.:format)                       tipos_transacciones#index
+                                          POST   /tipos_transacciones(.:format)                       tipos_transacciones#create
+                     new_tipo_transaccion GET    /tipos_transacciones/new(.:format)                   tipos_transacciones#new
+                    edit_tipo_transaccion GET    /tipos_transacciones/:id/edit(.:format)              tipos_transacciones#edit
+                         tipo_transaccion GET    /tipos_transacciones/:id(.:format)                   tipos_transacciones#show
+                                          PATCH  /tipos_transacciones/:id(.:format)                   tipos_transacciones#update
+                                          PUT    /tipos_transacciones/:id(.:format)                   tipos_transacciones#update
+                                          DELETE /tipos_transacciones/:id(.:format)                   tipos_transacciones#destroy
+                                   logout DELETE /logout(.:format)                                    sesiones#destroy
+                                    login GET    /login(.:format)                                     sesiones#new
+                                     root GET    /                                                    sesiones#new
+                       change_pwd_usuario GET    /usuarios/:id/change_pwd(.:format)                   usuarios#change_pwd
+                       update_pwd_usuario PATCH  /usuarios/:id/update_pwd(.:format)                   usuarios#update_pwd
+                        reset_pwd_usuario PATCH  /usuarios/:id/reset_pwd(.:format)                    usuarios#reset_pwd
+                                 usuarios GET    /usuarios(.:format)                                  usuarios#index
+                                          POST   /usuarios(.:format)                                  usuarios#create
+                              new_usuario GET    /usuarios/new(.:format)                              usuarios#new
+                             edit_usuario GET    /usuarios/:id/edit(.:format)                         usuarios#edit
+                                  usuario PATCH  /usuarios/:id(.:format)                              usuarios#update
+                                          PUT    /usuarios/:id(.:format)                              usuarios#update
+                                 sesiones POST   /sesiones(.:format)                                  sesiones#create
+                               new_sesion GET    /sesiones/new(.:format)                              sesiones#new
+                                   sesion DELETE /sesiones/:id(.:format)                              sesiones#destroy

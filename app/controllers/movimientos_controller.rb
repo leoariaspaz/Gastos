@@ -5,30 +5,40 @@ class MovimientosController < ApplicationController
   # GET /movimientos
   # GET /movimientos.json
   def index
+    @fecha_hasta = Date.today
+    @fecha_desde = @fecha_hasta - 30
   end
 
   def list
-    id = params[:id].to_i
-    if id == 0
-      @movimientos = current_user.movimientos.all
-    else
-      @movimientos = current_user.movimientos.where(cuenta_id: id)
-    end
-    @movimientos = @movimientos.order(fecha_mov: :desc, created_at: :desc, cuenta_id: :asc).page params[:page]
-    if @movimientos.any?
-      anteriores = current_user.movimientos
-                    .where(cuenta_id: id)
-                    .joins(:transaccion)
-                    .where("movimientos.created_at < ?", @movimientos.last.created_at)
-      debitos = anteriores.where("transacciones.es_debito = ?", true).sum(:importe)
-      creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
-      saldo_inicial = current_user.cuentas.find(id).saldo_inicial
-      saldo_anterior = saldo_inicial + creditos - debitos
-      @movimientos.reverse_each do |m|
-        m.saldo = saldo_anterior + m.importe_real
-        saldo_anterior = m.saldo
-      end
-    end
+    cuenta_id = params[:id].to_i
+    fecha_desde = helpers.str_to_date(params[:fecha_desde])
+    fecha_hasta = helpers.str_to_date(params[:fecha_hasta])
+
+    # if id == 0
+    #   @movimientos = current_user.movimientos.all
+    # else
+    #  @movimientos = current_user.movimientos.where(cuenta_id: id)
+    # end
+    #@movimientos = @movimientos.order(fecha_mov: :desc, created_at: :desc, cuenta_id: :asc).page params[:page]
+    # if @movimientos.any?
+    #   anteriores = current_user.movimientos
+    #                 .where(cuenta_id: id)
+    #                 .joins(:transaccion)
+    #                 .where("movimientos.created_at < ?", @movimientos.last.created_at)
+    #   debitos = anteriores.where("transacciones.es_debito = ?", true).sum(:importe)
+    #   creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
+    #   saldo_inicial = current_user.cuentas.find(id).saldo_inicial
+    #   saldo_anterior = saldo_inicial + creditos - debitos
+    #   @movimientos.reverse_each do |m|
+    #     m.saldo = saldo_anterior + m.importe_real
+    #     saldo_anterior = m.saldo
+    #   end
+    # end
+
+    @movimientos = Movimiento
+                     .movimientos_entre_fechas(fecha_desde, fecha_hasta, cuenta_id)
+                     .order(fecha_mov: :desc, created_at: :desc, cuenta_id: :asc)
+                     .page params[:page]
   end
 
   # GET /movimientos/1
@@ -93,10 +103,14 @@ class MovimientosController < ApplicationController
   # DELETE /movimientos/1
   # DELETE /movimientos/1.json
   def destroy
-    @movimiento.destroy
     respond_to do |format|
-      format.html { redirect_to movimientos_url, notice: 'El movimiento se eliminó correctamente.' }
-      format.json { head :no_content }
+      if @movimiento.update(es_contrasiento: true)
+        format.html { redirect_to movimientos_url, notice: 'El movimiento se contrasentó correctamente.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to movimientos_path, error: @movimiento.errors.full_messages.join(" ") }
+        format.json { render json: @movimiento.errors, status: :unprocessable_entity }
+      end
     end
   end
 

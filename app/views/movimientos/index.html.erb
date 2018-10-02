@@ -11,15 +11,29 @@
     </div>
   </div>
 
-  <div class="form-group movidxcta">
-    <%= form_tag cons_por_cta_movimientos_path, remote: true, method: :get do  %>
-      <%= label_tag :cuenta_id, "Cuenta:", { style: "display: inline;" } %>
-      <%= select_tag "id", options_for_select(current_user.cuentas.all_for_select, flash[:cuenta_id]),
-            {class: "form-control", style: "display: inline; max-width: 40%;"} %>
-      <%= submit_tag "Consultar", class: 'btn btn-default', role: 'button'%>
-      <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "30", id: "loader", class: "hide-on-load" } %>
-    <% end %>
+  <div class="row movidxcta">
+    <%= form_tag cons_por_cta_movimientos_path, remote: true, method: :get, class: "form-inline" do  %>
+
+      <div class="col-sm-12 form-group">
+        <%= label_tag :cuenta_id, "Cuenta:" %>
+        <%= select_tag "id", options_for_select(current_user.cuentas.all_for_select, flash[:cuenta_id]),
+              {class: "form-control", style: "display: inline; max-width: 40%; margin-rigth: 10px;"} %>
+        <span style="width: 10px; display: inline-block;"></span>
+
+        <%= label_tag "Período: " %>
+        <%= text_field_tag "fecha_desde", format_date(@fecha_desde), class: "form-control date-picker" %>
+         al 
+        <%= text_field_tag "fecha_hasta", format_date(@fecha_hasta), class: "form-control date-picker" %>
+        <span style="width: 10px; display: inline-block;"></span>
+
+        <%= submit_tag "Consultar", class: 'btn btn-default', role: 'button'%>
+        <%= image_tag "ajax-loader.gif", { alt: "Cargando...", size: "30", id: "loader", class: "hide-on-load" } %>
+      </div>
+
+    <% end %>    
   </div>
+
+  <br/>
 
   <div id="list"></div>
 </div>

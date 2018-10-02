@@ -14,13 +14,13 @@
 	  <%= render 'errores', partial: true, model: @movimiento, model_name: 'La cuenta' %>
 
 		<div class="col-sm-12 form-group">
+			<%= f.label "Cuenta: " %>
+			<%= f.select :cuenta_id, options_for_select(current_user.cuentas.all_for_select), {}, {class: "form-control"} %>
+			<span style="width: 10px; display: inline-block;"></span>
 			<%= f.label "Período: " %>
 			<%= f.text_field :fecha_desde, value: format_date(params[:desde]), class: "form-control date-picker", required: true, autofocus: true %>
 			 al 
 			<%= f.text_field :fecha_hasta, value: format_date(params[:hasta]), class: "form-control date-picker", required: true %>
-			<span style="width: 10px; display: inline-block;"></span>
-			<%= f.label "Cuenta: " %>
-			<%= f.select :cuenta_id, options_for_select(current_user.cuentas.all_for_select), {}, {class: "form-control"} %>
 			<span style="width: 10px; display: inline-block;"></span>
 			<%= f.label "Tipo: " %>
 			<%= f.select :tipo_informe, options_for_select(MovEntreFechasSearch::TIPOS_INFORME), {}, {class: "form-control"} %>
