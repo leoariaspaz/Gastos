@@ -39,24 +39,34 @@ private
   end
 
   def detail_row(movimiento)
-    # if movimiento.es_contrasiento
-    #   if movimiento.es_debito
-    #     deb = {content: "(c) #{deb}", font_style: :italic}
-    #   else
-    #     cred = {content: "(c) #{cred}", font_style: :italic}
-    #   end
-    # else
+    created_at = movimiento.created_at.strftime('%d/%m/%Y %T') if movimiento.created_at
+    fecha_mov = movimiento.fecha_mov.strftime('%d/%m/%Y') if movimiento.fecha_mov
+    trx_id = movimiento.transaccion_id
+    if movimiento.transaccion_id
+      # if movimiento.es_contrasiento
+      #   s = "(c) "
+      #   fs = :normal
+      # else
+      #   s = ""
+      #   fs = :normal
+      # end
+      s = movimiento.es_contrasiento ? "(c) " : ""
+      fs = :normal
+      cred = deb = ""
       if movimiento.es_debito
-        cred = ""
         deb = number_to_currency(movimiento.importe)
+        deb = {content: "#{s}#{deb}", font_style: fs}
       else
         cred = number_to_currency(movimiento.importe)
-        deb = ""
+        cred = {content: "#{s}#{cred}", font_style: fs}
       end
-    # end
-    sdo = number_to_currency(movimiento.saldo)
-    return [movimiento.updated_at.strftime('%d/%m/%Y %T'), movimiento.fecha_mov.strftime('%d/%m/%Y'),
-            movimiento.transaccion_id, movimiento.trx_desc, cred, deb, sdo]
+      trx_desc = movimiento.trx_desc      
+      sdo = number_to_currency(movimiento.saldo)
+    else
+      trx_desc = {content: movimiento.trx_desc, font_style: :italic}
+      sdo = {content: number_to_currency(movimiento.saldo), font_style: :italic}
+    end    
+    return [created_at, fecha_mov, trx_id, trx_desc, cred, deb, sdo]
   end
 
   def print_details(data)

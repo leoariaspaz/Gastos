@@ -95,30 +95,56 @@ class Movimiento < ApplicationRecord
   end
 
   def self.movimientos_entre_fechas(fecha_desde, fecha_hasta, cuenta_id)
-    movs = Movimiento.joins(:transaccion)
-                      .select("movimientos.updated_at, movimientos.fecha_mov, transacciones.descripcion AS trx_desc, 
-                        movimientos.importe, movimientos.created_at, movimientos.transaccion_id, transacciones.es_debito,
-                        movimientos.transaccion_id, movimientos.es_contrasiento, movimientos.id")
-                      .where("movimientos.cuenta_id = ? and movimientos.fecha_mov >= ? and movimientos.fecha_mov <= ?", 
-                        cuenta_id, fecha_desde, fecha_hasta)
+    # movs = Movimiento.joins(:transaccion)
+    #                   .select("movimientos.updated_at, movimientos.fecha_mov, transacciones.descripcion AS trx_desc, 
+    #                     movimientos.importe, movimientos.created_at, movimientos.transaccion_id, transacciones.es_debito,
+    #                     movimientos.es_contrasiento, movimientos.id")
+    #                   .where("movimientos.cuenta_id = ? and movimientos.fecha_mov >= ? and movimientos.fecha_mov <= ?", 
+    #                     cuenta_id, fecha_desde, fecha_hasta)
+
+    movs = Usuario.current_user.movimientos.joins(transaccion: :tipo_transaccion).joins(:cuenta)
+            .select("movimientos.*, transacciones.descripcion AS trx_desc, cuentas.saldo_inicial,
+              transacciones.es_debito, tipos_transacciones.descripcion AS ttrx_desc")
+            .where("movimientos.cuenta_id = ? and movimientos.fecha_mov >= ? and movimientos.fecha_mov <= ?",
+              cuenta_id, fecha_desde, fecha_hasta)
     return movs
   end
 
   def self.movimientos_con_saldo(fecha_desde, fecha_hasta, cuenta_id)
     movs = movimientos_entre_fechas(fecha_desde, fecha_hasta, cuenta_id)
-            .order(fecha_mov: :asc, created_at: :asc, created_at: :asc)
-    if not movs.empty?
-      anteriores = Movimiento.joins(:transaccion)
+            .order(fecha_mov: :asc, created_at: :asc)
+    result = []
+    if movs.any?
+      anteriores = Usuario.current_user.movimientos.joins(:transaccion)
                     .where("movimientos.cuenta_id = ? and movimientos.created_at < ?", cuenta_id, movs.first.created_at)
       debitos = anteriores.where("transacciones.es_debito = ?", true).sum(:importe)
       creditos = anteriores.where("transacciones.es_debito = ?", false).sum(:importe)
-      saldo_inicial = Cuenta.find(cuenta_id).saldo_inicial
-      saldo_anterior = saldo_inicial + creditos - debitos
-      movs.reverse_each do |m|
-        m.saldo = saldo_anterior + m.importe_real
+      saldo_anterior = movs.first.saldo_inicial + creditos - debitos
+      mov_sdoant = movs.first.dup
+      mov_sdoant.saldo = saldo_anterior
+      movs.each do |m|
+        logger.debug "[saldo_anterior, #{saldo_anterior}] [m.importe, #{m.importe}] => [m.saldo, #{saldo_anterior + m.importe}]"
+        if m.es_contrasiento
+          m.saldo = saldo_anterior
+        else
+          if m.es_debito
+            m.saldo = saldo_anterior - m.importe
+          else
+            m.saldo = saldo_anterior + m.importe
+          end
+        end
         saldo_anterior = m.saldo
       end
+      mov_sdoant.class_eval { attr_accessor :trx_desc }
+      mov_sdoant.trx_desc = " - Saldo anterior -"
+      mov_sdoant.importe = nil
+      mov_sdoant.transaccion_id = nil
+      mov_sdoant.fecha_mov = nil
+      result = movs.to_a
+      result.unshift(mov_sdoant)
     end
-    return movs
+    tp result, "created_at", "fecha_mov", "trx_desc", "importe"
+    # return movs.to_a
+    return result
   end
 end

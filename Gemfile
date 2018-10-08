@@ -63,4 +63,5 @@ gem 'prawn-rails'
 
 group :development do
   gem "thin"
+  gem 'table_print'
 end
