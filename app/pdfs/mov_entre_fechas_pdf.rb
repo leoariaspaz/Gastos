@@ -4,7 +4,7 @@ class MovEntreFechasPdf < Prawn::Document
   include ActionView::Helpers::NumberHelper 
   include MovEntreFechasSearchHelper
 
-  TABLE_HEADER = [["Fec. real", "Fec. Mov.", "Cód. Trx.", "Transacción", "Crédito", "Débito", "Saldo"]]
+  TABLE_HEADER = [["Fec. Real", "Fec. Mov.", "Cód. Trx.", "Transacción", "Crédito", "Débito", "Saldo"]]
 
   def initialize(movimiento_search, view)
     super({page_size: "A4", left_margin: 20, right_margin: 20})
@@ -34,6 +34,8 @@ private
       text "- No se han encontrado movimientos para su consulta -", align: :center
     else
       data = movimientos.map { |m| detail_row(m) }
+      move_down 5
+      text "- Listado de movimientos - <b>adsfadsfas</b>", size: 8, align: :left, inline_format: true
       print_details(data)
     end
   end
@@ -43,13 +45,6 @@ private
     fecha_mov = movimiento.fecha_mov.strftime('%d/%m/%Y') if movimiento.fecha_mov
     trx_id = movimiento.transaccion_id
     if movimiento.transaccion_id
-      # if movimiento.es_contrasiento
-      #   s = "(c) "
-      #   fs = :normal
-      # else
-      #   s = ""
-      #   fs = :normal
-      # end
       s = movimiento.es_contrasiento ? "(c) " : ""
       fs = :normal
       cred = deb = ""
@@ -73,7 +68,7 @@ private
     data = TABLE_HEADER + data
     table data do
       self.header = true
-      self.column_widths = [80, 45, 40, 195, 60, 60, 60]
+      self.column_widths = [80, 45, 40, 210, 60, 60, 60]
       self.position = :center
       column(0..1).align = :center
       column(2).align = :right

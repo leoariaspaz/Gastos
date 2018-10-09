@@ -8,10 +8,11 @@ private
 	def current_user
 		begin
 			@current_user ||= Usuario.find(session[:usuario_id]) if session[:usuario_id]			
+			Usuario.current_user = @current_user
 		rescue Exception => e
 			@current_user = nil
+			Usuario.current_user = @current_user
 		end
-		Usuario.current_user = @current_user
 		return @current_user
 	end
 

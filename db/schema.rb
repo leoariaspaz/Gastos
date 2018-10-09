@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181002140106) do
+ActiveRecord::Schema.define(version: 20181009143154) do
 
   create_table "cuentas", force: :cascade do |t|
     t.string   "descripcion",   limit: 50
@@ -38,9 +38,11 @@ ActiveRecord::Schema.define(version: 20181002140106) do
     t.integer  "cuenta_id"
     t.integer  "empresa_id"
     t.boolean  "es_contrasiento"
+    t.integer  "usuario_id"
     t.index ["cuenta_id"], name: "index_movimientos_on_cuenta_id"
     t.index ["empresa_id"], name: "index_movimientos_on_empresa_id"
     t.index ["transaccion_id"], name: "index_movimientos_on_transaccion_id"
+    t.index ["usuario_id"], name: "index_movimientos_on_usuario_id"
   end
 
   create_table "permisos", force: :cascade do |t|

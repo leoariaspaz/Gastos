@@ -3,6 +3,7 @@ class Usuario < ApplicationRecord
 
   belongs_to :empresa, :class_name => "Empresa", :foreign_key => "empresa_id"
   has_and_belongs_to_many :roles
+  has_many :movimientos
 
   attr_accessor :password
   attr_accessor :current_password
@@ -37,9 +38,9 @@ class Usuario < ApplicationRecord
     TipoTransaccion.where(empresa_id: empresa_id)
   end
 
-  def movimientos
-    Movimiento.where(empresa_id: empresa_id)
-  end
+  # def usuario
+  #   Movimiento.where(empresa_id: empresa_id)
+  # end
 
 protected
   def encrypt_password

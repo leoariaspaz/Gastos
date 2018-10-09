@@ -7,9 +7,21 @@ movs = usr.movimientos.joins(transaccion: :tipo_transaccion).joins(:cuenta)
         .where("movimientos.cuenta_id = ? and movimientos.fecha_mov >= ? and movimientos.fecha_mov <= ?", 
         	43, Date.new(2018, 9, 1), Date.new(2018, 10, 3))
 
+movs = Usuario.find(9).movimientos
+            .joins(transaccion: :tipo_transaccion)
+            .joins(:cuenta)
+            .select("movimientos.*, transacciones.descripcion AS trx_desc, transacciones.es_debito, 
+              tipos_transacciones.descripcion AS ttrx_desc, cuentas.saldo_inicial, usuarios.nombre AS nombre_usuario")
+            .where("movimientos.cuenta_id = ? and movimientos.fecha_mov >= ? and movimientos.fecha_mov <= ?",
+        			43, Date.new(2018, 9, 1), Date.new(2018, 10, 3))
+
+movs = movs.joins(empresa: :usuario)
+
 puts movs.to_sql
 # puts ""
 # movs = movs.to_a
+
+exit
 
 if movs.empty?
 	puts "sin filas"
