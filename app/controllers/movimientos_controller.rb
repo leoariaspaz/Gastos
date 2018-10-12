@@ -66,7 +66,6 @@ class MovimientosController < ApplicationController
   # PATCH/PUT /movimientos/1.json
   def update
     respond_to do |format|
-      @movimiento.usuario = current_user
       if @movimiento.update(movimiento_params)
         flash[:cuenta_id] = @movimiento.cuenta_id
         format.html { redirect_to movimientos_url, notice: 'El movimiento se actualizó correctamente.' }
@@ -137,19 +136,8 @@ class MovimientosController < ApplicationController
   def cons_entre_fechas
     p = params.require(:mov_entre_fechas_search).permit(:fecha_desde, :fecha_hasta, :cuenta_id, :tipo_informe)
     m = MovEntreFechasSearch.new(p)
-    # logger.debug "movimiento = #{m.to_yaml}"
-    # logger.debug "valid? #{m.valid?}"
-    # @movimiento = m
-    # render 'movimientos/reportes/cons_entre_fechas/index'
-
     if m.valid?
       pdf = MovEntreFechasPdf.new(m, view_context)
-      # case @movimiento.tipo_informe
-      #   when 1 # Ordenado por fecha
-      #     pdf = MovEntreFechasPdf.new(@movimiento, view_context)
-      #   when 2 # Agrupado por usuario
-      #     pdf = MovimientoUtilidadPdf.new(@movimiento, view_context)
-      # end
       if not pdf.nil?
         send_data pdf.render, filename: pdf.file_name,
                               type: "application/pdf",

@@ -38,10 +38,6 @@ class Usuario < ApplicationRecord
     TipoTransaccion.where(empresa_id: empresa_id)
   end
 
-  # def usuario
-  #   Movimiento.where(empresa_id: empresa_id)
-  # end
-
 protected
   def encrypt_password
     if password.present?

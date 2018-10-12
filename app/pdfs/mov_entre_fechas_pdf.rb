@@ -3,8 +3,9 @@ class MovEntreFechasPdf < Prawn::Document
   include ApplicationHelper
   include ActionView::Helpers::NumberHelper 
   include MovEntreFechasSearchHelper
+  include ActionView::Helpers::TextHelper
 
-  TABLE_HEADER = [["Fec. Real", "Fec. Mov.", "Cód. Trx.", "Transacción", "Crédito", "Débito", "Saldo"]]
+  TABLE_HEADER = ["Fec. Real", "Fec. Mov.", "Cód. Trx.", "Transacción", "Crédito", "Débito", "Saldo"]
 
   def initialize(movimiento_search, view)
     super({page_size: "A4", left_margin: 20, right_margin: 20})
@@ -29,14 +30,32 @@ private
   def body(movimiento)
     fecha_desde = str_to_date(movimiento.fecha_desde)
     fecha_hasta = str_to_date(movimiento.fecha_hasta)
-    movimientos = Movimiento.movimientos_con_saldo(fecha_desde, fecha_hasta, movimiento.cuenta_id)
+    if movimiento.tipo_informe.to_i == 1
+      movimientos = Movimiento.movimientos_con_saldo(fecha_desde, fecha_hasta, movimiento.cuenta_id)
+    else
+      movimientos = Movimiento.movimientos_con_saldo_por_usuario(fecha_desde, fecha_hasta, movimiento.cuenta_id)      
+    end
     if movimientos.empty?
       text "- No se han encontrado movimientos para su consulta -", align: :center
     else
-      data = movimientos.map { |m| detail_row(m) }
-      move_down 5
-      text "- Listado de movimientos - <b>adsfadsfas</b>", size: 8, align: :left, inline_format: true
-      print_details(data)
+      if movimiento.tipo_informe.to_i == 1
+        data = movimientos.map { |m| detail_row(m) }
+        print_details(data, movimiento.tipo_informe)        
+      else
+        entró = false
+        movimientos.group_by{|m| "#{m.usuario_id} - #{m.nombre_usuario}"}.each do |k, v|
+          move_down 15 if entró
+          entró = true
+          text "<b>Usuario:</b> #{k}", size: 8, align: :left, inline_format: true
+          data = v.map do |t| 
+            row = detail_row(t)
+            row.take(row.size - 1)
+          end
+          total_cred = v.select {|t| not t.es_debito }.sum {|t| t.importe}
+          total_deb = v.select {|t| t.es_debito }.sum {|t| t.importe}
+          print_details(data, movimiento.tipo_informe, total_cred, total_deb)
+        end
+      end
     end
   end
 
@@ -64,8 +83,14 @@ private
     return [created_at, fecha_mov, trx_id, trx_desc, cred, deb, sdo]
   end
 
-  def print_details(data)
-    data = TABLE_HEADER + data
+  def print_details(data, tipo_informe, total_cred, total_deb)
+    header = (tipo_informe.to_i == 1) ? TABLE_HEADER : TABLE_HEADER.take(data[0].size)
+    if tipo_informe.to_i == 2
+      row = ["#{pluralize(data.size, "movimiento", "movimientos")}", { content: "Total: ", colspan: 3 }, 
+             number_to_currency(total_cred), number_to_currency(total_deb)]
+      data << row
+    end
+    data.unshift(header)
     table data do
       self.header = true
       self.column_widths = [80, 45, 40, 210, 60, 60, 60]
@@ -74,8 +99,9 @@ private
       column(2).align = :right
       column(4..6).align = :right
       cells.style(borders: [], padding: [2,2,2,2], size: 8)
-      row(0).style(align: :center, borders: [:bottom], border_width: 1, font_style: :bold)
+      row(0).style(align: :center, borders: [:bottom], border_width: 0.1, font_style: :bold)
+      row(data.size - 1).style(align: :right, borders: [:top], border_width: 0.1)
+      row(data.size - 1).column(0).style(align: :left, font_style: :italic)
     end
-    #move_down 10
   end
 end

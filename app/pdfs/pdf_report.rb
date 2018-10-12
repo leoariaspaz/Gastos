@@ -24,13 +24,14 @@ module PdfReport
       move_down 5
       text subtitle, size: 8, align: :left
     end
+    line_width 0.1
     stroke_horizontal_rule
-    move_down 15
+    move_down 10
   end
   
   def footer(title)
     string = "Pág. <page> de <total>"
-    options = { at: [bounds.right - 150, 6.5], width: 150, align: :right, size: 8 }
+    options = { at: [bounds.right - 150, 6.5], width: 150, align: :right, size: 8, style: :italic }
     number_pages string, options    
     repeat(lambda { |pg| pg > 1 }) do
       bounding_box [bounds.left, bounds.top], :width => bounds.width do
@@ -39,7 +40,7 @@ module PdfReport
       end
     end
     repeat :all do
-      draw_text title, at: [0, 0], size: 8
+      draw_text title, at: [0, 0], size: 8, style: :italic
       move_cursor_to 10
       stroke_horizontal_rule
     end
