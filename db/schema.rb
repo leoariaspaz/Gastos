@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20181009143154) do
   end
 
   create_table "movimientos", force: :cascade do |t|
-    t.date     "fecha_mov",                                default: '2018-09-19'
+    t.date     "fecha_mov",                                default: '2018-10-16'
     t.integer  "transaccion_id"
     t.decimal  "importe",         precision: 18, scale: 2, default: "0.0"
     t.datetime "created_at",                                                      null: false
